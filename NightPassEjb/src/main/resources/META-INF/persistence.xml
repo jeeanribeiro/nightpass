@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="NightPass" transaction-type="JTA">
+	
+	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+	<jta-data-source>java:/NightPassEjb</jta-data-source>
+	
+	<class>br.com.fiap.NightPassEjb.Entity.PJuridica</class>
+	<class>br.com.fiap.NightPassEjb.Entity.PessoaFisica</class>
+	<class>br.com.fiap.NightPassEjb.Entity.Estabelecimento</class>
+	<class>br.com.fiap.NightPassEjb.Entity.TipoEstabelecimento</class>
+	<class>br.com.fiap.NightPassEjb.Entity.GeneroMusical</class>
+	<class>br.com.fiap.NightPassEjb.Entity.GaleriaEst</class>
+	<class>br.com.fiap.NightPassEjb.Entity.TipoGaleria</class>
+
+	<properties>
+		
+		<property name="hibernate.dialect" 
+		value="org.hibernate.dialect.Oracle12cDialect" />
+		
+		<property name="javax.persistence.jdbc.driver" 
+		value="oracle.jdbc.OracleDriver" />
+
+		<!-- 
+		
+		<property name="javax.persistence.jdbc.url" 
+		value="jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl" />
+		
+		<property name="javax.persistence.jdbc.user" 
+		value="rm82296" />
+		
+		<property name="javax.persistence.jdbc.password"
+		value="281180" />
+		
+		-->
+		
+				
+		<property name="javax.persistence.jdbc.url" 
+		value="jdbc:oracle:thin:@localhost:1521:xe" />
+
+		<property name="javax.persistence.jdbc.user" 
+		value="system" />
+		
+		<property name="javax.persistence.jdbc.password"
+		value="fiaporacle" />
+		
+		<property name="hibernate.hbm2ddl.auto" value="validate" />
+		<property name="hibernate.show_sql" value="false" />
+		<property name="hibernate.format_sql" value="true" />
+		
+		
+	</properties>
+	</persistence-unit>
+	
+</persistence>
+
