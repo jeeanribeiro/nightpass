@@ -25,16 +25,15 @@
 		<!-- 
 		
 		<property name="javax.persistence.jdbc.url" 
-		value="jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl" />
+		value="jdbc:oracle:thin:@localhost:1521:xe" />
 		
 		<property name="javax.persistence.jdbc.user" 
-		value="rm82296" />
+		value="system" />
 		
 		<property name="javax.persistence.jdbc.password"
-		value="281180" />
+		value="fiaporacle" />
 		
 		-->
-		
 				
 		<property name="javax.persistence.jdbc.url" 
 		value="jdbc:oracle:thin:@localhost:1521:xe" />
@@ -45,8 +44,10 @@
 		<property name="javax.persistence.jdbc.password"
 		value="fiaporacle" />
 		
+		
+		
 		<property name="hibernate.hbm2ddl.auto" value="validate" />
-		<property name="hibernate.show_sql" value="false" />
+		<property name="hibernate.show_sql" value="true" />
 		<property name="hibernate.format_sql" value="true" />
 		
 		

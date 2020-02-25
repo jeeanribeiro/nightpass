@@ -34,8 +34,6 @@
 
  --%>
 
-
-
 	<form action="CadastroUsuarioServlet" method="post">
 	
 	<label>Nome: </label>
@@ -45,8 +43,9 @@
 	<label>Sobrenome: </label>
 	<input type="text" name="sobrenome" value="" maxlength="100">
 	<p>
-	 
+	
 	<label>Data de Nascimento: </label>
+	
 	<input type="date" name="dtNascimento" value="">
 	<p>
 	
@@ -79,12 +78,16 @@
 	<input type="number" name="telCelular" value="" maxlength="15">
 	<p>
 
+	<!-- 
+
 	<label>Tipo Usuario: </label>
 	<input type="radio" name="tipoUsuario" value="Consumidor">
-	<label for="M"> Consumidor </label>
-	<input type="radio" name="tipoUsuario" value="Consumidor">
-	<label for="M"> Gestor PJ </label>
+	<label for="Consumidor"> Consumidor </label>
+	<input type="radio" name="tipoUsuario" value="Gestor PJ">
+	<label for="Gestor PJ"> Gestor PJ </label>
 	<p>
+
+	 -->
 
 	<label>E-mail: </label>
 	<input type="email" name="email" value="" maxlength="100">
@@ -95,7 +98,7 @@
 	<p>
 
 	
-	<input type="submit" id="cadUsuario" value="Cadastrar Usuário">
+	<input type="submit" name="cadUsuario" value="Cadastrar Usuário">
 	
 	</form>
 

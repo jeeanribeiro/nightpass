@@ -58,5 +58,12 @@ public class GenericDAOImpl<T, K> implements GenericDAO<T, K> {
 		
 	}
 	
+	public void refresh(T entidade) {
+		
+		em.refresh(entidade);
+		
+	}
+	
+	
 	
 }

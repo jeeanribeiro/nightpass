@@ -3,6 +3,7 @@ package br.com.fiap.NightPassEjb.Entity;
 import java.io.Serializable;
 import java.util.Calendar;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -75,7 +76,8 @@ public class PJuridica implements Serializable{
 	@Column(name="PSJ_APELIDO", nullable=true, length=30)
 	private String psjApelido;
 	
-	@OneToOne(mappedBy = "PSJ_CODIGO")
+	@OneToOne(mappedBy = "PSJ_CODIGO", cascade = {CascadeType.ALL})
+	
 	private Estabelecimento estabelecimento;
 	
 	public PJuridica() {

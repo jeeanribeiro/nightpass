@@ -10,5 +10,10 @@ import br.com.fiap.NightPassEjb.Entity.PessoaFisica;
 public interface PFisicaDAO extends GenericDAO<PessoaFisica, Integer>{
 	
 	public List<PessoaFisica> listarPorNome();
+	
+	public PessoaFisica buscarPorEmail(String emailUsuario);
+	
+	public boolean autenticarUsuario(String emailUsuario, String Senha);
+	
 
 }

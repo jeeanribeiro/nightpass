@@ -3,6 +3,8 @@ package br.com.fiap.NightPassEjb.Entity;
 import java.io.Serializable;
 import java.util.Calendar;
 
+import javax.ejb.EJB;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.ConstraintMode;
 import javax.persistence.Entity;
@@ -20,13 +22,20 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
+import org.hibernate.annotations.Immutable;
+
+import br.com.fiap.NightPassEjb.dao.GenericDAOImpl;
+import br.com.fiap.NightPassEjb.dao.PFisicaDAO;
+import br.com.fiap.NightPassEjb.dao.PFisicaDAOImpl;
 
 @Entity
 @Table(name="T_PFisica")
 public class PessoaFisica implements Serializable {
+	
+	
+	
 	
 	/**
 	 * 
@@ -128,9 +137,13 @@ public class PessoaFisica implements Serializable {
 	private String tipoUsuario;
 	
 
-	@OneToOne
+	@OneToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name="T_PJURIDICA_PSJ_CODIGO")
 	private PJuridica PSJ_CODIGO;
+	
+	@Transient
+	private boolean loginValidado = false;
+	
 	
 	public PessoaFisica() {
 		super();
@@ -423,7 +436,32 @@ public class PessoaFisica implements Serializable {
 		PSJ_CODIGO = pSJ_CODIGO;
 	}
 
+	public boolean ValidarSenha(String SenhaUsuario) {
+		
+		if(SenhaUsuario.equals(this.senha)) {
+			
+			this.loginValidado = true;
+			
+		}else {
+			
+			this.loginValidado = false;
+			
+		}
+		
+		return loginValidado;
+	}
+
+	public boolean isLoginValidado() {
+		return loginValidado;
+	}
 	
 	
+	
+	
+
+//	public void setLoginValidado(boolean loginValidado) {
+//		this.loginValidado = loginValidado;
+//	}
+
 	
 }

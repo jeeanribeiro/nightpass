@@ -10,8 +10,30 @@ version="3.1">
 		<servlet-name>CadastroUsuarioServlet</servlet-name>
 		<servlet-class>br.com.fiap.NightPassEjb.Servlet.CadastroUsuarioServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>LoginUsuarioServlet</display-name>
+		<servlet-name>LoginUsuarioServlet</servlet-name>
+		<servlet-class>br.com.fiap.NightPassEjb.Servlet.LoginUsuarioServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>CadastroPJServlet</display-name>
+		<servlet-name>CadastroPJServlet</servlet-name>
+		<servlet-class>br.com.fiap.NightPassEjb.Servlet.CadastroPJServlet</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>CadastroUsuarioServlet</servlet-name>
 		<url-pattern>/CadastroUsuarioServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginUsuarioServlet</servlet-name>
+		<url-pattern>/LoginUsuarioServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CadastroPJServlet</servlet-name>
+		<url-pattern>/CadastroPJServlet</url-pattern>
 	</servlet-mapping>
 </web-app>

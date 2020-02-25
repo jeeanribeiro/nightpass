@@ -3,8 +3,6 @@ package br.com.fiap.NightPassEjb.dao;
 import java.util.List;
 
 import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-
 import br.com.fiap.NightPassEjb.Entity.Estabelecimento;
 
 @Stateless
