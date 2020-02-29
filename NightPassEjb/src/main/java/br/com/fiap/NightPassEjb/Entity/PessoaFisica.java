@@ -1,12 +1,15 @@
 package br.com.fiap.NightPassEjb.Entity;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import javax.ejb.EJB;
+import javax.persistence.Access;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.ConstraintMode;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
@@ -33,8 +36,6 @@ import br.com.fiap.NightPassEjb.dao.PFisicaDAOImpl;
 @Entity
 @Table(name="T_PFisica")
 public class PessoaFisica implements Serializable {
-	
-	
 	
 	
 	/**
@@ -137,7 +138,9 @@ public class PessoaFisica implements Serializable {
 	private String tipoUsuario;
 	
 
-	@OneToOne(cascade = {CascadeType.ALL})
+	//@OneToOne(cascade = {CascadeType.MERGE})
+	@OneToOne(cascade = {CascadeType.REFRESH}
+    , fetch = FetchType.EAGER)
 	@JoinColumn(name="T_PJURIDICA_PSJ_CODIGO")
 	private PJuridica PSJ_CODIGO;
 	
@@ -436,6 +439,14 @@ public class PessoaFisica implements Serializable {
 		PSJ_CODIGO = pSJ_CODIGO;
 	}
 
+	public String getDtNascimentoFmt() {
+	
+	SimpleDateFormat DtFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+	return DtFormat.format(this.dataNasc.getTime());
+	
+	}
+	
 	public boolean ValidarSenha(String SenhaUsuario) {
 		
 		if(SenhaUsuario.equals(this.senha)) {

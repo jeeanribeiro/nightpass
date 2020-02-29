@@ -10,16 +10,7 @@
 </head>
 <body>
 
-
-	<!-- 
-	<c:if test="${empty PFisicalog}">
-	<h1>Login ou Senha incorretos</h1>
-	</c:if>
-	
-	<h1>${PFisicalog.nome}</h1>
-	<h1>${PFisicalog.loginValidado}</h1>
-	
-	 -->
+	<h1>${cadastroRealizado}</h1>
 	 
 	<form action="LoginUsuarioServlet" method="post">
 	
@@ -37,8 +28,6 @@
 	<h1>${resultado}</h1>
 	
 	<h1><a href="CadastroUsuario.jsp">Não possi cadastro click aqui</a></h1>
-
-
 
 </body>
 </html>

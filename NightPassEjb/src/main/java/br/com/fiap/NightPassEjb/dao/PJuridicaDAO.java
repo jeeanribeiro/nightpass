@@ -13,6 +13,8 @@ public interface PJuridicaDAO extends GenericDAO<PJuridica, Integer>{
 
 public List<PJuridica> listarPorNome();
 	
-	
+
+public PJuridica cadastrarR (PJuridica pjuridica);
+
 	
 }

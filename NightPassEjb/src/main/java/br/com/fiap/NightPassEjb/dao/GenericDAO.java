@@ -14,7 +14,8 @@ public interface GenericDAO<T,K> {
 	
 	public List<T> listar();
 	
+	public void flush();
+
 	public void refresh(T entidade);
-	
 
 }

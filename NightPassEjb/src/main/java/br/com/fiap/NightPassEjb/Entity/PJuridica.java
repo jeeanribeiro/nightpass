@@ -76,7 +76,8 @@ public class PJuridica implements Serializable{
 	@Column(name="PSJ_APELIDO", nullable=true, length=30)
 	private String psjApelido;
 	
-	@OneToOne(mappedBy = "PSJ_CODIGO", cascade = {CascadeType.ALL})
+	//@OneToOne(mappedBy = "PSJ_CODIGO", cascade = {CascadeType.ALL})
+	@OneToOne(mappedBy = "PSJ_CODIGO")
 	
 	private Estabelecimento estabelecimento;
 	

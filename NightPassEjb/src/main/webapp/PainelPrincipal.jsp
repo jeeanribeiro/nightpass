@@ -19,10 +19,13 @@
 	sugestões, opções de busca de estabelecimentos, etc.</h1>
 	<p>
 	<p>
+
 	
-	<H1>
-	<button type="button" formmethod="GET" 
-	onclick="window.location.href='CadastroUsuario.jsp'">Acesse sua conta</button> </h1>
+	<form action="CadastroUsuarioServlet" method="post">
+	<input type="hidden" name="acao" value="conta">
+	<h1><button type="submit">Acesse sua conta</button></h1> 
+	</form>
+	
 	
 	<p><p>
 	<h1>neste mesmo painel colacamos um botão para caso queira o usuário
@@ -30,7 +33,6 @@
 		uma pessoa jurídica e terá acesso as funcionalidades de pessoa
 		jurídica / estabelecimentos
 		<button type="button" onclick="window.location.href='PainelGestorPJ.jsp'">Acesse aqui</button> </h1>
-		
 
 
 </body>

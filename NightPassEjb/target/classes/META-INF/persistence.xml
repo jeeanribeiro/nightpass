@@ -34,17 +34,18 @@
 		value="fiaporacle" />
 		
 		-->
-				
+		
 		<property name="javax.persistence.jdbc.url" 
-		value="jdbc:oracle:thin:@localhost:1521:xe" />
-
+		value="jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl" />
+		
 		<property name="javax.persistence.jdbc.user" 
-		value="system" />
+		value="rm82296" />
 		
 		<property name="javax.persistence.jdbc.password"
-		value="fiaporacle" />
-		
-		
+		value="281180" />
+
+		<!-- usar validate apenas se não for necessário alterar as tabelas
+		caso contrário usar update -->
 		
 		<property name="hibernate.hbm2ddl.auto" value="validate" />
 		<property name="hibernate.show_sql" value="true" />

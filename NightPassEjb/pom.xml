@@ -11,7 +11,7 @@
 
   <name>NightPassEjb Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <url>LoginUsuario.jsp</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -54,7 +54,7 @@
     <version>1.0.0.Final</version>
     <scope>provided</scope>
   </dependency>
-      
+
   </dependencies>
 
   <build>

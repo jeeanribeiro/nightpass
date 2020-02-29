@@ -3,6 +3,9 @@ package br.com.fiap.NightPassEjb.Servlet;
 import java.io.IOException;
 
 import javax.ejb.EJB;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -51,8 +54,6 @@ public class CadastroPJServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		
 				
 		//Cadastra a nova PJ na base de Dados
 		
@@ -75,8 +76,13 @@ public class CadastroPJServlet extends HttpServlet {
 		cPJuridica.setPsjEstadoCom(request.getParameter("estadoCom"));
 		
 		cPJuridica.setPsjEmail(request.getParameter("email"));
-	
-		dao.cadastrar(cPJuridica);
+		
+		cPJuridica = dao.cadastrarR(cPJuridica);
+		
+		cPJuridica.setPsjBairroCom("Vila mariana");
+		
+		
+		System.out.println(cPJuridica.getPsjCodigo());
 		
 		//Vincula a PJ ao usuário que realizou o cadastro atualizando os campom tipoUsuário e PSJ_CODIGO
 
@@ -87,9 +93,8 @@ public class CadastroPJServlet extends HttpServlet {
 		cPFisica.setTipoUsuario("gestor");
 		
 		cPFisica.setPSJ_CODIGO(cPJuridica);
-				
+	
 		daopf.atualizar(cPFisica);
-		
 		
 		
 	}

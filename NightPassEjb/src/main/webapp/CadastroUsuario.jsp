@@ -34,6 +34,7 @@
 
  --%>
 
+
 	<form action="CadastroUsuarioServlet" method="post">
 	
 	<label>Nome: </label>
@@ -61,7 +62,7 @@
 	<input type="text" name="rgEstado" value="" maxlength="15">
 	<p>
 
-	<label>CPF: </label>
+	<label >CPF: </label>
 	<input type="number" name="cpf" value="" maxlength="11">
 	<p>
 
@@ -69,7 +70,7 @@
 	<input type="radio" name="sexo" value="M">
 	<label for="M"> M </label>
 	<input type="radio" name="sexo" value="F">
-	<label for="M"> F </label>
+	<label for="F"> F </label>
 	<input type="radio" name="sexo" value="O">
 	<label for="O"> Prefiro não Informar </label>
 	<p>
@@ -97,8 +98,9 @@
 	<input type="text" name="senha" value="" maxlength="40">
 	<p>
 
+	<input type="hidden" name="acao" value="cadUsuario">
 	
-	<input type="submit" name="cadUsuario" value="Cadastrar Usuário">
+	<input type="submit" name="cadUsuario" value="Cadastrar">
 	
 	</form>
 
