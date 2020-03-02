@@ -1,0 +1,56 @@
+html, body {
+  align-items: center;
+  backdrop-filter: blur(2px) brightness(50%);
+  background-image: url("imgs/background-club.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+#loginContainer {
+  align-items: center;
+  background: #222;
+  box-shadow: 0 0 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-width: 360px;
+  padding: 20px;
+}
+
+#loginContainer #loginForm {
+  display: flex;
+  flex-direction: column;
+  min-width: 75%;
+}
+
+#loginContainer #loginForm * {
+  margin-bottom: 20px;
+}
+
+#loginContainer #loginForm button {
+  background: #27739a;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 10px 0;
+}
+
+#loginContainer #loginForm button:hover {
+  background: #206080;
+}
+
+#loginContainer p {
+  color: #fff;
+  text-align: center;
+  white-space: pre-line;
+}
+
+#loginContainer p a {
+  color: #ff0084;
+  font-weight: 700;
+  text-decoration: none;
+}
