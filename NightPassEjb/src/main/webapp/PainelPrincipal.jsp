@@ -15,8 +15,8 @@
 
 
 
-	<h1>Inserir nesse painel informações para o usuário consumidor como usas fotos,
-	sugestões, opções de busca de estabelecimentos, etc.</h1>
+	<h1>Neste painel haverá informações para o usuário consumidor como suas fotos,
+	sugestões de estabelecimentos, opções de busca de estabelecimentos, etc.</h1>
 	<p>
 	<p>
 
@@ -28,7 +28,7 @@
 	
 	
 	<p><p>
-	<h1>neste mesmo painel colacamos um botão para caso queira o usuário
+	<h1>neste mesmo painel haverá um botão para caso queira o usuário
 		pule para outro painel destinado aos gestores onde ele poderá cadastrar
 		uma pessoa jurídica e terá acesso as funcionalidades de pessoa
 		jurídica / estabelecimentos

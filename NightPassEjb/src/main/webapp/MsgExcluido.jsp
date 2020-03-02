@@ -6,11 +6,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Login do Usuario</title>
+<title>Usuário Excluído!</title>
 </head>
 <body>
 
-	<h1>${cadastroRealizado}</h1>
+	<h1>${contaexcluida}</h1>
 	 
 </body>
 </html>

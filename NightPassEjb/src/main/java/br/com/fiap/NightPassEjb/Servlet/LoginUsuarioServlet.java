@@ -34,7 +34,7 @@ public class LoginUsuarioServlet extends HttpServlet {
 	@EJB
 	private PFisicaDAO dao;
 
-	private PessoaFisica cPFisica;
+	private PessoaFisica cPFisica = new PessoaFisica();
         
     
 	/**

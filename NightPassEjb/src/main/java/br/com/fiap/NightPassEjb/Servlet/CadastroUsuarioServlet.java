@@ -153,7 +153,7 @@ public class CadastroUsuarioServlet extends HttpServlet {
 				e1.printStackTrace();
 			}
 			
-		response.getWriter().append("Conta Excluída");
+		request.setAttribute("contaexcluida", "Conta Excluída!");
 			
 		request.getRequestDispatcher("MsgExcluido.jsp").forward(request, response);
 				

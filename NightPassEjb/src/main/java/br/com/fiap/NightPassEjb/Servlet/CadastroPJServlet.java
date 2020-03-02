@@ -31,7 +31,7 @@ public class CadastroPJServlet extends HttpServlet {
 	private PFisicaDAO daopf;
 	
 	private PJuridica cPJuridica = new PJuridica();
-	private PessoaFisica cPFisica; 
+	private PessoaFisica cPFisica = new PessoaFisica(); 
 	
 	
     /**
@@ -95,6 +95,8 @@ public class CadastroPJServlet extends HttpServlet {
 		cPFisica.setPSJ_CODIGO(cPJuridica);
 	
 		daopf.atualizar(cPFisica);
+		
+		request.getRequestDispatcher("PainelPrincipal.jsp").forward(request, response);
 		
 		
 	}
