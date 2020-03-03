@@ -81,9 +81,6 @@ public class CadastroPJServlet extends HttpServlet {
 		
 		cPJuridica.setPsjBairroCom("Vila mariana");
 		
-		
-		System.out.println(cPJuridica.getPsjCodigo());
-		
 		//Vincula a PJ ao usuário que realizou o cadastro atualizando os campom tipoUsuário e PSJ_CODIGO
 
 		HttpSession session = request.getSession();
@@ -96,7 +93,11 @@ public class CadastroPJServlet extends HttpServlet {
 	
 		daopf.atualizar(cPFisica);
 		
-		request.getRequestDispatcher("PainelPrincipal.jsp").forward(request, response);
+		//Exibe mensagem de cadastro realizado
+		
+		request.setAttribute("PJCadastrada", "Pessoa Jurídica Cadastrada com sucesso!");
+		
+		request.getRequestDispatcher("CadastroPJ.jsp").forward(request, response);
 		
 		
 	}

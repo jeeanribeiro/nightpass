@@ -1,33 +1,46 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<html>
+<!DOCTYPE html>
+<html lang='pt'>
 <head>
+<meta charset='UTF-8'>
 <meta charset="ISO-8859-1">
-<title>Login do Usuario</title>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<meta http-equiv='X-UA-Compatible' content='ie=edge'>
+<link rel="apple-touch-icon" sizes="180x180" href="imgs/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon-16x16.png">
+<link rel="manifest" href="imgs/site.webmanifest">
+<link rel='stylesheet' href='global.css'>
+<link rel='stylesheet' href='LoginUsuario.css'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.min.js'></script>
+<title>Login - NightPass</title>
 </head>
 <body>
-
-	<h1>${cadastroRealizado}</h1>
-	 
-	<form action="LoginUsuarioServlet" method="post">
-	
-	<label>Digite seu email:</label>
-	<input type="email" name="email">
-	
-	<label>Senha:</label>
-	<input type="password" name="senha">
-	
-	<input type="submit" name="Entrar">
-		
-	</form>
-	<p>
-	
-	<h1>${resultado}</h1>
-	
-	<h1><a href="CadastroUsuario.jsp">Não possi cadastro click aqui</a></h1>
-
+  <section id='loginContainer'>
+  	  <h1 class="destaque1">${cadastroRealizado}</h1>
+  	  <h1 class="destaque1">${resultado}</h1>
+      <h1 class='logo'>NightPass</h1>
+      <form action="LoginUsuarioServlet" method="post" id='loginForm'>
+        <input 
+          type='text' 
+          name="email" 
+          id='login' 
+          placeholder='E-mail'
+          pattern='/\d{3}\.\d{3}\.\d{3}\-|[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4})\w+/'
+        >
+        <input type='password' name="senha" id='password' placeholder='Senha' minlength='8'>
+        
+        <input type="submit" name="Entrar" value="Entrar">
+                
+      </form>
+      <p>Não possui uma conta?
+        <a href="CadastroUsuario.jsp">Cadastre-se aqui!</a>
+      </p>
+  </section>
+  <script src='LoginUsuario.js'></script>
 </body>
 </html>

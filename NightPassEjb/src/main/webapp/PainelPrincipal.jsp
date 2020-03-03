@@ -1,39 +1,172 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<html>
+<!DOCTYPE html>
+<html lang='pt-br'>
 <head>
 <meta charset="ISO-8859-1">
-<title>Painel Principal</title>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel="apple-touch-icon" sizes="180x180" href="imgs/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon-16x16.png">
+<link rel="manifest" href="imgs/site.webmanifest">
+<link rel="stylesheet" href="global.css">
+<link rel="stylesheet" href="PainelPrincipal.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+<title>NightPass</title>
 </head>
 <body>
-
-<h1>Olá  ${PFisicalog.nome}</h1>
-
-
-
-	<h1>Neste painel haverá informações para o usuário consumidor como suas fotos,
-	sugestões de estabelecimentos, opções de busca de estabelecimentos, etc.</h1>
-	<p>
-	<p>
-
+  <header>
+    <nav>
+      <div class='logo'>NightPass</div>
+      <div class='logo'>Olá  ${PFisicalog.nome} </div>
+      
+       <!-- <input type='text' id='searchBox' placeholder='O que estão procurando?' maxlength='128'></input> -->
 	
-	<form action="CadastroUsuarioServlet" method="post">
-	<input type="hidden" name="acao" value="conta">
-	<h1><button type="submit">Acesse sua conta</button></h1> 
-	</form>
-	
-	
-	<p><p>
-	<h1>neste mesmo painel haverá um botão para caso queira o usuário
-		pule para outro painel destinado aos gestores onde ele poderá cadastrar
-		uma pessoa jurídica e terá acesso as funcionalidades de pessoa
-		jurídica / estabelecimentos
-		<button type="button" onclick="window.location.href='PainelGestorPJ.jsp'">Acesse aqui</button> </h1>
+	   <form action="CadastroUsuarioServlet" method="post">
+		<input type="hidden" name="acao" value="conta">
+		<h1><input class='profile' type="submit" value="sua conta"></h1>
+		</form>
 
-
+		<form>
+	    <h1><input class='profile' type="button" onclick="window.location.href='PainelGestorPJ.jsp'" value="acesso gestor"></h1>
+		</form>
+	    <div id='navMenu'>
+        
+        <a class='sign-out' href='LoginUsuario.jsp'><i class="fas fa-power-off"></i></a>
+        </div>
+    </nav>
+    
+  </header>
+  <section id='establishmentList'>
+    <div class='establishment'>
+      <div class="establishment-image-button">
+        <div class='establishment-image' src="" alt="" width="128" height="128"></div>
+        <button class="establishment-goto"><i class="fas fa-location-arrow"></i>Rotas</button>
+      </div>
+      <div class="establishment-info">
+        <h4 class="establishment-title">Nome do estabelecimento</h3>
+        <p class="establishment-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur...</p>
+        <div class="establishment-time-distance">
+          <span class="establishment-time-range"><i class="far fa-clock"></i>20h00 - 06h00</span>
+          <span class="establishment-distance"><i class="fas fa-map-marker-alt"></i>7.2km</span>
+        </div>
+      </div>
+    </div>
+    <div class='establishment'>
+      <div class="establishment-image-button">
+        <div class='establishment-image' src="" alt="" width="128" height="128"></div>
+        <button class="establishment-goto"><i class="fas fa-location-arrow"></i>Rotas</button>
+      </div>
+      <div class="establishment-info">
+        <h4 class="establishment-title">Nome do estabelecimento</h3>
+        <p class="establishment-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur...</p>
+        <div class="establishment-time-distance">
+          <span class="establishment-time-range"><i class="far fa-clock"></i>20h00 - 06h00</span>
+          <span class="establishment-distance"><i class="fas fa-map-marker-alt"></i>7.2km</span>
+        </div>
+      </div>
+    </div>
+    <div class='establishment'>
+      <div class="establishment-image-button">
+        <div class='establishment-image' src="" alt="" width="128" height="128"></div>
+        <button class="establishment-goto"><i class="fas fa-location-arrow"></i>Rotas</button>
+      </div>
+      <div class="establishment-info">
+        <h4 class="establishment-title">Nome do estabelecimento</h3>
+        <p class="establishment-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur...</p>
+        <div class="establishment-time-distance">
+          <span class="establishment-time-range"><i class="far fa-clock"></i>20h00 - 06h00</span>
+          <span class="establishment-distance"><i class="fas fa-map-marker-alt"></i>7.2km</span>
+        </div>
+      </div>
+    </div>
+    <div class='establishment'>
+      <div class="establishment-image-button">
+        <div class='establishment-image' src="" alt="" width="128" height="128"></div>
+        <button class="establishment-goto"><i class="fas fa-location-arrow"></i>Rotas</button>
+      </div>
+      <div class="establishment-info">
+        <h4 class="establishment-title">Nome do estabelecimento</h3>
+        <p class="establishment-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur...</p>
+        <div class="establishment-time-distance">
+          <span class="establishment-time-range"><i class="far fa-clock"></i>20h00 - 06h00</span>
+          <span class="establishment-distance"><i class="fas fa-map-marker-alt"></i>7.2km</span>
+        </div>
+      </div>
+    </div>
+    <div class='establishment'>
+      <div class="establishment-image-button">
+        <div class='establishment-image' src="" alt="" width="128" height="128"></div>
+        <button class="establishment-goto"><i class="fas fa-location-arrow"></i>Rotas</button>
+      </div>
+      <div class="establishment-info">
+        <h4 class="establishment-title">Nome do estabelecimento</h3>
+        <p class="establishment-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur...</p>
+        <div class="establishment-time-distance">
+          <span class="establishment-time-range"><i class="far fa-clock"></i>20h00 - 06h00</span>
+          <span class="establishment-distance"><i class="fas fa-map-marker-alt"></i>7.2km</span>
+        </div>
+      </div>
+    </div>
+    <div class='establishment'>
+      <div class="establishment-image-button">
+        <div class='establishment-image' src="" alt="" width="128" height="128"></div>
+        <button class="establishment-goto"><i class="fas fa-location-arrow"></i>Rotas</button>
+      </div>
+      <div class="establishment-info">
+        <h4 class="establishment-title">Nome do estabelecimento</h3>
+        <p class="establishment-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur...</p>
+        <div class="establishment-time-distance">
+          <span class="establishment-time-range"><i class="far fa-clock"></i>20h00 - 06h00</span>
+          <span class="establishment-distance"><i class="fas fa-map-marker-alt"></i>7.2km</span>
+        </div>
+      </div>
+    </div>
+    <div class='establishment'>
+      <div class="establishment-image-button">
+        <div class='establishment-image' src="" alt="" width="128" height="128"></div>
+        <button class="establishment-goto"><i class="fas fa-location-arrow"></i>Rotas</button>
+      </div>
+      <div class="establishment-info">
+        <h4 class="establishment-title">Nome do estabelecimento</h3>
+        <p class="establishment-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur...</p>
+        <div class="establishment-time-distance">
+          <span class="establishment-time-range"><i class="far fa-clock"></i>20h00 - 06h00</span>
+          <span class="establishment-distance"><i class="fas fa-map-marker-alt"></i>7.2km</span>
+        </div>
+      </div>
+    </div>
+    <div class='establishment'>
+      <div class="establishment-image-button">
+        <div class='establishment-image' src="" alt="" width="128" height="128"></div>
+        <button class="establishment-goto"><i class="fas fa-location-arrow"></i>Rotas</button>
+      </div>
+      <div class="establishment-info">
+        <h4 class="establishment-title">Nome do estabelecimento</h3>
+        <p class="establishment-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur...</p>
+        <div class="establishment-time-distance">
+          <span class="establishment-time-range"><i class="far fa-clock"></i>20h00 - 06h00</span>
+          <span class="establishment-distance"><i class="fas fa-map-marker-alt"></i>7.2km</span>
+        </div>
+      </div>
+    </div>
+    <div class='establishment'>
+      <div class="establishment-image-button">
+        <div class='establishment-image' src="" alt="" width="128" height="128"></div>
+        <button class="establishment-goto"><i class="fas fa-location-arrow"></i>Rotas</button>
+      </div>
+      <div class="establishment-info">
+        <h4 class="establishment-title">Nome do estabelecimento</h3>
+        <p class="establishment-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur...</p>
+        <div class="establishment-time-distance">
+          <span class="establishment-time-range"><i class="far fa-clock"></i>20h00 - 06h00</span>
+          <span class="establishment-distance"><i class="fas fa-map-marker-alt"></i>7.2km</span>
+        </div>
+      </div>
+    </div>
+  </section>
 </body>
 </html>

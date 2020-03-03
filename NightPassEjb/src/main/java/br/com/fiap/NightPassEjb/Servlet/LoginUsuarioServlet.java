@@ -53,12 +53,9 @@ public class LoginUsuarioServlet extends HttpServlet {
 
 		HttpSession usSession;
 		boolean senhaValida = false;
-			
 		
 		usSession = request.getSession();
-		
-
-		
+				
 		cPFisica = dao.buscarPorEmail((String) request.getParameter("email"));
 		
 		if (cPFisica == null) {
