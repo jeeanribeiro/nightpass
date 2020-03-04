@@ -79,8 +79,6 @@ public class CadastroPJServlet extends HttpServlet {
 		
 		cPJuridica = dao.cadastrarR(cPJuridica);
 		
-		cPJuridica.setPsjBairroCom("Vila mariana");
-		
 		//Vincula a PJ ao usuário que realizou o cadastro atualizando os campom tipoUsuário e PSJ_CODIGO
 
 		HttpSession session = request.getSession();
