@@ -21,24 +21,21 @@
   <header>
     <nav>
       <div class='logo'>NightPass</div>
-      <div class='logo'>Olá  ${PFisicalog.nome} </div>
-      
-       <!-- <input type='text' id='searchBox' placeholder='O que estão procurando?' maxlength='128'></input> -->
-	
-	   <form action="CadastroUsuarioServlet" method="post">
-		<input type="hidden" name="acao" value="conta">
-		<h1><input class='profile' type="submit" value="sua conta"></h1>
-		</form>
+      <div class='logo'>Olï¿½  ${PFisicalog.nome} </div>
 
-		<form>
-	    <h1><input class='profile' type="button" onclick="window.location.href='PainelGestorPJ.jsp'" value="acesso gestor"></h1>
-		</form>
-	    <div id='navMenu'>
-        
+      <form action="CadastroUsuarioServlet" method="post">
+		    <input type="hidden" name="acao" value="conta">
+		    <h1><input class='profile' type="submit" value="sua conta"></h1>
+      </form>
+      
+      <form>
+        <h1><input class='profile' type="button" onclick="window.location.href='PainelGestorPJ.jsp'" value="acesso gestor"></h1>
+      </form>
+      
+      <div id='navMenu'>
         <a class='sign-out' href='LoginUsuario.jsp'><i class="fas fa-power-off"></i></a>
-        </div>
+      </div>
     </nav>
-    
   </header>
   <section id='establishmentList'>
     <div class='establishment'>

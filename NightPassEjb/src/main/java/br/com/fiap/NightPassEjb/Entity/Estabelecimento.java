@@ -33,11 +33,7 @@ import javax.persistence.TemporalType;
 @Table(name="T_ESTABELECI")
 
 public class Estabelecimento implements Serializable {
-	
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -49,9 +45,6 @@ public class Estabelecimento implements Serializable {
 	@Lob
 	@Column(name="EST_DESCRICAO", nullable=false)
 	private String estDescricao;
-	
-	//private Clob Est_Descricao;
-	
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="EST_ABERTURA", nullable=false)
@@ -78,10 +71,8 @@ public class Estabelecimento implements Serializable {
 	name="T_ESTGENMUSICAL")
 	private List<GeneroMusical> generoMusical;
 	
-		
 	public Estabelecimento() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 
@@ -164,7 +155,4 @@ public class Estabelecimento implements Serializable {
 		this.generoMusical = generoMusical;
 	}
 
-	
-
-	
 }

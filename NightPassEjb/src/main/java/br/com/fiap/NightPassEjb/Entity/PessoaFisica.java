@@ -37,10 +37,6 @@ import br.com.fiap.NightPassEjb.dao.PFisicaDAOImpl;
 @Table(name="T_PFisica")
 public class PessoaFisica implements Serializable {
 	
-	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -136,9 +132,7 @@ public class PessoaFisica implements Serializable {
 	
 	@Column(name="psa_tipousuario", nullable=false, length=20)
 	private String tipoUsuario;
-	
 
-	//@OneToOne(cascade = {CascadeType.MERGE})
 	@OneToOne(cascade = {CascadeType.REFRESH}
     , fetch = FetchType.EAGER)
 	@JoinColumn(name="T_PJURIDICA_PSJ_CODIGO")
@@ -146,7 +140,6 @@ public class PessoaFisica implements Serializable {
 	
 	@Transient
 	private boolean loginValidado = false;
-	
 	
 	public PessoaFisica() {
 		super();
@@ -440,39 +433,21 @@ public class PessoaFisica implements Serializable {
 	}
 
 	public String getDtNascimentoFmt() {
-	
-	SimpleDateFormat DtFormat = new SimpleDateFormat("yyyy-MM-dd");
-
-	return DtFormat.format(this.dataNasc.getTime());
-	
+		SimpleDateFormat DtFormat = new SimpleDateFormat("yyyy-MM-dd");
+		return DtFormat.format(this.dataNasc.getTime());
 	}
 	
 	public boolean ValidarSenha(String SenhaUsuario) {
-		
-		if(SenhaUsuario.equals(this.senha)) {
-			
+		if (SenhaUsuario.equals(this.senha)) {
 			this.loginValidado = true;
-			
-		}else {
-			
+		} else {
 			this.loginValidado = false;
-			
 		}
-		
 		return loginValidado;
 	}
 
 	public boolean isLoginValidado() {
 		return loginValidado;
 	}
-	
-	
-	
-	
-
-//	public void setLoginValidado(boolean loginValidado) {
-//		this.loginValidado = loginValidado;
-//	}
-
 	
 }

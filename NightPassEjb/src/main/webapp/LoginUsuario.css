@@ -50,8 +50,6 @@ input {
   padding: 10px 0;
 }
 
-
-
 #loginContainer #loginForm button:hover {
   background: #206080;
 }
@@ -69,7 +67,6 @@ input {
 }
 
 .destaque1{
-	
 	color: purple;
 	font-family: 'Fira Sans', sans-serif;
 	font-size: 16px;

@@ -18,15 +18,13 @@
 </head>
 <body>
   <section id='signUpContainer'>
-  
-  	<h2 class="destaque1"> ${CadastroAtu} </h2> 
-  
+  	<h2 class="destaque1">${CadastroAtu}</h2> 
     <form action="CadastroUsuarioServlet" method="post" id="signUpForm">
       <input required type="text" name="nome" value="${PFisicalog.nome}" placeholder="Nome" maxlength="40">
       <input required type="text" name="sobrenome" value="${PFisicalog.sobrenome}" placeholder="Sobrenome" maxlength="100">
       <input required type="date" name="dtNascimento" value="${PFisicalog.getDtNascimentoFmt()}" placeholder="Data de nascimento">
       <input required type="tel" name="rg" value="${PFisicalog.rg}" placeholder="RG" maxlength="15">
-      <input required type="text" name="rgOrgaoEmissor" value="${PFisicalog.rgOrgaoEmissor}" id="rgEmitter" placeholder="Orgão emissor" maxlength="15">
+      <input required type="text" name="rgOrgaoEmissor" value="${PFisicalog.rgOrgaoEmissor}" id="rgEmitter" placeholder="Orgï¿½o emissor" maxlength="15">
       <select id="rgEstado" name="rgEstado">
         <option value="AC">AC</option>
         <option value="AL">AL</option>
@@ -63,14 +61,12 @@
         <option value="O" ${sexoO}>Outros</option>
       </select>
       <input required type="email" name="email" value="${PFisicalog.email}" placeholder="E-mail" maxlength="100">
-      <input required type="tel" name="telCelular" value="${PFisicalog.telCelular}" placeholder="Número do celular" maxlength="15">
+      <input required type="tel" name="telCelular" value="${PFisicalog.telCelular}" placeholder="Nï¿½mero do celular" maxlength="15">
       <input required type="password" name="senha" value="${PFisicalog.senha}"  placeholder="Senha" minlength="8" maxlength="40">
       <input required type="password" name="confirmarSenha" value="${PFisicalog.senha}" placeholder="Confirmar senha" minlength="8" maxlength="40">
       <input type="submit" name="acao" value="Atualizar Dados">
       <button type="button" onclick="window.location.href='PainelPrincipal.jsp'">Voltar para Painel</button>
-	  <input type="submit" name="acao" value="Remover Conta">
-	  
-      
+	    <input type="submit" name="acao" value="Remover Conta">
     </form>
   </section>
   <script src="CadastroUsuario.js"></script>

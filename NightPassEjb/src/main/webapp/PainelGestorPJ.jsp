@@ -16,11 +16,11 @@
 <title>Painel Gestor - NightPass</title>
 </head>
 <body>
-
 	<p>
 	<p>
-	<div style="color: red"> Cadastro de Pessoa Jurídica
-	<button type="button" onclick="window.location.href='CadastroPJ.jsp'">Acesse aqui</button>
+	<div style="color: red">
+		Cadastro de Pessoa Jurï¿½dica
+		<button type="button" onclick="window.location.href='CadastroPJ.jsp'">Acesse aqui</button>
 	</div>
 </body>
 </html>
