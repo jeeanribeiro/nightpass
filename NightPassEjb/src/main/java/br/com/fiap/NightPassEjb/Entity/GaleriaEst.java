@@ -19,9 +19,6 @@ import javax.persistence.Table;
 @Table(name="T_GaleriaEst")
 public class GaleriaEst implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -32,7 +29,6 @@ public class GaleriaEst implements Serializable{
 	
 	@Column(name="gae_foto", nullable = false)
 	private Blob gaefoto;
-	
 		
 	@ManyToOne
 	@JoinColumn(name="T_TipoGaleria_tga_codigo", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
@@ -41,7 +37,6 @@ public class GaleriaEst implements Serializable{
 	@ManyToOne
 	@JoinColumn(name="T_Estabeleci_est_codigo", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
 	private Estabelecimento gae_est_codigo;
-	
 	
 	public TipoGaleria getTga_codigo() {
 		return gae_tga_codigo;
@@ -66,13 +61,5 @@ public class GaleriaEst implements Serializable{
 	public void setGaefoto(Blob gaefoto) {
 		this.gaefoto = gaefoto;
 	}
-
-	
-	
-	
-	
-	
-	
-	
 
 }

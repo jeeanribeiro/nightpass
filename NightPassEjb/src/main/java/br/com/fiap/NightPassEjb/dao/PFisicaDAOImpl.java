@@ -15,51 +15,32 @@ public class PFisicaDAOImpl extends GenericDAOImpl<PessoaFisica, Integer> implem
 
 	public PFisicaDAOImpl() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
-	public List<PessoaFisica> listarPorNome(){
-		
+	public List<PessoaFisica> listarPorNome() {
 		return em.createQuery("from PessoaFisica f Order by nome", PessoaFisica.class)
 				.getResultList();
-		
 	}
 	
-	
 	public PessoaFisica buscarPorEmail(String emailUsuario) {
-		
 		try {
-		
-		return em.createQuery("from PessoaFisica f Where UPPER(f.email)='"
-		+ emailUsuario.toUpperCase() +"'", PessoaFisica.class).getSingleResult();
-		
-		}catch (NoResultException expected) {
-			
-		return null;
-			
+			return em.createQuery("from PessoaFisica f Where UPPER(f.email)='"
+			+ emailUsuario.toUpperCase() +"'", PessoaFisica.class).getSingleResult();
+		} catch (NoResultException expected) {
+			return null;
 		}
-		
 	}
 	
 	public boolean autenticarUsuario(String emailUsuario, String Senha) {
-		
 		try {
-		
-		em.createQuery("from PessoaFisica f Where UPPER(f.email)='"
-		+ emailUsuario.toUpperCase() +"'" + "AND f.senha='" + Senha + "'",
-		PessoaFisica.class).getSingleResult();
-		
-		return true;
+			em.createQuery("from PessoaFisica f Where UPPER(f.email)='"
+			+ emailUsuario.toUpperCase() +"'" + "AND f.senha='" + Senha + "'",
+			PessoaFisica.class).getSingleResult();
 
-		}catch (NoResultException expected) {
-		
-		return false;
-			
+			return true;
+		} catch (NoResultException expected) {
+			return false;
 		}
-			
-		
 	}
 	
-	
-
 }

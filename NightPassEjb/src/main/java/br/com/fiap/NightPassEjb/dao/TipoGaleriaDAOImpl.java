@@ -9,8 +9,6 @@ public class TipoGaleriaDAOImpl extends GenericDAOImpl<TipoGaleria, Integer> imp
 
 	public TipoGaleriaDAOImpl(EntityManager em) {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-	
 
 }

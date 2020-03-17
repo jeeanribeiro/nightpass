@@ -13,35 +13,26 @@ import javax.servlet.http.HttpSession;
 import br.com.fiap.NightPassEjb.Entity.PessoaFisica;
 import br.com.fiap.NightPassEjb.dao.PFisicaDAO;
 
-/**
- * Servlet implementation class LoginUsuario
- */
-
 @WebServlet("/LoginUsuarioServlet")
 public class LoginUsuarioServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 	
     /**
      * @see HttpServlet#HttpServlet()
      */
     public LoginUsuarioServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
-
 
 	@EJB
 	private PFisicaDAO dao;
 
 	private PessoaFisica cPFisica = new PessoaFisica();
-        
     
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -49,8 +40,6 @@ public class LoginUsuarioServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-
 		HttpSession usSession;
 		boolean senhaValida = false;
 		
@@ -64,11 +53,9 @@ public class LoginUsuarioServlet extends HttpServlet {
 			usSession.invalidate();
 			
 			
-		}else{
-			
+		} else {
 			if (cPFisica.ValidarSenha(request.getParameter("senha")) == true) {
 				
-				//Armazena a pessoa logada na Sessao
 				usSession.setAttribute("PFisicalog", cPFisica);
 				
 				senhaValida = true;

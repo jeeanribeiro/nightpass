@@ -17,11 +17,8 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="T_PJURIDICA")
-public class PJuridica implements Serializable{
+public class PJuridica implements Serializable {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -76,7 +73,6 @@ public class PJuridica implements Serializable{
 	@Column(name="PSJ_APELIDO", nullable=true, length=30)
 	private String psjApelido;
 	
-	//@OneToOne(mappedBy = "PSJ_CODIGO", cascade = {CascadeType.ALL})
 	@OneToOne(mappedBy = "PSJ_CODIGO")
 	
 	private Estabelecimento estabelecimento;
@@ -221,16 +217,5 @@ public class PJuridica implements Serializable{
 	public void setEstabelecimento(Estabelecimento estabelecimento) {
 		this.estabelecimento = estabelecimento;
 	}
-
-	
-	
-//	@Column(name="xxx", nullable=xxx, length=xxx)
-//	private String xxx;
-	
-	
-	
-	
-	
-	
 
 }

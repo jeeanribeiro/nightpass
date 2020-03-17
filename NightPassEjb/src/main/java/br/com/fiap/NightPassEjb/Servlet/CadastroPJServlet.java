@@ -17,12 +17,8 @@ import br.com.fiap.NightPassEjb.Entity.PessoaFisica;
 import br.com.fiap.NightPassEjb.dao.PFisicaDAO;
 import br.com.fiap.NightPassEjb.dao.PJuridicaDAO;
 
-/**
- * Servlet implementation class CadastroPJServlet
- */
 public class CadastroPJServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
 	
 	@EJB
 	private PJuridicaDAO dao;
@@ -33,13 +29,11 @@ public class CadastroPJServlet extends HttpServlet {
 	private PJuridica cPJuridica = new PJuridica();
 	private PessoaFisica cPFisica = new PessoaFisica(); 
 	
-	
     /**
      * @see HttpServlet#HttpServlet()
      */
     public CadastroPJServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -54,50 +48,26 @@ public class CadastroPJServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-				
-		//Cadastra a nova PJ na base de Dados
-		
 		cPJuridica.setPsjNome(request.getParameter("nome"));
-		
 		cPJuridica.setPsjCnpj(Long.parseLong(request.getParameter("cnpj")));
-		
 		cPJuridica.setPsjTelComercial(Long.parseLong(request.getParameter("telefoneCom")));
-		
 		cPJuridica.setPsjEnderecoCom(request.getParameter("enderecoCom"));
-		
 		cPJuridica.setPsjNumeroCom(Integer.parseInt(request.getParameter("numeroCom")));
-	
 		cPJuridica.setPsjCepCom(Integer.parseInt(request.getParameter("CepCom")));
-		
 		cPJuridica.setPsjBairroCom((request.getParameter("bairroCom")));
-		
 		cPJuridica.setPsjCidadeCom(request.getParameter("cidadeCom"));
-		
 		cPJuridica.setPsjEstadoCom(request.getParameter("estadoCom"));
-		
 		cPJuridica.setPsjEmail(request.getParameter("email"));
-		
 		cPJuridica = dao.cadastrarR(cPJuridica);
 		
-		//Vincula a PJ ao usuário que realizou o cadastro atualizando os campom tipoUsuário e PSJ_CODIGO
-
 		HttpSession session = request.getSession();
-		
 		cPFisica = (PessoaFisica) session.getAttribute("PFisicalog");
-		
 		cPFisica.setTipoUsuario("gestor");
-		
 		cPFisica.setPSJ_CODIGO(cPJuridica);
-	
 		daopf.atualizar(cPFisica);
 		
-		//Exibe mensagem de cadastro realizado
-		
 		request.setAttribute("PJCadastrada", "Pessoa Jurídica Cadastrada com sucesso!");
-		
 		request.getRequestDispatcher("CadastroPJ.jsp").forward(request, response);
-		
-		
 	}
 
 }

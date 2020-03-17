@@ -21,15 +21,11 @@ import javax.persistence.Table;
 
 public class TipoEstabelecimento implements Serializable {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@SequenceGenerator(name="tipoEst",sequenceName="sq_t_TipoEst",allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="tipoEst")
-
 	
 	@Column(name="tes_codigo")
 	private Integer codigo;
@@ -40,12 +36,9 @@ public class TipoEstabelecimento implements Serializable {
 	@OneToMany(mappedBy = "tes_codigo")
 	private List<Estabelecimento> estabelecimentos;
 	
-	
 	public TipoEstabelecimento() {
 		super();
 	}
-
-	
 	
 	public TipoEstabelecimento(Integer codigo, String nome) {
 		super();
@@ -69,13 +62,9 @@ public class TipoEstabelecimento implements Serializable {
 		this.nome = nome;
 	}
 
-
-
 	public List<Estabelecimento> getEstabelecimentos() {
 		return estabelecimentos;
 	}
-
-
 
 	public void setEstabelecimentos(List<Estabelecimento> estabelecimentos) {
 		this.estabelecimentos = estabelecimentos;

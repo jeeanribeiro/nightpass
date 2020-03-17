@@ -37,9 +37,7 @@
     }
 </style>
 </head>
-	<body>
+<body>
     <h1>${contaexcluida} <br> <button type="button" onclick="window.location.href='LoginUsuario.jsp'">Voltar</button></h1><p><p>
-    
-    </body>
-    
+</body>
 </html>

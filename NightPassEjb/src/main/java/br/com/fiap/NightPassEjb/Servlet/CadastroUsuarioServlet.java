@@ -31,7 +31,6 @@ public class CadastroUsuarioServlet extends HttpServlet {
 	public CadastroUsuarioServlet() {
         super();
     }
-
         
 	@EJB
 	private PFisicaDAO dao;
@@ -43,9 +42,6 @@ public class CadastroUsuarioServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//doGet(request, response);
-		
 		String Acao;
 		
 		HttpSession session = request.getSession();
@@ -56,7 +52,6 @@ public class CadastroUsuarioServlet extends HttpServlet {
 		
 		Calendar CalDtNascimento = Calendar.getInstance();
 
-		
 		Acao = request.getParameter("acao");
 		
 		request.setAttribute("CadastroAtu", "");
@@ -64,7 +59,6 @@ public class CadastroUsuarioServlet extends HttpServlet {
 		switch(Acao) {
 		
 		case "conta":
-		
 			String atuSexo;
 		
 			atuSexo = PFisicaConta.getSexo(); 
@@ -74,134 +68,85 @@ public class CadastroUsuarioServlet extends HttpServlet {
 			session.setAttribute("sexoO", "");
 			
 			switch(atuSexo) {
-			
-			case "F":
-				
-				session.setAttribute("sexoF", "checked");
-				
-			break;
-						
-			case "M":
-				
-				session.setAttribute("sexoM", "checked");
-			
-			break;
-			
-			case "O":
-				
-				session.setAttribute("sexoO", "checked");
-				
-			break;
-			
+				case "F":
+					session.setAttribute("sexoF", "checked");
+				break;
+				case "M":
+					session.setAttribute("sexoM", "checked");
+				break;
+				case "O":
+					session.setAttribute("sexoO", "checked");
+				break;
 			}
 		
-		request.getRequestDispatcher("DadosContaUsuario.jsp").forward(request, response);
-		
+			request.getRequestDispatcher("DadosContaUsuario.jsp").forward(request, response);
 		break;
-		
 		
 		case "Atualizar Dados":
+			PFisicaConta.setNome((String) request.getParameter("nome"));
+			PFisicaConta.setSobrenome((String) request.getParameter("sobrenome"));
 			
-		//Códigos para atualização do cadastro do usuário logado
+			try {
+				CalDtNascimento.setTime((Date) DtFormat.parseObject(request.getParameter("dtNascimento")));
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+			
+			PFisicaConta.setDataNasc(CalDtNascimento);
+			PFisicaConta.setRg((String) request.getParameter("rg"));
+			PFisicaConta.setRgOrgaoEmissor((String) request.getParameter("rgOrgaoEmissor"));
+			PFisicaConta.setRgEstadoEmissor((String) request.getParameter("rgEstado"));
+			PFisicaConta.setSexo((String) request.getParameter("sexo"));
+			PFisicaConta.setTelCelular(Long.parseLong((String) request.getParameter("telCelular")));
+			PFisicaConta.setTipoUsuario((String) request.getParameter("tipoUsuario"));
+			PFisicaConta.setEmail((String) request.getParameter("email"));
+			PFisicaConta.setSenha((String) request.getParameter("senha"));
+			PFisicaConta.setTipoUsuario("consumidor");
 
-			
-		PFisicaConta.setNome((String) request.getParameter("nome"));
-		PFisicaConta.setSobrenome((String) request.getParameter("sobrenome"));
-		
-		try {
-			CalDtNascimento.setTime((Date) DtFormat.parseObject(request.getParameter("dtNascimento")));
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		PFisicaConta.setDataNasc(CalDtNascimento);
-		
-		PFisicaConta.setRg((String) request.getParameter("rg"));
-		
-		PFisicaConta.setRgOrgaoEmissor((String) request.getParameter("rgOrgaoEmissor"));
-		
-		PFisicaConta.setRgEstadoEmissor((String) request.getParameter("rgEstado"));
-		
-		PFisicaConta.setSexo((String) request.getParameter("sexo"));
-		
-		PFisicaConta.setTelCelular(Long.parseLong((String) request.getParameter("telCelular")));
-		
-		PFisicaConta.setTipoUsuario((String) request.getParameter("tipoUsuario"));
-		
-		PFisicaConta.setEmail((String) request.getParameter("email"));
-		
-		PFisicaConta.setSenha((String) request.getParameter("senha"));
-		
-		PFisicaConta.setTipoUsuario("consumidor");
-		
-		dao.atualizar(PFisicaConta);
-		
-		request.setAttribute("CadastroAtu", "Cadastro Atualizado");
-		
-		request.getRequestDispatcher("DadosContaUsuario.jsp").forward(request, response);
-		
+			dao.atualizar(PFisicaConta);
+			request.setAttribute("CadastroAtu", "Cadastro Atualizado");
+			request.getRequestDispatcher("DadosContaUsuario.jsp").forward(request, response);
 		break;
 		
-		
 		case "Remover Conta":
-			
 			try {
 				dao.remover(PFisicaConta.getCodigo());
 			} catch (Exception e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 			
-		request.setAttribute("contaexcluida", "Conta Excluída!");
+			request.setAttribute("contaexcluida", "Conta Excluída!");
 			
-		request.getRequestDispatcher("MsgExcluido.jsp").forward(request, response);
-				
-			
+			request.getRequestDispatcher("MsgExcluido.jsp").forward(request, response);
 		break;
 		
 		default:
+			cPFisica.setNome((String) request.getParameter("nome"));
+			cPFisica.setSobrenome((String) request.getParameter("sobrenome"));
 		
-				
-		cPFisica.setNome((String) request.getParameter("nome"));
-		cPFisica.setSobrenome((String) request.getParameter("sobrenome"));
-		
-		try {
-			CalDtNascimento.setTime((Date) DtFormat.parseObject(request.getParameter("dtNascimento")));
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		cPFisica.setDataNasc(CalDtNascimento);
-		
-		cPFisica.setRg((String) request.getParameter("rg"));
-		
-		cPFisica.setRgOrgaoEmissor((String) request.getParameter("rgOrgaoEmissor"));
-		
-		cPFisica.setRgEstadoEmissor((String) request.getParameter("rgEstado"));
-		
-		cPFisica.setCpf(Long.parseLong(((String) request.getParameter("cpf"))));
-		
-		cPFisica.setSexo((String) request.getParameter("sexo"));
-		
-		cPFisica.setTelCelular(Long.parseLong((String) request.getParameter("telCelular")));
-		
-		cPFisica.setTipoUsuario((String) request.getParameter("tipoUsuario"));
-		
-		cPFisica.setEmail((String) request.getParameter("email"));
-		
-		cPFisica.setSenha((String) request.getParameter("senha"));
-		
-		cPFisica.setTipoUsuario("consumidor");
-		
-		
-		dao.cadastrar(cPFisica);
-		
-		request.setAttribute("cadastroRealizado", "Cadastro Realizado, faça seu login");
-		
-		request.getRequestDispatcher("LoginUsuario.jsp").forward(request, response);
-		
+			try {
+				CalDtNascimento.setTime((Date) DtFormat.parseObject(request.getParameter("dtNascimento")));
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+			
+			cPFisica.setDataNasc(CalDtNascimento);
+			cPFisica.setRg((String) request.getParameter("rg"));
+			cPFisica.setRgOrgaoEmissor((String) request.getParameter("rgOrgaoEmissor"));
+			cPFisica.setRgEstadoEmissor((String) request.getParameter("rgEstado"));
+			cPFisica.setCpf(Long.parseLong(((String) request.getParameter("cpf"))));
+			cPFisica.setSexo((String) request.getParameter("sexo"));
+			cPFisica.setTelCelular(Long.parseLong((String) request.getParameter("telCelular")));
+			cPFisica.setTipoUsuario((String) request.getParameter("tipoUsuario"));
+			cPFisica.setEmail((String) request.getParameter("email"));
+			cPFisica.setSenha((String) request.getParameter("senha"));
+			cPFisica.setTipoUsuario("consumidor");
+			
+			dao.cadastrar(cPFisica);
+			
+			request.setAttribute("cadastroRealizado", "Cadastro Realizado, faça seu login");
+			
+			request.getRequestDispatcher("LoginUsuario.jsp").forward(request, response);
 		break;
 		
 		}
