@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="877AB5A5-60DB-030D-A7A8-3C1144B21F45" name="T_GenMusical">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>BB264E2D-18F5-C33E-24C2-A6D1F93C91A2</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="gmu_codigo" id="59E0D1BE-F920-12CC-AF15-6B4B083EFB8B">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>03EB4735-2E32-680D-5A00-642CD9EEDB2A</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="gmu_nome" id="8DADE2DD-BC47-13B9-FE48-505CC04F7F19">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>D99DE85F-0C2B-C0E9-4C50-E1FCA25671B6</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="874770EB-831E-E98D-1AA0-F63C908C11ED" name="T_GenMusical_PK">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>55958138-9749-1081-D418-3E2D2CECE82F</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="59E0D1BE-F920-12CC-AF15-6B4B083EFB8B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
