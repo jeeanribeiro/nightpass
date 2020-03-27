@@ -3,6 +3,7 @@ package br.com.fiap.NightPassEjb.Entity;
 import java.io.Serializable;
 import java.lang.annotation.Target;
 import java.sql.Clob;
+import java.sql.Date;
 import java.util.Calendar;
 import java.util.List;
 
@@ -100,14 +101,13 @@ public class Estabelecimento implements Serializable {
 		return estAbertura;
 	}
 
-
 	public void setEstAbertura(Calendar estAbertura) {
 		this.estAbertura = estAbertura;
 	}
-
-
+	
 	public Calendar getEstFechamento() {
 		return estFechamento;
+				
 	}
 
 

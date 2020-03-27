@@ -10,6 +10,8 @@ import javax.persistence.PersistenceContextType;
 
 import org.hibernate.FlushMode;
 
+import br.com.fiap.NightPassEjb.Entity.PJuridica;
+
 public class GenericDAOImpl<T, K> implements GenericDAO<T, K> {
 
 	private Class<T> clazz;
@@ -58,6 +60,13 @@ public class GenericDAOImpl<T, K> implements GenericDAO<T, K> {
 	@Override
 	public void refresh(T entidade) {
 		em.refresh(entidade);
+		
 	}
+	
+	public T cadastrarRetEntity (T entidade) {
+		em.persist(entidade);
+		return entidade;
+	}
+
 	
 }

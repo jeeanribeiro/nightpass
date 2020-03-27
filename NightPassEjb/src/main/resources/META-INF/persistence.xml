@@ -13,6 +13,7 @@
 	<class>br.com.fiap.NightPassEjb.Entity.GeneroMusical</class>
 	<class>br.com.fiap.NightPassEjb.Entity.GaleriaEst</class>
 	<class>br.com.fiap.NightPassEjb.Entity.TipoGaleria</class>
+	<class>br.com.fiap.NightPassEjb.Entity.PFGestor</class>
 
 	<properties>
 		
@@ -47,7 +48,7 @@
 		<!-- usar validate apenas se não for necessário alterar as tabelas
 		caso contrário usar update -->
 		
-		<property name="hibernate.hbm2ddl.auto" value="validate" />
+		<property name="hibernate.hbm2ddl.auto" value="update"/>
 		<property name="hibernate.show_sql" value="true" />
 		<property name="hibernate.format_sql" value="true" />
 		

@@ -2,6 +2,7 @@ package br.com.fiap.NightPassEjb.Entity;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -9,11 +10,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.Fetch;
 
 @Entity
 @Table(name="T_PJURIDICA")
@@ -72,9 +76,11 @@ public class PJuridica implements Serializable {
 	
 	@Column(name="PSJ_APELIDO", nullable=true, length=30)
 	private String psjApelido;
-	
+
+	@OneToMany(mappedBy = "pJuridica")
+	private List<PFGestor> pfGestor;
+
 	@OneToOne(mappedBy = "PSJ_CODIGO")
-	
 	private Estabelecimento estabelecimento;
 	
 	public PJuridica() {
@@ -218,4 +224,13 @@ public class PJuridica implements Serializable {
 		this.estabelecimento = estabelecimento;
 	}
 
+
+	public List<PFGestor> getPfGestor() { return pfGestor; }
+
+	public void setPfGestor(List<PFGestor> pfGestor) { this.pfGestor = pfGestor;
+	}
+
+
+	
+	
 }

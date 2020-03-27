@@ -6,6 +6,7 @@ import javax.ejb.EJB;
 import javax.ejb.Remote;
 import javax.ejb.Stateful;
 import javax.ejb.Stateless;
+
 import br.com.fiap.NightPassEjb.Entity.PJuridica;
 
 @Stateless

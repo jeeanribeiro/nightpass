@@ -7,6 +7,12 @@ html, body {
   justify-content: center;
 }
 
+header{
+	display:inline;
+}
+
+
+
 #signUpContainer {
   background: #222;
   box-shadow: 0 0 10px;

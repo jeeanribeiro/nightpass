@@ -8,12 +8,12 @@
 <meta charset="UTF-8">
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="apple-touch-icon" sizes="180x180" href="imgs/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon-16x16.png">
-<link rel="manifest" href="imgs/site.webmanifest">
-<link rel="stylesheet" href="global.css">
-<link rel="stylesheet" href="CadastroUsuario.css">
+<link rel="apple-touch-icon" sizes="180x180" href="resources/imgs/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="resources/imgs/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="resources/imgs/favicon-16x16.png">
+<link rel="manifest" href="resources/imgs/site.webmanifest">
+<link rel="stylesheet" href="resources/css/global.css">
+<link rel="stylesheet" href="resources/css/CadastroUsuario.css">
 <title>Cadastro - NightPass</title>
 </head>
 <body>
@@ -26,6 +26,10 @@
       <input required type="tel" name="rg" value="${PFisicalog.rg}" placeholder="RG" maxlength="15">
       <input required type="text" name="rgOrgaoEmissor" value="${PFisicalog.rgOrgaoEmissor}" id="rgEmitter" placeholder="Orgï¿½o emissor" maxlength="15">
       <select id="rgEstado" name="rgEstado">
+      
+      
+      	<!-- Opção cadastrada na Base -->
+      	<option value="${PFisicalog.rgEstadoEmissor}" selected="selected">${PFisicalog.rgEstadoEmissor}</option>
         <option value="AC">AC</option>
         <option value="AL">AL</option>
         <option value="AP">AP</option>
@@ -69,6 +73,6 @@
 	    <input type="submit" name="acao" value="Remover Conta">
     </form>
   </section>
-  <script src="CadastroUsuario.js"></script>
+  <script src="resources/js/CadastroUsuario.js"></script>
 </body>
 </html>
