@@ -9,6 +9,8 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
 
 import org.hibernate.FlushMode;
+import org.springframework.stereotype.Repository;
+
 
 public class GenericDAOImpl<T, K> implements GenericDAO<T, K> {
 

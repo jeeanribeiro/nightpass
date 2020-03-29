@@ -3,6 +3,7 @@ package br.com.fiap.NightPassSpr.Entity;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -23,6 +24,7 @@ import javax.persistence.Transient;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
+import org.springframework.format.annotation.DateTimeFormat;
 
 
 @Entity
@@ -44,6 +46,7 @@ public class PessoaFisica implements Serializable {
 	private String sobrenome;
 	
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name="psa_dtnascimento", nullable=false)
 	private Calendar dataNasc;
 	
@@ -211,6 +214,11 @@ public class PessoaFisica implements Serializable {
 		this.dataNasc = dataNasc;
 	}
 
+	public void setDataNasc(Date dataNasc) {
+		this.dataNasc.setTime(dataNasc);
+	}
+	
+	
 	public String getRg() {
 		return rg;
 	}

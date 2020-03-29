@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -34,6 +35,16 @@ public class LoginUsuarioController {
 
 	}
 
+	@GetMapping("/signout")
+	public String signout(PessoaFisica pessoaFisica) {
+
+		session.invalidate();
+		
+		return "base/LoginUsuario";
+
+	}
+	
+	
 	@GetMapping("/acessaPainelPrincipal") 
 	public String acessaPainelPrincipal() {
 
@@ -45,15 +56,15 @@ public class LoginUsuarioController {
 	@Transactional
 	@PostMapping("/logar") 
 	public ModelAndView login (PessoaFisica pessoaFisica,
-			RedirectAttributes redirect) {
-	
-		System.out.println(pessoaFisica.getEmail());
+			Model model) {
 		
 		usuarioLog = dao.buscarPorEmail(pessoaFisica.getEmail());
 		
 		if (usuarioLog.ValidarSenha(pessoaFisica.getSenha()) == true) {
 			
 			//Senha Valida
+			
+			model.addAttribute("msg", "Usuario Autenticado");
 			
 			session.setAttribute("usuarioLog", usuarioLog);
 			
@@ -68,7 +79,9 @@ public class LoginUsuarioController {
 		}
 		
 		
-	return new ModelAndView("redirect:/acessaPainelPrincipal");
+	//return new ModelAndView("redirect:/acessaPainelPrincipal");
+	
+		return new ModelAndView("redirect:/carregarListaEstabelecimentos");
 	
 	}
 

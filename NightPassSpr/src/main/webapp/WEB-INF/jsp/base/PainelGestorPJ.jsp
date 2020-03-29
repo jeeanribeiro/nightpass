@@ -24,7 +24,7 @@
 
 	<select id="pJuridicaSel" name="pJuridicaSel">
 	
-		<c:forEach var="n" items="${PFisicalog.pfGestor}">
+		<c:forEach var="n" items="${usuarioLog.pfGestor}">
 			
 			<option value='${n.getpJuridica().getPsjCodigo()}'> 
 			Cnpj: ${n.getpJuridica().getPsjCnpj()} -

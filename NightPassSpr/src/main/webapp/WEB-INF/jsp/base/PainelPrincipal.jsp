@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 <html lang='pt-br'>
@@ -31,148 +33,47 @@
       <!-- Neste Formulário é aberto o painel de Gestor e carregadas as PJ vinculadas 
       ao gestor -->
       
-      <form action="GestorPJServlet" method="post">
-      <!-- <h1><input class='profile' type="button" onclick="window.location.href='PainelGestorPJ.jsp'" value="acesso gestor"></h1> -->
       
-      		<input type="hidden" name="acao" value="listarPJdoGestor">
-		    <h1><input class='profile' type="submit" value="Acesso Gestor"></h1>
+     <c:url value="/buscarTodasPJGestor" var="action" />
+	 <form:form action="${action }" method="get">
       
-      </form>
+     <h1><input class='profile' type="submit" value="Acesso Gestor"></h1>
       
-      
+     </form:form>
       
       <div id='navMenu'>
-        <a class='sign-out' href='LoginUsuario.jsp'><i class="fas fa-power-off"></i></a>
+        <a class='sign-out' href='/NightPassSpr'><i class="fas fa-power-off"></i></a>
       </div>
     </nav>
   </header>
-  <section id='establishmentList'>
+
+<section id='establishmentList'>
+
+<c:forEach items="${lEstabelecimentos}" var="l" >
+
+	<!-- Inicio bloco de estabelecimento -->
     <div class='establishment'>
       <div class="establishment-image-button">
         <div class='establishment-image' src="" alt="" width="128" height="128"></div>
         <button class="establishment-goto"><i class="fas fa-location-arrow"></i>Rotas</button>
       </div>
       <div class="establishment-info">
-        <h4 class="establishment-title">Nome do estabelecimento</h3>
-        <p class="establishment-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur...</p>
+        <h4 class="establishment-title">${l.getPSJ_CODIGO().getPsjNome()}</h3>
+        <p class="establishment-description">${l.getEstDescricao()}</p>
         <div class="establishment-time-distance">
-          <span class="establishment-time-range"><i class="far fa-clock"></i>20h00 - 06h00</span>
+          <span class="establishment-time-range"><i class="far fa-clock"></i>
+          <fmt:formatDate pattern = "HH:mm" value = "${l.estAbertura.getTime()}" />
+           - 
+          <fmt:formatDate pattern = "HH:mm" value = "${l.estFechamento.getTime()}" />
+          </span>
           <span class="establishment-distance"><i class="fas fa-map-marker-alt"></i>7.2km</span>
         </div>
       </div>
     </div>
-    <div class='establishment'>
-      <div class="establishment-image-button">
-        <div class='establishment-image' src="" alt="" width="128" height="128"></div>
-        <button class="establishment-goto"><i class="fas fa-location-arrow"></i>Rotas</button>
-      </div>
-      <div class="establishment-info">
-        <h4 class="establishment-title">Nome do estabelecimento</h3>
-        <p class="establishment-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur...</p>
-        <div class="establishment-time-distance">
-          <span class="establishment-time-range"><i class="far fa-clock"></i>20h00 - 06h00</span>
-          <span class="establishment-distance"><i class="fas fa-map-marker-alt"></i>7.2km</span>
-        </div>
-      </div>
-    </div>
-    <div class='establishment'>
-      <div class="establishment-image-button">
-        <div class='establishment-image' src="" alt="" width="128" height="128"></div>
-        <button class="establishment-goto"><i class="fas fa-location-arrow"></i>Rotas</button>
-      </div>
-      <div class="establishment-info">
-        <h4 class="establishment-title">Nome do estabelecimento</h3>
-        <p class="establishment-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur...</p>
-        <div class="establishment-time-distance">
-          <span class="establishment-time-range"><i class="far fa-clock"></i>20h00 - 06h00</span>
-          <span class="establishment-distance"><i class="fas fa-map-marker-alt"></i>7.2km</span>
-        </div>
-      </div>
-    </div>
-    <div class='establishment'>
-      <div class="establishment-image-button">
-        <div class='establishment-image' src="" alt="" width="128" height="128"></div>
-        <button class="establishment-goto"><i class="fas fa-location-arrow"></i>Rotas</button>
-      </div>
-      <div class="establishment-info">
-        <h4 class="establishment-title">Nome do estabelecimento</h3>
-        <p class="establishment-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur...</p>
-        <div class="establishment-time-distance">
-          <span class="establishment-time-range"><i class="far fa-clock"></i>20h00 - 06h00</span>
-          <span class="establishment-distance"><i class="fas fa-map-marker-alt"></i>7.2km</span>
-        </div>
-      </div>
-    </div>
-    <div class='establishment'>
-      <div class="establishment-image-button">
-        <div class='establishment-image' src="" alt="" width="128" height="128"></div>
-        <button class="establishment-goto"><i class="fas fa-location-arrow"></i>Rotas</button>
-      </div>
-      <div class="establishment-info">
-        <h4 class="establishment-title">Nome do estabelecimento</h3>
-        <p class="establishment-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur...</p>
-        <div class="establishment-time-distance">
-          <span class="establishment-time-range"><i class="far fa-clock"></i>20h00 - 06h00</span>
-          <span class="establishment-distance"><i class="fas fa-map-marker-alt"></i>7.2km</span>
-        </div>
-      </div>
-    </div>
-    <div class='establishment'>
-      <div class="establishment-image-button">
-        <div class='establishment-image' src="" alt="" width="128" height="128"></div>
-        <button class="establishment-goto"><i class="fas fa-location-arrow"></i>Rotas</button>
-      </div>
-      <div class="establishment-info">
-        <h4 class="establishment-title">Nome do estabelecimento</h3>
-        <p class="establishment-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur...</p>
-        <div class="establishment-time-distance">
-          <span class="establishment-time-range"><i class="far fa-clock"></i>20h00 - 06h00</span>
-          <span class="establishment-distance"><i class="fas fa-map-marker-alt"></i>7.2km</span>
-        </div>
-      </div>
-    </div>
-    <div class='establishment'>
-      <div class="establishment-image-button">
-        <div class='establishment-image' src="" alt="" width="128" height="128"></div>
-        <button class="establishment-goto"><i class="fas fa-location-arrow"></i>Rotas</button>
-      </div>
-      <div class="establishment-info">
-        <h4 class="establishment-title">Nome do estabelecimento</h3>
-        <p class="establishment-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur...</p>
-        <div class="establishment-time-distance">
-          <span class="establishment-time-range"><i class="far fa-clock"></i>20h00 - 06h00</span>
-          <span class="establishment-distance"><i class="fas fa-map-marker-alt"></i>7.2km</span>
-        </div>
-      </div>
-    </div>
-    <div class='establishment'>
-      <div class="establishment-image-button">
-        <div class='establishment-image' src="" alt="" width="128" height="128"></div>
-        <button class="establishment-goto"><i class="fas fa-location-arrow"></i>Rotas</button>
-      </div>
-      <div class="establishment-info">
-        <h4 class="establishment-title">Nome do estabelecimento</h3>
-        <p class="establishment-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur...</p>
-        <div class="establishment-time-distance">
-          <span class="establishment-time-range"><i class="far fa-clock"></i>20h00 - 06h00</span>
-          <span class="establishment-distance"><i class="fas fa-map-marker-alt"></i>7.2km</span>
-        </div>
-      </div>
-    </div>
-    <div class='establishment'>
-      <div class="establishment-image-button">
-        <div class='establishment-image' src="" alt="" width="128" height="128"></div>
-        <button class="establishment-goto"><i class="fas fa-location-arrow"></i>Rotas</button>
-      </div>
-      <div class="establishment-info">
-        <h4 class="establishment-title">Nome do estabelecimento</h3>
-        <p class="establishment-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur...</p>
-        <div class="establishment-time-distance">
-          <span class="establishment-time-range"><i class="far fa-clock"></i>20h00 - 06h00</span>
-          <span class="establishment-distance"><i class="fas fa-map-marker-alt"></i>7.2km</span>
-        </div>
-      </div>
-    </div>
+	<!-- Fim bloco de estabelecimento -->
+
+</c:forEach>
+    
   </section>
 </body>
 </html>
