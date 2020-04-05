@@ -10,7 +10,7 @@ import br.com.fiap.NightPassSpr.Entity.PessoaFisica;
 
 
 @Repository
-public class PFisicaDAOImpl extends GenericDAOImpl<PessoaFisica, Integer> implements PFisicaDAO {
+public class PFisicaDAOImpl extends GenericDAOImpl<PessoaFisica, Long> implements PFisicaDAO {
 
 	public PFisicaDAOImpl() {
 		super();

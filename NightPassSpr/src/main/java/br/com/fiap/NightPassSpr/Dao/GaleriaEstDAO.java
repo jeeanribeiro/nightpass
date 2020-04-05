@@ -1,5 +1,16 @@
 package br.com.fiap.NightPassSpr.Dao;
 
-import br.com.fiap.NightPassSpr.Entity.GaleriaEst;
+import java.util.List;
 
-public interface GaleriaEstDAO extends GenericDAO<GaleriaEst, Integer> {}
+import br.com.fiap.NightPassSpr.Entity.Estabelecimento;
+import br.com.fiap.NightPassSpr.Entity.GaleriaEst;
+import br.com.fiap.NightPassSpr.Entity.TipoGaleria;
+
+public interface GaleriaEstDAO extends GenericDAO<GaleriaEst, Long> {
+	
+	public List<GaleriaEst> listarPorTipo(Estabelecimento defEstabelecimento,
+			TipoGaleria tipoGaleria);
+	
+}
+
+

@@ -26,18 +26,25 @@ public class PFGestor implements Serializable{
 	@SequenceGenerator(name="Seq_T_PFGestor", sequenceName="Seq_T_PFGestor", allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "Seq_T_PFGestor")
 	@Column(name="RGE_CODIGO", nullable=false)
-	private int rgeCodigo;
+	private long rgeCodigo;
 	
 	@Column(name="RGE_PERFIL", nullable=false, length=40)
 	private String rgePerfil; 
 
-	@ManyToOne(cascade=CascadeType.REFRESH)
-	@JoinColumn(name="T_PFISICA_PSA_CODIGO")
-	private PessoaFisica pessoaFisica;
+	@Column(name="T_PFISICA_PSA_CODIGO", nullable=false, length=40)
+	private long psacodigo;
+	
+	@Column(name="T_PJURIDICA_PSJ_CODIGO", nullable=false, length=40)
+	private long psjcodigo;
+	
+	
+	//@ManyToOne(cascade=CascadeType.REFRESH)
+	//@JoinColumn(name="T_PFISICA_PSA_CODIGO")
+	//private PessoaFisica pessoaFisica;
 
-	@ManyToOne(cascade=CascadeType.REFRESH)
-	@JoinColumn(name="T_PJURIDICA_PSJ_CODIGO")
-	private PJuridica pJuridica;
+	//@ManyToOne(cascade=CascadeType.REFRESH)
+	//@JoinColumn(name="T_PJURIDICA_PSJ_CODIGO")
+	//private PJuridica pJuridica;
 	
 	
 	public PFGestor() {
@@ -45,11 +52,11 @@ public class PFGestor implements Serializable{
 
 	}
 
-	public int getRgeCodigo() {
+	public long getRgeCodigo() {
 		return rgeCodigo;
 	}
 
-	public void setRgeCodigo(int rgeCodigo) {
+	public void setRgeCodigo(long rgeCodigo) {
 		this.rgeCodigo = rgeCodigo;
 	}
 
@@ -60,26 +67,35 @@ public class PFGestor implements Serializable{
 	public void setRgePerfil(String rgePerfil) {
 		this.rgePerfil = rgePerfil;
 	}
+	/*
+	 * public PessoaFisica getPessoaFisica() { return pessoaFisica; }
+	 * 
+	 * public void setPessoaFisica(PessoaFisica pessoaFisica) { this.pessoaFisica =
+	 * pessoaFisica; }
+	 * 
+	 * public PJuridica getpJuridica() { return pJuridica; }
+	 * 
+	 * public void setpJuridica(PJuridica pJuridica) { this.pJuridica = pJuridica; }
+	 * 
+	 */
 
-	public PessoaFisica getPessoaFisica() {
-		return pessoaFisica;
+	public long getPsacodigo() {
+		return psacodigo;
 	}
 
-	public void setPessoaFisica(PessoaFisica pessoaFisica) {
-		this.pessoaFisica = pessoaFisica;
+	public void setPsacodigo(long psacodigo) {
+		this.psacodigo = psacodigo;
 	}
 
-	public PJuridica getpJuridica() {
-		return pJuridica;
+	public long getPsjcodigo() {
+		return psjcodigo;
 	}
 
-	public void setpJuridica(PJuridica pJuridica) {
-		this.pJuridica = pJuridica;
+	public void setPsjcodigo(long psjcodigo) {
+		this.psjcodigo = psjcodigo;
 	}
 	
-	
-	
-	
+	 
 	
 
 }

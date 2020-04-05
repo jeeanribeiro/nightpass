@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import br.com.fiap.NightPassSpr.Entity.PJuridica;
 
 @Repository
-public class PJuridicaDAOImpl extends GenericDAOImpl<PJuridica, Integer> implements PJuridicaDAO {
+public class PJuridicaDAOImpl extends GenericDAOImpl<PJuridica, Long> implements PJuridicaDAO {
 
 	public PJuridicaDAOImpl() {
 		super();

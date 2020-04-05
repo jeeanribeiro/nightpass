@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import br.com.fiap.NightPassSpr.Entity.GeneroMusical;
 
 @Repository
-public class GeneroMusicalDAOImpl extends GenericDAOImpl<GeneroMusical, Integer>
+public class GeneroMusicalDAOImpl extends GenericDAOImpl<GeneroMusical, Long>
 			implements GeneroMusicalDAO {
 
 	public GeneroMusicalDAOImpl() {

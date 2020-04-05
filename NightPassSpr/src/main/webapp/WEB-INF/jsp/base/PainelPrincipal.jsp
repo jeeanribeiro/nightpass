@@ -42,20 +42,31 @@
      </form:form>
       
       <div id='navMenu'>
-        <a class='sign-out' href='/NightPassSpr'><i class="fas fa-power-off"></i></a>
+        <a class='sign-out' href='/NightPassSpr/signout'><i class="fas fa-power-off"></i></a>
       </div>
     </nav>
   </header>
 
 <section id='establishmentList'>
 
-<c:forEach items="${lEstabelecimentos}" var="l" >
-
+<c:forEach items="${estabelecimentos}" var="l" >
 	<!-- Inicio bloco de estabelecimento -->
+	
+	<c:set var="fachada" value="resources/imgs/EstabelecimentoSemFoto.jpg"/>
+	
     <div class='establishment'>
       <div class="establishment-image-button">
-        <div class='establishment-image' src="" alt="" width="128" height="128"></div>
-        <button class="establishment-goto"><i class="fas fa-location-arrow"></i>Rotas</button>
+      	<c:forEach items="${galeria}" var="g">
+      		<c:set var="est" value="${l.getEstcodigo()}" />
+			<c:if test="${est == g.getGae_est_codigo().getEstcodigo()}">
+				<c:set var="tipo" value="${g.getTga_codigo().getTgacodigo()}" />
+				<c:if test="${tipo==1}">
+					<c:set var="fachada" value="data:image/jpg;base64,${g.getGaeFotoExibivel()}"/>
+				</c:if>
+			</c:if>
+		</c:forEach>
+	  <img class='establishment-image' src="${fachada}" alt="" width="300" height="255"/>
+      <button class="establishment-goto"><i class="fas fa-location-arrow"></i>Rotas</button>
       </div>
       <div class="establishment-info">
         <h4 class="establishment-title">${l.getPSJ_CODIGO().getPsjNome()}</h3>

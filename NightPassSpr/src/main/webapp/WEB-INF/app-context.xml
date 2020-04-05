@@ -16,6 +16,7 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.spri
   <property name="persistenceUnitName" value="NightPassSpr" />
   <property name="dataSource" ref="oracleDataSource" />
   <property name="jpaVendorAdapter">
+  
     <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
   </property>
 </bean>
@@ -23,16 +24,16 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.spri
   class="org.springframework.jdbc.datasource.DriverManagerDataSource">
   <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
   
-   
+
   <property name="url" value="jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl" />
   <property name="username" value="rm82296" />
   <property name="password" value="281180" />
-   
-  <!--
+
+  <!--   
   <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
   <property name="username" value="system" />
   <property name="password" value="fiaporacle2" />
-  -->
+  -->   
   
 </bean>
 

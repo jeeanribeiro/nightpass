@@ -5,4 +5,8 @@ Funcionalidades em funcionamento:
 	- Acesso de conta para alteração dos dados dos Usuários
 	- Exclusão de Conta
 	- Cadastro de Pessoa Jurídica vinculada a Pessoa Física
+	- Carregamento de Estabelecimentos cadastrados no sistema
+	- Edição de dados dos estabelecimentos
+	- Utilizado servidor Tomcat
+	
 	

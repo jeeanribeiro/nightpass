@@ -46,24 +46,29 @@ nav {
   box-shadow: 0 0 5px;
   display: flex;
   flex-direction: row;
-  height: 180px;
+  height: 350px;
   margin: 10px;
   padding: 10px;
-  width: 400px;
+  width: 900px;
 }
 
 .establishment-image-button {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  min-width: 350px;
+  max-width: 350x;
+    
 }
 
+/* Ajustado para relação 1 para 1,5  1920 x 1280 */
 .establishment-image {
   background: #111;
-  min-width: 128px;
-  min-height: 128px;
-  max-width: 128px;
-  max-height: 128px;
+  min-width: 350px;
+  min-height: 233px;
+  max-width: 350x;
+  max-height: 233px;
+    
 }
 
 .establishment-goto {
@@ -91,19 +96,24 @@ nav {
   flex-direction: column;
   justify-content: space-between;
   margin-left: 20px;
+  text-overflow: ellipsis;
 }
 
 .establishment-title {
-  color: #eee;
+  color: #d6006e;
   margin: 0;
   margin-top: 10px;
+  font-size: 22px;
 }
 
 .establishment-description {
   color: #eee;
-  font-size: 13px;
-  text-align: justify;
+  font-size: 18px;
   text-align-last: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height : 200px;
+  
 }
 
 .establishment-time-distance {
@@ -111,7 +121,6 @@ nav {
   color: #eee;
   display: flex;
   justify-content: space-between;
-  padding: 10px 0;
 }
 
 .establishment-time-distance i {

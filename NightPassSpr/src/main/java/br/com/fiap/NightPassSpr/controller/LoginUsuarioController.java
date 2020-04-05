@@ -9,8 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import br.com.fiap.NightPassSpr.Dao.PFisicaDAO;
 import br.com.fiap.NightPassSpr.Entity.PessoaFisica;
 
@@ -20,13 +18,10 @@ public class LoginUsuarioController {
 	@Autowired
 	private PFisicaDAO dao;
 	
+	PessoaFisica usuarioLog = new PessoaFisica();
 	
 	@Autowired
 	private HttpSession session;
-		
-	
-	PessoaFisica usuarioLog = new PessoaFisica();
-	
 	
 	@GetMapping("/")
 	public String login(PessoaFisica pessoaFisica) {
@@ -60,6 +55,13 @@ public class LoginUsuarioController {
 		
 		usuarioLog = dao.buscarPorEmail(pessoaFisica.getEmail());
 		
+		if(usuarioLog == null) {
+			
+			model.addAttribute("msg", "Login não cadastrado");
+			return new ModelAndView("base/LoginUsuario");
+			
+		}
+		
 		if (usuarioLog.ValidarSenha(pessoaFisica.getSenha()) == true) {
 			
 			//Senha Valida
@@ -74,12 +76,15 @@ public class LoginUsuarioController {
 			
 			//Senha Inválida
 			
+			model.addAttribute("msg", "Senha Incorreta");
+			
 			return new ModelAndView("base/LoginUsuario");
 			
 		}
+	
 		
+		//Procedimentos básicos de carregamento de páginas
 		
-	//return new ModelAndView("redirect:/acessaPainelPrincipal");
 	
 		return new ModelAndView("redirect:/carregarListaEstabelecimentos");
 	

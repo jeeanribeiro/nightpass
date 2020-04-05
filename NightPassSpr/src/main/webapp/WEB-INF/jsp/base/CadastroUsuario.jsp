@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 
@@ -35,7 +34,7 @@
       <form:input path="DataNasc" required="true" type='date' name="DataNasc" placeholder="Data de nascimento"/>
       <form:input path="rg" required="true" type="tel" name="rg" placeholder="RG" maxlength="15"/>
       <form:input path="rgOrgaoEmissor" required="true" type="text" name="rgOrgaoEmissor" id="rgEmitter" placeholder="Orgão emissor" maxlength="15"/>
-      <form:select path="rgEstadoEmissor" id="rgEstado" name="rgEstadoEmissor">
+      <form:select path="rgEstadoEmissor" id="rgEstado" name="rgEstadoEmissor" placeholder="RG Estado">
         <form:option value="AC" itemlable="AC"/>
         <form:option  value="AL" itemlable="AL" />
         <form:option  value="AP" itemlable="AP" />
@@ -64,14 +63,14 @@
         <form:option  value="SE" itemlable="SE"/>
         <form:option  value="TO" itemlable="TO"/>
       </form:select>
-      <input path="cpf" required type="tel" name="cpf" placeholder="CPF" maxlength="11">
-      <form:select path="sexo" id="sexo" name="sexo">
+      <input required type="tel" name="cpf" placeholder="CPF" maxlength="11">
+      <form:select path="sexo" id="sexo" name="sexo" placeholder="Sexo">
        <form:option value="M" itemlable="Masculino"/>
        <form:option value="F" itemlable="Feminino"/>
        <form:option value="O" itemlable="Outros"/>
       </form:select>
       <form:input path="email" required="true" type="email" name="email" placeholder="E-mail" maxlength="100"/>
-      <input path="telCelular" required type="tel" name="telCelular" placeholder="Número do celular" maxlength="15">
+      <input required type="tel" name="telCelular" placeholder="Número do celular" maxlength="15">
       <form:input path="senha" required="true" type="password" name="senha" placeholder="Senha" minlength="8" maxlength="40"/>
       <input required type="password" name="confirmarSenha" placeholder="Confirmar senha" minlength="8" maxlength="40">
       <button type="submit">Cadastrar</button>

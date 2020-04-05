@@ -14,6 +14,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
@@ -37,7 +39,7 @@ public class PessoaFisica implements Serializable {
 	@SequenceGenerator(name="pessoaFisica",sequenceName="sq_t_pfisica",allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="pessoaFisica")
 	@Column(name="psa_codigo")
-	private Integer codigo;
+	private long codigo;
 	
 	@Column(name="psa_nome", nullable=false, length=40)
 	private String nome;
@@ -133,8 +135,15 @@ public class PessoaFisica implements Serializable {
 	@JoinColumn(name="T_PJURIDICA_PSJ_CODIGO")
 	private PJuridica PSJ_CODIGO;
 	
-	@OneToMany(mappedBy = "pessoaFisica",fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
-	private List< PFGestor > pfGestor;
+//	@OneToMany(mappedBy = "pessoaFisica", fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
+//	private List< PFGestor > pfGestor;
+	
+	@ManyToMany(cascade=CascadeType.REFRESH, fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
+	@JoinTable(joinColumns=@JoinColumn(name="T_PFISICA_PSA_CODIGO"),
+	inverseJoinColumns = @JoinColumn(name="T_PJURIDICA_PSJ_CODIGO"),
+	name="T_PFGESTOR")
+	private List<PJuridica> pJuridicas;
+	
 
 	@Transient
 	private boolean loginValidado = false;
@@ -182,11 +191,11 @@ public class PessoaFisica implements Serializable {
 		this.tipoUsuario = tipoUsuario;
 	}
 
-	public Integer getCodigo() {
+	public long getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(Integer codigo) {
+	public void setCodigo(long codigo) {
 		this.codigo = codigo;
 	}
 
@@ -453,14 +462,20 @@ public class PessoaFisica implements Serializable {
 		return loginValidado;
 	}
 
-	public List<PFGestor> getPfGestor() {
-		return pfGestor;
+	public List<PJuridica> getpJuridicas() {
+		return pJuridicas;
 	}
 
-	public void setPfGestor(List<PFGestor> pfGestor) {
-		this.pfGestor = pfGestor;
+	public void setpJuridicas(List<PJuridica> pJuridica) {
+		this.pJuridicas = pJuridica;
 	}
-	
+
+	/*
+	 * public List<PFGestor> getPfGestor() { return pfGestor; }
+	 * 
+	 * public void setPfGestor(List<PFGestor> pfGestor) { this.pfGestor = pfGestor;
+	 * }
+	 */	
 	
 	
 	

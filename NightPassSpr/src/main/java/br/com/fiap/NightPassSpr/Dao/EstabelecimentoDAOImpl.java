@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import br.com.fiap.NightPassSpr.Entity.Estabelecimento;
 
 @Repository
-public class EstabelecimentoDAOImpl extends GenericDAOImpl<Estabelecimento, Integer> 
+public class EstabelecimentoDAOImpl extends GenericDAOImpl<Estabelecimento, Long> 
 			implements EstabelecimentoDAO {
 
 	public EstabelecimentoDAOImpl() {

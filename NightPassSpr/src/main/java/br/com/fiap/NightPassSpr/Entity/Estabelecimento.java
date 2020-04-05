@@ -4,9 +4,11 @@ import java.io.Serializable;
 import java.util.Calendar;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.ConstraintMode;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,6 +24,11 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="T_ESTABELECI")
@@ -41,10 +48,12 @@ public class Estabelecimento implements Serializable {
 	private String estDescricao;
 	
 	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "HH:mm")
 	@Column(name="EST_ABERTURA", nullable=false)
 	private Calendar estAbertura;
 	
 	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "HH:mm")
 	@Column(name="EST_FECHAMENTO", nullable=false)
 	private Calendar estFechamento;
 	
@@ -59,7 +68,7 @@ public class Estabelecimento implements Serializable {
 	@JoinColumn(name="T_PJURIDICA_PSJ_CODIGO", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
 	private PJuridica PSJ_CODIGO;
 
-	@ManyToMany
+	@ManyToMany(cascade=CascadeType.REFRESH, fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
 	@JoinTable(joinColumns=@JoinColumn(name="T_ESTABELECI_EST_CODIGO"),
 	inverseJoinColumns = @JoinColumn(name="T_GENMUSICAL_GMU_CODIGO"),
 	name="T_ESTGENMUSICAL")
@@ -67,6 +76,15 @@ public class Estabelecimento implements Serializable {
 	
 	public Estabelecimento() {
 		super();
+	}
+
+	public Estabelecimento(String estDescricao, Calendar estAbertura, Calendar estFechamento,
+			TipoEstabelecimento tes_codigo) {
+		super();
+		this.estDescricao = estDescricao;
+		this.estAbertura = estAbertura;
+		this.estFechamento = estFechamento;
+		this.tes_codigo = tes_codigo;
 	}
 
 
@@ -147,5 +165,31 @@ public class Estabelecimento implements Serializable {
 	public void setGeneroMusical(List<GeneroMusical> generoMusical) {
 		this.generoMusical = generoMusical;
 	}
+	
+	public GaleriaEst getGaleriaEstporTipo(TipoGaleria tipoGaleria) {
+		
+		List <GaleriaEst> galeriaEstVer = this.getGaleriaEst();
+		
+		for (GaleriaEst galeriaEst : galeriaEstVer) {
+			
+			if (galeriaEst.getTga_codigo().getTgacodigo() == tipoGaleria.getTgacodigo()) {
+				
+				System.out.println(galeriaEst.getGae_est_codigo());
+				
+				return galeriaEst;
+				
+			}else{
+			
+				System.out.println("nada");
+				
+			}
+				
+		}
+		
+		return null;
+		
+	}
+	
+	
 
 }

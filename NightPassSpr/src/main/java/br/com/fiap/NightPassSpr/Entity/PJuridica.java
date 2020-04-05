@@ -6,15 +6,20 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 @Entity
 @Table(name="T_PJURIDICA")
@@ -26,7 +31,7 @@ public class PJuridica implements Serializable {
 	@SequenceGenerator(name="Seq_T_PJuridica", sequenceName="Seq_T_PJuridica", allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "Seq_T_PJuridica")
 	@Column(name="PSJ_CODIGO", nullable=false)
-	private int psjCodigo;
+	private long psjCodigo;
 	
 	@Column(name="PSJ_NOME", nullable=false, length=100)
 	private String psjNome; 
@@ -74,8 +79,11 @@ public class PJuridica implements Serializable {
 	@Column(name="PSJ_APELIDO", nullable=true, length=30)
 	private String psjApelido;
 
-	@OneToMany(mappedBy = "pJuridica")
-	private List<PFGestor> pfGestor;
+//	@OneToMany(mappedBy = "pJuridica")
+//	private List<PFGestor> pfGestor;
+	
+	@ManyToMany(mappedBy="pJuridicas", fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
+	private List<PessoaFisica> pessoaFisicas;
 
 	@OneToOne(mappedBy = "PSJ_CODIGO")
 	private Estabelecimento estabelecimento;
@@ -85,11 +93,11 @@ public class PJuridica implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public int getPsjCodigo() {
+	public long getPsjCodigo() {
 		return psjCodigo;
 	}
 
-	public void setPsjCodigo(int psjCodigo) {
+	public void setPsjCodigo(long psjCodigo) {
 		this.psjCodigo = psjCodigo;
 	}
 
@@ -221,12 +229,21 @@ public class PJuridica implements Serializable {
 		this.estabelecimento = estabelecimento;
 	}
 
-
-	public List<PFGestor> getPfGestor() { return pfGestor; }
-
-	public void setPfGestor(List<PFGestor> pfGestor) { this.pfGestor = pfGestor;
+	public List<PessoaFisica> getPessoaFisicas() {
+		return pessoaFisicas;
 	}
 
+	public void setPessoaFisicas(List<PessoaFisica> pessoaFisica) {
+		this.pessoaFisicas = pessoaFisica;
+	}
+
+
+	/*
+	 * public List<PFGestor> getPfGestor() { return pfGestor; }
+	 * 
+	 * public void setPfGestor(List<PFGestor> pfGestor) { this.pfGestor = pfGestor;
+	 * }
+	 */
 
 	
 	

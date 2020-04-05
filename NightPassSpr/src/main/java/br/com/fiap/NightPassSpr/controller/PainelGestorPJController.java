@@ -29,7 +29,7 @@ public class PainelGestorPJController {
 	@GetMapping("/buscarTodasPJGestor") 
 	public String buscarTodasPJGestor (Model model) {
 		
-		//usuarioLog = (PessoaFisica) session.getAttribute("usuarioLog");
+		usuarioLog = (PessoaFisica) session.getAttribute("usuarioLog");
 		
 		return "base/PainelGestorPJ";
 		

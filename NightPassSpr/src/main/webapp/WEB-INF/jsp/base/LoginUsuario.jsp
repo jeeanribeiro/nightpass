@@ -10,6 +10,8 @@ title="NightPass"
 cssProprio="/resources/css/LoginUsuario.css">
 
   <section id='loginContainer'>
+  
+  	<h1 class="destaque1">${msg}</h1>
     <h1 class='logo'>NightPass</h1>
 	<c:url value="/logar" var="action" />
 	<form:form action="${action }" method="post" commandName="pessoaFisica" id='loginForm'>

@@ -14,4 +14,20 @@ public class PaginaInicial {
 	 * }
 	 * 
 	 */
+	
+	
+public String AtuPage() {
+	
+	return "Olá";
+	
+	
 }
+	
+	
+	
+	
+	
+	
+	
+}
+

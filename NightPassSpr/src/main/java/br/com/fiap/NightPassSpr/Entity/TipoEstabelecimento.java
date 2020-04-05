@@ -24,7 +24,7 @@ public class TipoEstabelecimento implements Serializable {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="tipoEst")
 	
 	@Column(name="tes_codigo")
-	private Integer codigo;
+	private long codigo;
 	
 	@Column(name="tes_nome", length=60)
 	private String nome;
@@ -42,11 +42,11 @@ public class TipoEstabelecimento implements Serializable {
 		this.nome = nome;
 	}
 
-	public Integer getCodigo() {
+	public long getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(Integer codigo) {
+	public void setCodigo(long codigo) {
 		this.codigo = codigo;
 	}
 

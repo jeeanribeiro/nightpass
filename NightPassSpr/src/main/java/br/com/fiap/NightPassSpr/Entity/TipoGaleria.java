@@ -23,7 +23,7 @@ public class TipoGaleria implements Serializable{
 	@SequenceGenerator(name="Seq_T_TipoGaleria", sequenceName="Seq_T_TipoGaleria", allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "Seq_T_TipoGaleria")
 	@Column(name="tga_codigo", nullable=false)
-	private int tgacodigo;
+	private long tgacodigo;
 
 	@Column(name="tga_nome", nullable=false, length=25)
 	private String tganome;
@@ -34,11 +34,17 @@ public class TipoGaleria implements Serializable{
 	@OneToMany(mappedBy = "gae_tga_codigo")
 	private List<GaleriaEst> galeriaEst;
 
-	public int getTgacodigo() {
+	
+	public TipoGaleria() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public long getTgacodigo() {
 		return tgacodigo;
 	}
 
-	public void setTgacodigo(int tgacodigo) {
+	public void setTgacodigo(long tgacodigo) {
 		this.tgacodigo = tgacodigo;
 	}
 
