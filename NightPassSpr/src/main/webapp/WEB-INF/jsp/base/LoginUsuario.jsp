@@ -20,13 +20,13 @@ cssProprio="/resources/css/LoginUsuario.css">
 		  path="email"
           type='text' 
           name="email" 
-          value='paula@uol.com'
+          value=''
           id='login' 
           placeholder='E-mail'
           pattern='/\d{3}\.\d{3}\.\d{3}\-|[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4})\w+/' />
     
     <form:input path="senha" type='password' name="senha"
-     id='password' placeholder='Senha' minlength='8' value="paulapaula"/>
+     id='password' placeholder='Senha' minlength='8' value=""/>
         
     <input type="submit" name="Entrar" value="Entrar">
                 

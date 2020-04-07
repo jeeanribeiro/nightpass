@@ -1,5 +1,6 @@
 package br.com.fiap.NightPassSpr.controller;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,12 +24,19 @@ public class CadastroUsuarioController {
 	
 	@Autowired
 	private PFisicaDAO dao;
+	
+	@Autowired
+	private HttpSession session;
 
 	@GetMapping()
 	public String abrircadastroUsuario (@RequestParam(required=false) PessoaFisica NovoUsuario,
 			Model model) {
 		
+		session.invalidate();
+		
 		model.addAttribute("NovoUsuario", new PessoaFisica());
+		model.addAttribute("action", "cadastrousuario");
+		model.addAttribute("btnNome", "Cadastrar");
 		
 		return "base/CadastroUsuario";
 		
@@ -49,10 +57,44 @@ public class CadastroUsuarioController {
 			dao.cadastrar(NovoUsuario);
 			
 			return "redirect:cadastrousuario";
-			
 		
 	}
 	
 	
+	@Transactional
+	@PostMapping("alterarUsuario") 
+	public String alterarUsuario(@Valid PessoaFisica alteraUsuario, BindingResult bindingResult,
+			RedirectAttributes RAttr, Model model) {
+		
+
+			
+			//codigo para atualizar o usuario
+			
+			PessoaFisica usuarioLog = (PessoaFisica) session.getAttribute("usuarioLog");
+		
+			alteraUsuario.setCodigo(usuarioLog.getCodigo());
+			alteraUsuario.setTipoUsuario(usuarioLog.getTipoUsuario());
+			alteraUsuario.setpJuridicas((usuarioLog.getpJuridicas()));
+		
+			dao.atualizar(alteraUsuario);
+
+			RAttr.addFlashAttribute("msg","Cadastrado alterado com sucesso");
+			
+			return "redirect:/cadastrousuario/dadosConta";
+		
+	}
+	
+	@GetMapping("dadosConta")
+	public String dadosConta (@RequestParam(required=false) PessoaFisica NovoUsuario,
+			Model model) {
+		
+		model.addAttribute("NovoUsuario", new PessoaFisica());
+		model.addAttribute("action", "/cadastrousuario/alterarUsuario");
+		model.addAttribute("btnNome", "Alterar");
+		
+		return "base/CadastroUsuario";
+		
+	}
+
 	
 }

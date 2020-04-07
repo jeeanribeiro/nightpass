@@ -25,11 +25,11 @@
       <div class='logo'>NightPass</div>
       <div class='logo'>Olá  ${usuarioLog.nome} </div>
 
-      <form action="CadastroUsuarioServlet" method="post">
-		    <input type="hidden" name="acao" value="conta">
+	  		<c:url value="/cadastrousuario/dadosConta" var="conta" />
+	  		<form:form action="${conta}" method="get">
 		    <h1><input class='profile' type="submit" value="sua conta"></h1>
-      </form>
-      
+		    </form:form>
+            
       <!-- Neste Formulário é aberto o painel de Gestor e carregadas as PJ vinculadas 
       ao gestor -->
       
