@@ -15,5 +15,7 @@ public interface GenericApiDAO <T,K> {
 	public List<T> listar();
 	
 	public void commit() throws Exception;
+	
+	public void close();
 
 }

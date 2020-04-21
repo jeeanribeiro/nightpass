@@ -35,9 +35,10 @@ public class TipoEstabelecimento implements Serializable {
 	private String nome;
 
 	@OneToMany(mappedBy = "tes_codigo")
-	@JsonManagedReference(value="tes_codigo")
+
 	//é necessária para impedir o loop infinito
 	//Permite a Exibição
+	@JsonIgnore()
 	private List<Estabelecimento> estabelecimentos;
 	
 	public TipoEstabelecimento() {

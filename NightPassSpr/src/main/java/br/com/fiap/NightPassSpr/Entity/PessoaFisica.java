@@ -28,6 +28,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
@@ -223,7 +224,8 @@ public class PessoaFisica implements Serializable {
 		return dataNasc;
 	}
 
-	public void setDataNascCalendar(Calendar dataNasc) {
+	@JsonIgnore //Ignorado para impedir o erro de duplicidade de metodos set
+	public void setDataNasc(Calendar dataNasc) {
 		this.dataNasc = dataNasc;
 	}
 

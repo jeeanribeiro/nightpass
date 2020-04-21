@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 import br.com.fiap.NightPassSpr.Entity.PessoaFisica;
 
 
-@Repository
 public class PFisicaApiDAOImpl extends GenericApiDAOImpl<PessoaFisica, Long> implements PFisicaApiDAO {
 
 	

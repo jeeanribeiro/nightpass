@@ -61,6 +61,7 @@ public class GenericApiDAOImpl<T, K> implements GenericApiDAO<T,K> {
 		try {
 			em.getTransaction().begin();
 			em.getTransaction().commit();
+			em.close();
 		}catch (Exception e) {
 			
 			if (em.getTransaction().isActive())
@@ -68,6 +69,13 @@ public class GenericApiDAOImpl<T, K> implements GenericApiDAO<T,K> {
 			throw new Exception("Erro no commit");
 			
 		}
+		
+	}
+
+	@Override
+	public void close() {
+		
+		em.close();
 		
 	}
 		

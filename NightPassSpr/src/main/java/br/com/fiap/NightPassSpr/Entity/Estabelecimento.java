@@ -31,6 +31,7 @@ import org.hibernate.annotations.FetchMode;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -53,18 +54,19 @@ public class Estabelecimento implements Serializable {
 	@Column(name="EST_DESCRICAO", nullable=false)
 	private String estDescricao;
 	
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd@HH:mm")
 	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern = "HH:mm")
 	@Column(name="EST_ABERTURA", nullable=false)
 	private Calendar estAbertura;
 	
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd@HH:mm")
 	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern = "HH:mm")
 	@Column(name="EST_FECHAMENTO", nullable=false)
 	private Calendar estFechamento;
 	
 	@ManyToOne
-	@JsonBackReference(value="tes_codigo")
 	@JoinColumn(name="T_TIPOEST_TES_CODIGO", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
 	private TipoEstabelecimento tes_codigo;
 
@@ -75,7 +77,6 @@ public class Estabelecimento implements Serializable {
 
 	@OneToOne
 	@JoinColumn(name="T_PJURIDICA_PSJ_CODIGO", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
-	//Inibe a Exibição
 	private PJuridica PSJ_CODIGO;
 
 	@ManyToMany(cascade=CascadeType.REFRESH, fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
@@ -136,7 +137,7 @@ public class Estabelecimento implements Serializable {
 		this.estFechamento = estFechamento;
 	}
 
-
+	
 	public TipoEstabelecimento getTes_codigo() {
 		return tes_codigo;
 	}
