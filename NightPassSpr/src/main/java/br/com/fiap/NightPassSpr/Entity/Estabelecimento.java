@@ -64,19 +64,16 @@ public class Estabelecimento implements Serializable {
 	private Calendar estFechamento;
 	
 	@ManyToOne
-	@JsonManagedReference
-	//é necessária para impedir o loop infinito
-	//Permite a Exibição
+	@JsonBackReference(value="tes_codigo")
 	@JoinColumn(name="T_TIPOEST_TES_CODIGO", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
 	private TipoEstabelecimento tes_codigo;
 
 	@OneToMany(mappedBy = "gae_est_codigo", fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
-	@JsonManagedReference
+	@JsonManagedReference(value="galeriaEst")
 	private List<GaleriaEst> galeriaEst;
 	
 
 	@OneToOne
-	@JsonBackReference //é necessária para impedir o loop infinito
 	@JoinColumn(name="T_PJURIDICA_PSJ_CODIGO", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
 	//Inibe a Exibição
 	private PJuridica PSJ_CODIGO;
@@ -85,7 +82,6 @@ public class Estabelecimento implements Serializable {
 	@JoinTable(joinColumns=@JoinColumn(name="T_ESTABELECI_EST_CODIGO"),
 	inverseJoinColumns = @JoinColumn(name="T_GENMUSICAL_GMU_CODIGO"),
 	name="T_ESTGENMUSICAL")
-	@JsonManagedReference
 	private List<GeneroMusical> generoMusical;
 	
 	public Estabelecimento() {
@@ -160,7 +156,7 @@ public class Estabelecimento implements Serializable {
 		this.galeriaEst = galeriaEst;
 	}
 
-	@JsonBackReference //é necessária para impedir o loop infinito
+	@JsonBackReference(value="estabelecimento") //é necessária para impedir o loop infinito
 	public PJuridica getPSJ_CODIGO() {
 		return PSJ_CODIGO;
 	}

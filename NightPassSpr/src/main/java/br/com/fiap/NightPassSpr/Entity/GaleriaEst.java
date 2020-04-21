@@ -35,7 +35,7 @@ import br.com.fiap.NightPassSpr.util.BlobUtil;
 @Entity
 @Table(name="T_GaleriaEst")
 @Transactional
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "gaecodigo")
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "gaecodigo")
 public class GaleriaEst implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -55,12 +55,12 @@ public class GaleriaEst implements Serializable{
 		
 	@ManyToOne
 	@JoinColumn(name="T_TipoGaleria_tga_codigo", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
-	@JsonManagedReference
+	@JsonBackReference(value="gae_tga_codigo")
 	private TipoGaleria gae_tga_codigo;
 
 	@ManyToOne()
 	@JoinColumn(name="T_Estabeleci_est_codigo", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
-	@JsonBackReference
+	@JsonBackReference(value="galeriaEst")
 	private Estabelecimento gae_est_codigo;
 	
 	@JsonIgnore

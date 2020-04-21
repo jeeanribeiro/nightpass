@@ -15,6 +15,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 
@@ -36,9 +37,11 @@ public class PFGestor implements Serializable{
 	@Column(name="RGE_PERFIL", nullable=false, length=40)
 	private String rgePerfil; 
 	
+	@JsonManagedReference	
 	@Column(name="T_PFISICA_PSA_CODIGO", nullable=false, length=40)
 	private long psacodigo;
 	
+	@JsonManagedReference
 	@Column(name="T_PJURIDICA_PSJ_CODIGO", nullable=false, length=40)
 	private long psjcodigo;
 	

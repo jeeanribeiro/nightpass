@@ -87,13 +87,10 @@ public class PJuridica implements Serializable {
 //	@OneToMany(mappedBy = "pJuridica")
 //	private List<PFGestor> pfGestor;
 	
-	@JsonBackReference //Esta anotação impede que as Pessoas Fisicas recuperem as juridicas
-	//é necessária para impedir o loop infinito
-	//Inibe a Exibição
 	@ManyToMany(mappedBy="pJuridicas", fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
 	private List<PessoaFisica> pessoaFisicas;
 
-	@JsonManagedReference
+	@JsonManagedReference(value="estabelecimento")
 	@OneToOne(mappedBy = "PSJ_CODIGO")
 	private Estabelecimento estabelecimento;
 	
@@ -236,6 +233,9 @@ public class PJuridica implements Serializable {
 	public void setEstabelecimento(Estabelecimento estabelecimento) {
 		this.estabelecimento = estabelecimento;
 	}
+
+	@JsonBackReference(value="pessoaFisicas")
+	//Inibe a Exibiçãoé necessária para impedir o loop infinito
 
 	public List<PessoaFisica> getPessoaFisicas() {
 		return pessoaFisicas;

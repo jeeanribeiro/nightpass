@@ -15,6 +15,7 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
@@ -34,7 +35,9 @@ public class TipoEstabelecimento implements Serializable {
 	private String nome;
 
 	@OneToMany(mappedBy = "tes_codigo")
-	@JsonBackReference
+	@JsonManagedReference(value="tes_codigo")
+	//é necessária para impedir o loop infinito
+	//Permite a Exibição
 	private List<Estabelecimento> estabelecimentos;
 	
 	public TipoEstabelecimento() {
@@ -63,7 +66,6 @@ public class TipoEstabelecimento implements Serializable {
 		this.nome = nome;
 	}
 
-	@JsonIgnore  //resolve o loop no Json
 	public List<Estabelecimento> getEstabelecimentos() {
 		return estabelecimentos;
 	}

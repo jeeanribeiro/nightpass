@@ -147,9 +147,6 @@ public class PessoaFisica implements Serializable {
 	@JoinTable(joinColumns=@JoinColumn(name="T_PFISICA_PSA_CODIGO"),
 	inverseJoinColumns = @JoinColumn(name="T_PJURIDICA_PSJ_CODIGO"),
 	name="T_PFGESTOR")
-	@JsonManagedReference //Esta anotação impede que as Pessoas Fisicas recuperem as juridicas
-	//é necessária para impedir o loop infinito
-	//Permite a Exibição
 	private List<PJuridica> pJuridicas;
 	
 	@Transient
@@ -226,7 +223,7 @@ public class PessoaFisica implements Serializable {
 		return dataNasc;
 	}
 
-	public void setDataNasc(Calendar dataNasc) {
+	public void setDataNascCalendar(Calendar dataNasc) {
 		this.dataNasc = dataNasc;
 	}
 

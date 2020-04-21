@@ -14,6 +14,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
@@ -35,7 +36,7 @@ public class TipoGaleria implements Serializable{
 	private String tga_descricao;
 	
 	@OneToMany(mappedBy = "gae_tga_codigo")
-	@JsonBackReference
+	@JsonManagedReference(value="gae_tga_codigo")
 	private List<GaleriaEst> galeriaEst;
 
 	

@@ -17,12 +17,15 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 @Table(name="T_GenMusical")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "codigo")
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "codigo")
 public class GeneroMusical implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -37,6 +40,7 @@ public class GeneroMusical implements Serializable {
 	private String nome;
 
 	@ManyToMany(mappedBy="generoMusical", fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
+	@JsonIgnore()
 	private List<Estabelecimento> estabelecimentos;
 
 	public GeneroMusical() {
