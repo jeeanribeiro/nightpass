@@ -12,9 +12,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity
 @Table(name="T_TipoGaleria")
-
 public class TipoGaleria implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -32,6 +35,7 @@ public class TipoGaleria implements Serializable{
 	private String tga_descricao;
 	
 	@OneToMany(mappedBy = "gae_tga_codigo")
+	@JsonBackReference
 	private List<GaleriaEst> galeriaEst;
 
 	

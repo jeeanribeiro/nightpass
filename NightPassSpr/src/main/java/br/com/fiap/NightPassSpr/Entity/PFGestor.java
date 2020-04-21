@@ -13,10 +13,15 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 
 
 @Entity
 @Table(name="T_PFGESTOR")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "rgeCodigo")
 public class PFGestor implements Serializable{
 
 	
@@ -30,7 +35,7 @@ public class PFGestor implements Serializable{
 	
 	@Column(name="RGE_PERFIL", nullable=false, length=40)
 	private String rgePerfil; 
-
+	
 	@Column(name="T_PFISICA_PSA_CODIGO", nullable=false, length=40)
 	private long psacodigo;
 	

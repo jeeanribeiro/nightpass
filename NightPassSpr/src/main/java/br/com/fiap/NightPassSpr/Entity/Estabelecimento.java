@@ -30,9 +30,14 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity
 @Table(name="T_ESTABELECI")
-
 public class Estabelecimento implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -41,6 +46,7 @@ public class Estabelecimento implements Serializable {
 	@SequenceGenerator(name="Seq_T_Estabeleci", sequenceName="Seq_T_Estabeleci", allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "Seq_T_Estabeleci")
 	@Column(name="est_codigo", nullable=false)
+
 	private long estcodigo;
 	
 	@Lob
@@ -58,20 +64,28 @@ public class Estabelecimento implements Serializable {
 	private Calendar estFechamento;
 	
 	@ManyToOne
+	@JsonManagedReference
+	//é necessária para impedir o loop infinito
+	//Permite a Exibição
 	@JoinColumn(name="T_TIPOEST_TES_CODIGO", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
 	private TipoEstabelecimento tes_codigo;
 
-	@OneToMany(mappedBy = "gae_est_codigo")
+	@OneToMany(mappedBy = "gae_est_codigo", fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
+	@JsonManagedReference
 	private List<GaleriaEst> galeriaEst;
 	
+
 	@OneToOne
+	@JsonBackReference //é necessária para impedir o loop infinito
 	@JoinColumn(name="T_PJURIDICA_PSJ_CODIGO", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
+	//Inibe a Exibição
 	private PJuridica PSJ_CODIGO;
 
 	@ManyToMany(cascade=CascadeType.REFRESH, fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
 	@JoinTable(joinColumns=@JoinColumn(name="T_ESTABELECI_EST_CODIGO"),
 	inverseJoinColumns = @JoinColumn(name="T_GENMUSICAL_GMU_CODIGO"),
 	name="T_ESTGENMUSICAL")
+	@JsonManagedReference
 	private List<GeneroMusical> generoMusical;
 	
 	public Estabelecimento() {
@@ -146,7 +160,7 @@ public class Estabelecimento implements Serializable {
 		this.galeriaEst = galeriaEst;
 	}
 
-
+	@JsonBackReference //é necessária para impedir o loop infinito
 	public PJuridica getPSJ_CODIGO() {
 		return PSJ_CODIGO;
 	}
@@ -172,7 +186,7 @@ public class Estabelecimento implements Serializable {
 		
 		for (GaleriaEst galeriaEst : galeriaEstVer) {
 			
-			if (galeriaEst.getTga_codigo().getTgacodigo() == tipoGaleria.getTgacodigo()) {
+			if (galeriaEst.getGae_tga_codigo().getTgacodigo() == tipoGaleria.getTgacodigo()) {
 				
 				System.out.println(galeriaEst.getGae_est_codigo());
 				

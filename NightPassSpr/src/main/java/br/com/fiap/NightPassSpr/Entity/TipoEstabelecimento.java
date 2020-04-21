@@ -12,9 +12,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity
 @Table(name="T_TipoEst")
-
 public class TipoEstabelecimento implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -30,6 +34,7 @@ public class TipoEstabelecimento implements Serializable {
 	private String nome;
 
 	@OneToMany(mappedBy = "tes_codigo")
+	@JsonBackReference
 	private List<Estabelecimento> estabelecimentos;
 	
 	public TipoEstabelecimento() {
@@ -58,6 +63,7 @@ public class TipoEstabelecimento implements Serializable {
 		this.nome = nome;
 	}
 
+	@JsonIgnore  //resolve o loop no Json
 	public List<Estabelecimento> getEstabelecimentos() {
 		return estabelecimentos;
 	}

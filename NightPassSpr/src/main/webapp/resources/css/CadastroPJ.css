@@ -34,13 +34,14 @@ header{
   font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   font-weight: 700;
-  grid-column-start: 2;
+  grid-column-start: 1;
   padding: 10px 0;
 }
 
 #signUpContainer #signUpForm button:hover {
   background: #b8005f;
 }
+
 
 .destaque1{
 	color: purple;

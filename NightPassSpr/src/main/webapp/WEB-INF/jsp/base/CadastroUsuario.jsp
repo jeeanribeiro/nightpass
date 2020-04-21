@@ -7,13 +7,14 @@
 
 <tags:template 
 title="NightPass"
-cssProprio="/resources/css/CadastroUsuario.css">
+cssProprio="/resources/css/CadastroUsuario.css"
+jsProprio="CadastroUsuario.js">
 
   <section id='signUpContainer'>
   
     <h1 class="destaque1">${msg}</h1>
 
- 	<c:url value="${action}" var="urlfinal" />
+ 	<c:url value="${action}" var="urlfinal"/>
 
     <form:form  modelAttribute="NovoUsuario" action="${urlfinal}" method="post" id="signUpForm">
     
@@ -67,6 +68,5 @@ cssProprio="/resources/css/CadastroUsuario.css">
       <button type="submit">${btnNome}</button>
     </form:form>
   </section>
-  <script src="resources/js/CadastroUsuario.js"></script>
   
 </tags:template>

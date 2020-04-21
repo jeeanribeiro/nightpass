@@ -28,8 +28,14 @@ public class PainelGestorPJController {
 	@Transactional
 	@GetMapping("/buscarTodasPJGestor") 
 	public String buscarTodasPJGestor (Model model) {
-		
+
 		usuarioLog = (PessoaFisica) session.getAttribute("usuarioLog");
+		
+		usuarioLog = dao.buscar(usuarioLog.getCodigo());
+		
+		session.setAttribute("usuarioLog", usuarioLog);
+		
+
 		
 		return "base/PainelGestorPJ";
 		

@@ -7,7 +7,8 @@
 
 <tags:template 
 title="NightPass"
-cssProprio="/resources/css/PainelEstabelecimento.css">
+cssProprio="/resources/css/PainelEstabelecimento.css"
+jsProprio="Ajustar">
 	
 	<section id="signUpContainer">
 	
@@ -48,11 +49,21 @@ cssProprio="/resources/css/PainelEstabelecimento.css">
 
 				</c:forEach>
 
+
+			<br><br>
+			<c:url value="/abreGaleria" var="voltar"/>
+			<a class="buttonfmt" href="${voltar}">Galeria Estabelecimento</a>
+
+
 			<br><br>
 			<button class="buttonfmt" type="submit">Atualizar</button>
 			
 			<c:url value="/buscarTodasPJGestor" var="voltar"/>
 			<a class="buttonfmt" href="${voltar}">Voltar</a>
+		
+		
+			
+		
 		
 		</form:form>
 		

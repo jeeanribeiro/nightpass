@@ -68,7 +68,6 @@ public class PainelEstabelecimentoController {
 		
 		estabelecimento = pJuridicaAtual.getEstabelecimento();
 		
-
 		if (estabelecimento != null) {
 
 			//Se o Estabelecimento existir carrega dos dados
@@ -83,6 +82,10 @@ public class PainelEstabelecimentoController {
 		
 		//adiciona a pessoa jurídica Atual a sessão do usuario
 		session.setAttribute("pJuridicaAtual", pJuridicaAtual);
+		
+		//adiciona o Estabelecimento Atual a sessão do usuario
+		
+		session.setAttribute("estabelecimentoAtual", estabelecimento);
 		
 		//Carrega a Lista de Tipos de Estabelecimentos
 		
@@ -109,8 +112,6 @@ public class PainelEstabelecimentoController {
 		PJuridica pJuridicaAt = (PJuridica) session.getAttribute("pJuridicaAtual");
 	
 		List<GeneroMusical> pGeneroMusical = (List<GeneroMusical>) session.getAttribute("estabelecimentoGenMusical");
-		
-		
 		
 		estabelecimento.setPSJ_CODIGO(pJuridicaAt);
 		estabelecimento.setGeneroMusical(pGeneroMusical);

@@ -4,12 +4,7 @@ import java.lang.reflect.*;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.FlushModeType;
 import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceContextType;
-
-import org.hibernate.FlushMode;
-import org.springframework.stereotype.Repository;
 
 
 public class GenericDAOImpl<T, K> implements GenericDAO<T, K> {
@@ -24,21 +19,36 @@ public class GenericDAOImpl<T, K> implements GenericDAO<T, K> {
 		this.em = em;
 		
 		clazz = (Class<T>) ((ParameterizedType) getClass()
-				.getGenericSuperclass()).getActualTypeArguments()[0]; 
+				.getGenericSuperclass()).getActualTypeArguments()[0];
+		
 	}
 	
 	public void cadastrar(T entidade) {
 		em.persist(entidade);
-		em.setFlushMode(FlushModeType.COMMIT);
 	}
 	
 	public void atualizar(T entidade) {
 		em.merge(entidade);
 	}
+
+	public T atualizarRetEntity(T entidade) {
+		em.merge(entidade);
+		return entidade;
+	}
 	
 	public T buscar (K chave) {
 		return em.find(clazz, chave);
+		
 	}
+	
+	public void detach (T entidade) {
+		
+		em.detach(entidade);
+		
+	}
+	
+	
+	
 	
 	public void remover(K chave) throws Exception {
 		T entidade = buscar(chave);
@@ -48,14 +58,23 @@ public class GenericDAOImpl<T, K> implements GenericDAO<T, K> {
 		}
 		
 		em.remove(entidade);
+
 	}
 
+	
+		
+	
+	
 	public List<T> listar() {
 		return em.createQuery("from " + clazz.getName(), clazz).getResultList();
 	}
 
 	@Override
-	public void flush() {}
+	public void flush() {
+		
+		em.flush();
+		
+	}
 
 	@Override
 	public void refresh(T entidade) {

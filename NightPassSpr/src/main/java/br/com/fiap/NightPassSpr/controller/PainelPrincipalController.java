@@ -43,6 +43,15 @@ public class PainelPrincipalController {
 			
 			model.addAttribute("galeria", galeriaEst);
 			
+			//Novo Teste
+
+			for (Estabelecimento estabelecimento : lEstabelecimentos) {
+				
+				model.addAttribute(String.valueOf((estabelecimento.getEstcodigo())),
+						estabelecimento.getGaleriaEst());
+				
+			}
+			
 		return ("base/PainelPrincipal");
 		
 		

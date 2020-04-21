@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.Base64;
 
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.ConstraintMode;
 import javax.persistence.Entity;
@@ -23,11 +24,18 @@ import javax.persistence.Transient;
 
 import org.springframework.transaction.annotation.Transactional;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import br.com.fiap.NightPassSpr.util.BlobUtil;
 
 @Entity
 @Table(name="T_GaleriaEst")
 @Transactional
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "gaecodigo")
 public class GaleriaEst implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -47,16 +55,19 @@ public class GaleriaEst implements Serializable{
 		
 	@ManyToOne
 	@JoinColumn(name="T_TipoGaleria_tga_codigo", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
+	@JsonManagedReference
 	private TipoGaleria gae_tga_codigo;
 
-	@ManyToOne
+	@ManyToOne()
 	@JoinColumn(name="T_Estabeleci_est_codigo", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
+	@JsonBackReference
 	private Estabelecimento gae_est_codigo;
 	
+	@JsonIgnore
 	@Transient
 	private String gaeFotoExibivel = new String();
 
-	public GaleriaEst() throws SQLException {
+	public GaleriaEst() {
 		
 		super();
 		
@@ -70,16 +81,14 @@ public class GaleriaEst implements Serializable{
 
 	public void setGaeFotoExibivel() {
 		
-		//this.gaeFotoExibivel = BlobUtil.BlobToString64(this.getGaefoto());
 	}
 
-
-	public TipoGaleria getTga_codigo() {
+	public TipoGaleria getGae_tga_codigo() {
 		return gae_tga_codigo;
 	}
 
-	public void setTga_codigo(TipoGaleria tga_codigo) {
-		this.gae_tga_codigo = tga_codigo;
+	public void setGae_tga_codigo(TipoGaleria gae_tga_codigo) {
+		this.gae_tga_codigo = gae_tga_codigo;
 	}
 
 	public Estabelecimento getGae_est_codigo() {
@@ -89,17 +98,6 @@ public class GaleriaEst implements Serializable{
 	public void setGae_est_codigo(Estabelecimento gae_est_codigo) {
 		this.gae_est_codigo = gae_est_codigo;
 	}
-	/*
-	 * public Blob getGaefoto(){
-	 * 
-	 * return gaefoto; }
-	 * 
-	 * public void setGaefoto(Blob gaefoto){
-	 * 
-	 * this.gaefoto = gaefoto;
-	 * 
-	 * }
-	 */
 
 	public byte[] getGaefoto() {
 		return gaefoto;
@@ -107,6 +105,14 @@ public class GaleriaEst implements Serializable{
 
 	public void setGaefoto(byte[] gaefoto) {
 		this.gaefoto = gaefoto;
+	}
+
+	public long getGaecodigo() {
+		return gaecodigo;
+	}
+
+	public void setGaecodigo(long gaecodigo) {
+		this.gaecodigo = gaecodigo;
 	}
 	
 	

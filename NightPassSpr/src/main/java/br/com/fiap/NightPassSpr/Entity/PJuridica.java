@@ -11,7 +11,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -21,8 +20,14 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity
 @Table(name="T_PJURIDICA")
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "psjCodigo")
 public class PJuridica implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -82,15 +87,18 @@ public class PJuridica implements Serializable {
 //	@OneToMany(mappedBy = "pJuridica")
 //	private List<PFGestor> pfGestor;
 	
+	@JsonBackReference //Esta anotação impede que as Pessoas Fisicas recuperem as juridicas
+	//é necessária para impedir o loop infinito
+	//Inibe a Exibição
 	@ManyToMany(mappedBy="pJuridicas", fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
 	private List<PessoaFisica> pessoaFisicas;
 
+	@JsonManagedReference
 	@OneToOne(mappedBy = "PSJ_CODIGO")
 	private Estabelecimento estabelecimento;
 	
 	public PJuridica() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public long getPsjCodigo() {
@@ -237,14 +245,4 @@ public class PJuridica implements Serializable {
 		this.pessoaFisicas = pessoaFisica;
 	}
 
-
-	/*
-	 * public List<PFGestor> getPfGestor() { return pfGestor; }
-	 * 
-	 * public void setPfGestor(List<PFGestor> pfGestor) { this.pfGestor = pfGestor;
-	 * }
-	 */
-
-	
-	
 }

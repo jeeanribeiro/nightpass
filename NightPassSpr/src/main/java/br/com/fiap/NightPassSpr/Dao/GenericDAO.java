@@ -11,4 +11,6 @@ public interface GenericDAO<T,K> {
 	public void flush();
 	public void refresh(T entidade);
 	public T cadastrarRetEntity (T entidade);
+	public T atualizarRetEntity(T entidade);
+	public void detach (T entidade);
 }

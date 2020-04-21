@@ -1,6 +1,7 @@
 <%@ tag language="java" pageEncoding="ISO-8859-1"%>
 <%@ attribute name="title" required="true" %>
 <%@ attribute name="cssProprio" required="true" %>
+<%@ attribute name="jsProprio" required="true" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
@@ -30,6 +31,7 @@
 	<jsp:doBody/>
 
   <script src="<c:url value="resources/js/LoginUsuario.js"/>"></script>
+  <script src="<c:url value="resources/js/${jsProprio}"/>"></script>
 </body>
 </html>
 

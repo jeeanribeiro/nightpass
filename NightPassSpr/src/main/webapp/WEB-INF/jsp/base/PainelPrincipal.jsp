@@ -50,24 +50,28 @@
 <section id='establishmentList'>
 
 <c:forEach items="${estabelecimentos}" var="l" >
+
 	<!-- Inicio bloco de estabelecimento -->
 	
+	<%--Inicia a variável fachada que contem a foto padrão de estabelecimento --%>
 	<c:set var="fachada" value="resources/imgs/EstabelecimentoSemFoto.jpg"/>
 	
     <div class='establishment'>
+      
+      <c:set var="codigoest" value="${l.estcodigo}"/>
+            
       <div class="establishment-image-button">
-      	<c:forEach items="${galeria}" var="g">
-      		<c:set var="est" value="${l.getEstcodigo()}" />
-			<c:if test="${est == g.getGae_est_codigo().getEstcodigo()}">
-				<c:set var="tipo" value="${g.getTga_codigo().getTgacodigo()}" />
-				<c:if test="${tipo==1}">
-					<c:set var="fachada" value="data:image/jpg;base64,${g.getGaeFotoExibivel()}"/>
-				</c:if>
-			</c:if>
+      
+      	<%--Atualmente apenas a primeira fotografia do estabelecimento é carregada --%>
+      	<c:forEach items="${l.getGaleriaEst()}" var="g" end="0">
+			<c:set var="fachada" value="data:image/jpg;base64,${g.getGaeFotoExibivel()}"/>
 		</c:forEach>
-	  <img class='establishment-image' src="${fachada}" alt="" width="300" height="255"/>
+		<img class='establishment-image' src="${fachada}" alt="" width="300" height="255"/>
+
       <button class="establishment-goto"><i class="fas fa-location-arrow"></i>Rotas</button>
       </div>
+      
+      
       <div class="establishment-info">
         <h4 class="establishment-title">${l.getPSJ_CODIGO().getPsjNome()}</h3>
         <p class="establishment-description">${l.getEstDescricao()}</p>
@@ -85,6 +89,6 @@
 
 </c:forEach>
     
-  </section>
+</section>
 </body>
 </html>

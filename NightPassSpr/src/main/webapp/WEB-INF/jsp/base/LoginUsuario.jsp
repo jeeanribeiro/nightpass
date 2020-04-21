@@ -7,7 +7,8 @@
 
 <tags:template 
 title="NightPass"
-cssProprio="/resources/css/LoginUsuario.css">
+cssProprio="/resources/css/LoginUsuario.css"
+jsProprio="LoginUsuario.js">
 
   <section id='loginContainer'>
   
@@ -20,13 +21,13 @@ cssProprio="/resources/css/LoginUsuario.css">
 		  path="email"
           type='text' 
           name="email" 
-          value=''
+          value='paula@uol.com'
           id='login' 
           placeholder='E-mail'
           pattern='/\d{3}\.\d{3}\.\d{3}\-|[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4})\w+/' />
     
     <form:input path="senha" type='password' name="senha"
-     id='password' placeholder='Senha' minlength='8' value=""/>
+     id='password' placeholder='Senha' minlength='8' value="paulapaula"/>
         
     <input type="submit" name="Entrar" value="Entrar">
                 
@@ -38,6 +39,5 @@ cssProprio="/resources/css/LoginUsuario.css">
       </p>
       
   </section>
-  <script src="<c:url value="resources/js/LoginUsuario.js"/>"></script>
 
 </tags:template>

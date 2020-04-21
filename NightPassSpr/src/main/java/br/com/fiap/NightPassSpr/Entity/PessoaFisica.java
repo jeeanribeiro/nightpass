@@ -16,8 +16,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -28,9 +26,16 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+
 
 @Entity
 @Table(name="T_PFisica")
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "codigo")
 public class PessoaFisica implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -130,10 +135,10 @@ public class PessoaFisica implements Serializable {
 	@Column(name="psa_tipousuario", nullable=false, length=20)
 	private String tipoUsuario;
 
-	@OneToOne(cascade = {CascadeType.REFRESH}
-    , fetch = FetchType.EAGER)
-	@JoinColumn(name="T_PJURIDICA_PSJ_CODIGO")
-	private PJuridica PSJ_CODIGO;
+//	@OneToOne(cascade = {CascadeType.REFRESH}
+//    , fetch = FetchType.EAGER)
+//	@JoinColumn(name="T_PJURIDICA_PSJ_CODIGO")
+//	private PJuridica PSJ_CODIGO;
 	
 //	@OneToMany(mappedBy = "pessoaFisica", fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
 //	private List< PFGestor > pfGestor;
@@ -142,9 +147,11 @@ public class PessoaFisica implements Serializable {
 	@JoinTable(joinColumns=@JoinColumn(name="T_PFISICA_PSA_CODIGO"),
 	inverseJoinColumns = @JoinColumn(name="T_PJURIDICA_PSJ_CODIGO"),
 	name="T_PFGESTOR")
+	@JsonManagedReference //Esta anotação impede que as Pessoas Fisicas recuperem as juridicas
+	//é necessária para impedir o loop infinito
+	//Permite a Exibição
 	private List<PJuridica> pJuridicas;
 	
-
 	@Transient
 	private boolean loginValidado = false;
 	
@@ -436,14 +443,11 @@ public class PessoaFisica implements Serializable {
 		this.tipoUsuario = tipoUsuario;
 	}
 
-	public PJuridica getPSJ_CODIGO() {
-		return PSJ_CODIGO;
-	}
-
-	public void setPSJ_CODIGO(PJuridica pSJ_CODIGO) {
-		PSJ_CODIGO = pSJ_CODIGO;
-	}
-
+	/*
+	 * public PJuridica getPSJ_CODIGO() { return PSJ_CODIGO; }
+	 * 
+	 * public void setPSJ_CODIGO(PJuridica pSJ_CODIGO) { PSJ_CODIGO = pSJ_CODIGO; }
+	 */
 	public String getDtNascimentoFmt() {
 		SimpleDateFormat DtFormat = new SimpleDateFormat("yyyy-MM-dd");
 		return DtFormat.format(this.dataNasc.getTime());

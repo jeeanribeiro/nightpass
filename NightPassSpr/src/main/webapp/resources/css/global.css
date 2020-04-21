@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
 
+*{
+  margin-bottom: 2px;
+  margin-top: 2px;
+}
+
 html, body {
   background: #111;
   font-family: 'Fira Sans', sans-serif;
   min-height: 100%;
   max-width: 100%;
-  margin: 0;
-  padding: 0;
+  padding: 0px;
+  margin: 0px;
 }
 
 input,
@@ -35,7 +40,6 @@ input::-webkit-calendar-picker-indicator {
   font-weight: 700;
   padding-bottom: 10px;
   text-align: center;
-  user-select: none;
 }
 
 .titulopadrao{
@@ -54,16 +58,14 @@ input::-webkit-calendar-picker-indicator {
 	color: #d6006e;
 	font-size: 20px;
 	font-weight: 700;
-	padding-bottom: 10px;
-	user-select: none;
+	padding-bottom: 1px 1px 1px 1px;
 }
 
 .fontelabel {
 	font-family: 'Fira Sans', sans-serif;
 	color: #d6006e;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: 700;
-	padding-bottom: 10px;
 	user-select: none;
 	display: inline-block;
 }
@@ -76,7 +78,7 @@ td {
   font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   font-weight: 300;
-  padding: 2px 4px 2px 4px;
+  padding: 0px 4px 0px 4px;
 }
 
 th {
@@ -86,7 +88,7 @@ th {
   font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   font-weight: 300;
-  padding: 1px 4px 1px 4px;
+  padding: 0px 4px 0px 4px;
 }
 
 .buttonfmt {
@@ -101,3 +103,11 @@ th {
   border: solid  grey 2px;
    
  }
+ 
+ .fileinput {
+  color: #ff0084;
+  font-weight: 700;
+  text-decoration: none;
+}
+ 
+ 

@@ -9,42 +9,18 @@
 
 <tags:template 
 title="NightPass - Galeria do Estabelecimento"
-cssProprio="ajustar">
-
-<%-- 	<img src="data:image/jpg;base64,${Fotog.getGaeFotoExibivel()}"/>
-	<img src="data:image/jpg;base64,${Fotog.getGaeFotoExibivel()}"/>
- --%>	
- 	
-<%-- 		<c:forEach items="${teste22}" var="r" end="0">
-		
-		<img src="data:image/jpg;base64,${r.getGaeFotoExibivel()}"/>
-		<h1>----------</h1>
-		
-		</c:forEach>
+cssProprio="/resources/css/PainelGaleriaEstabelecimento.css"
+jsProprio="Ajustar">
 	
-		<c:forEach items="${teste45}" var="r" end="0">
-		
-		<img src="data:image/jpg;base64,${r.getGaeFotoExibivel()}"/>
-		<h1>----------</h1>
-		
-		</c:forEach> --%>
-
-	<c:forEach items="${estabelecimento}" var="r">
-		<h1 class="fontepadrao">----------</h1>
-		<h1 class="fontepadrao">${r.getEstcodigo()}</h1>
-		<h1 class="fontepadrao">${r.getEstDescricao()}</h1>
-		<c:forEach items="${galeria}" var="g">
-			<c:set var="est" value="${r.getEstcodigo()}" />
-			<c:if test="${est == g.getGae_est_codigo().getEstcodigo()}">
-				<c:set var="tipo" value="${g.getTga_codigo().getTgacodigo()}" />
-				<c:if test="${tipo==1}">
-					<h1 class="fontepadrao">-.-.-.-.-.-.-.-.-.-</h1>
-					<h1 class="fontepadrao">${g.getGae_est_codigo().getEstcodigo()}</h1>
-					<img src="data:image/jpg;base64,${g.getGaeFotoExibivel()}" />
-					<h1 class="fontepadrao">-.-.-.-.-.-.-.-.-.-</h1>
-				</c:if>
-			</c:if>
-		</c:forEach>
+	<c:url value="NovaFoto" var="NovaFoto"/>	
+	<form action="${NovaFoto}" method="GET">
+	<p><button class="buttonfmt" type="submit">Adicionar Novo</button>
+	</form>
+	
+	<c:forEach items="${galeriaEstAtu}" var="r">
+		<h1 class="fontelabel">_________________________________________________________</h1><br>
+		<h1 class="fontelabel">${r.getGae_tga_codigo().getTganome()}</h1><p>
+		<img class='establishment-image' src="data:image/jpg;base64,${r.getGaeFotoExibivel()}" alt=""/>
 	</c:forEach>
 
 </tags:template>

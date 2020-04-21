@@ -52,7 +52,9 @@
 
 	</table>
 	
-	<p><button class="buttonfmt" type="button" onclick="window.location.href='CadastroPJ.jsp'">Adicionar Novo</button>
+	<br>
+	<c:url value="/cadastropj" var="voltar"/>
+	<a class="buttonfmt" href="${voltar}">Adicionar Novo</a>
 	<c:url value="/carregarListaEstabelecimentos" var="voltar"/>
 	<a class="buttonfmt" href="${voltar}">Voltar</a>
 
