@@ -1,0 +1,139 @@
+nav {
+  align-items: center;
+  background: #222;
+  box-shadow: 0 0 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+  position: sticky;
+}
+
+#searchBox {
+  border-radius: 10px;
+  transition-duration: 0.2s;
+  width: 50%;
+}
+
+#searchBox:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #d6006e;
+}
+
+.profile,
+.sign-out {
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 20px;
+  transition-duration: 0.2s;
+}
+
+.profile:hover,
+.sign-out:hover {
+  color: #d6006e;
+}
+
+#establishmentList {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.establishment {
+  background: #222;
+  box-shadow: 0 0 5px;
+  display: flex;
+  flex-direction: row;
+  height: 350px;
+  margin: 10px;
+  padding: 10px;
+  width: 1100px;
+}
+
+.establishment-image-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 350px;
+  max-width: 350x;
+    
+}
+
+/* Ajustado para relação 1 para 1,5  1920 x 1280 */
+.establishment-image {
+  background: #111;
+  min-width: 350px;
+  min-height: 233px;
+  max-width: 350x;
+  max-height: 233px;
+    
+}
+
+.establishment-goto {
+  background: #27739a;
+  border: none;
+  color: #fff;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.establishment-goto:hover {
+  background: #206080;
+  cursor: pointer;
+}
+
+.establishment-goto i {
+  margin-right: 10px;
+}
+
+.establishment-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 20px;
+  text-overflow: ellipsis;
+}
+
+.establishment-title {
+  color: #d6006e;
+  margin: 0;
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+.establishment-description {
+  color: #eee;
+  font-size: 18px;
+  text-align-last: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height : 200px;
+  
+}
+
+.establishment-time-distance {
+  align-items: center;
+  color: #eee;
+  display: flex;
+  justify-content: space-between;
+}
+
+.establishment-time-distance i {
+  color: #d6006e;
+  margin-right: 10px;
+}
+
+.establishment-time-distance {
+  font-size: 16px;
+}
+
+.establishment-distance,
+.establishment-time-range {
+  background: #333;
+  padding: 10px;
+}

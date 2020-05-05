@@ -18,7 +18,14 @@ Funcionalidades em funcionamento:
 			eduardo@uol.com
 			senhaeduardo
 			
-			
+Para acesso a API / JSON
+
+Endereços:
+	
+	http://localhost:7080/NightPassSpr/api/pessoajuridicaapi
+	http://localhost:7080/NightPassSpr/api/estabelecimentoapi
+	
+
 	
 	
 	

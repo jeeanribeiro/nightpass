@@ -31,7 +31,7 @@
 	<jsp:doBody/>
 
   <script src="<c:url value="resources/js/LoginUsuario.js"/>"></script>
-  <script src="<c:url value="resources/js/${jsProprio}"/>"></script>
+  <script type="text/javascript" src="<c:url value="${jsProprio}"/>"></script>
 </body>
 </html>
 

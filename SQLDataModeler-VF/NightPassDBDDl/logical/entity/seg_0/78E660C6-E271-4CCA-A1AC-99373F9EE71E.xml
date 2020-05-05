@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="78E660C6-E271-4CCA-A1AC-99373F9EE71E" name="T_Presenca">
+<createdBy>User</createdBy>
+<createdTime>2020-04-22 00:54:49 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="pre_codigo" id="AC1D5612-FF2E-A2DF-C6E7-B6E9E15AF544">
+<createdBy>User</createdBy>
+<createdTime>2020-04-22 00:56:32 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="pre_status" id="617ACA37-B3DE-F282-D797-76AB3EA1A8F9">
+<createdBy>User</createdBy>
+<createdTime>2020-04-22 00:58:17 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="psa_codigo" id="C6579984-3307-0129-18FC-2C09D205A844">
+<createdBy>User</createdBy>
+<createdTime>2020-04-22 01:01:55 UTC</createdTime>
+<generatorID>B93C5665-CF1E-F9A5-12DC-D89268F4596E</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<referedAttribute>305502A8-90E9-5044-023E-0A78EBC9EB0A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="age_codigo" id="E2AC9C86-F665-9DF3-FEBE-A47FED8E9132">
+<createdBy>User</createdBy>
+<createdTime>2020-04-22 01:04:02 UTC</createdTime>
+<generatorID>EB68C5DB-A21F-1177-8491-3CC68C286CC1</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<referedAttribute>8343E0A6-5625-6062-C923-50B7A16B6E06</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A01C2F81-5055-5302-B1C1-6A2560BD1B0F" name="T_Presenca PK">
+<createdBy>User</createdBy>
+<createdTime>2020-04-22 01:03:31 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>AC1D5612-FF2E-A2DF-C6E7-B6E9E15AF544</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

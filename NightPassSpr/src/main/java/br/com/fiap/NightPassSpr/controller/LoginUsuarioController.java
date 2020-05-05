@@ -8,8 +8,10 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import br.com.fiap.NightPassSpr.Dao.PFisicaDAO;
+import br.com.fiap.NightPassSpr.Entity.GaleriaEst;
 import br.com.fiap.NightPassSpr.Entity.PessoaFisica;
 
 @Controller
@@ -51,9 +53,12 @@ public class LoginUsuarioController {
 	@Transactional
 	@PostMapping("/logar") 
 	public ModelAndView login (PessoaFisica pessoaFisica,
-			Model model) {
+			Model model, @RequestParam(required=false) boolean baseimagens) {
 		
 		usuarioLog = dao.buscarPorEmail(pessoaFisica.getEmail());
+		
+		session.setAttribute("baseimagens", baseimagens);
+		System.out.println(baseimagens);
 		
 		if(usuarioLog == null) {
 			

@@ -10,7 +10,7 @@
 <tags:template 
 title="NightPass - Galeria do Estabelecimento"
 cssProprio="/resources/css/NovaFotoEst.css"
-jsProprio="NovaFotoEst.js">
+jsProprio="/resources/js/NovaFotoEst.js">
 	
 <%-- 	
 

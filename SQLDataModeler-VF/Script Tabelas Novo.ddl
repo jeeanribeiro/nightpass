@@ -1,9 +1,19 @@
 -- Gerado por Oracle SQL Developer Data Modeler 18.4.0.339.1532
---   em:        2020-03-18 09:30:48 BRT
+--   em:        2020-04-21 22:25:16 BRT
 --   site:      Oracle Database 11g
 --   tipo:      Oracle Database 11g
 
 
+
+CREATE TABLE t_agenda (
+    age_codigo                INTEGER NOT NULL,
+    age_detalhes              CLOB,
+    age_data                  DATE,
+    age_ftpublicidade         BLOB,
+    t_estabeleci_est_codigo   INTEGER NOT NULL
+);
+
+ALTER TABLE t_agenda ADD CONSTRAINT t_agenda_pk PRIMARY KEY ( age_codigo );
 
 CREATE TABLE t_estabeleci (
     est_codigo               INTEGER NOT NULL,
@@ -107,6 +117,15 @@ CREATE TABLE t_pjuridica (
 
 ALTER TABLE t_pjuridica ADD CONSTRAINT t_pjuridica_pk PRIMARY KEY ( psj_codigo );
 
+CREATE TABLE t_presenca (
+    pre_codigo             INTEGER NOT NULL,
+    pre_status             VARCHAR2(20),
+    t_pfisica_psa_codigo   INTEGER NOT NULL,
+    t_agenda_age_codigo    INTEGER NOT NULL
+);
+
+ALTER TABLE t_presenca ADD CONSTRAINT t_presenca_pk PRIMARY KEY ( pre_codigo );
+
 CREATE TABLE t_tipoest (
     tes_codigo   INTEGER NOT NULL,
     tes_nome     VARCHAR2(60) NOT NULL
@@ -122,6 +141,10 @@ CREATE TABLE t_tipogaleria (
 
 ALTER TABLE t_tipogaleria ADD CONSTRAINT t_tipogaleria_pk PRIMARY KEY ( tga_codigo );
 
+ALTER TABLE t_agenda
+    ADD CONSTRAINT t_agenda_t_estabeleci_fk FOREIGN KEY ( t_estabeleci_est_codigo )
+        REFERENCES t_estabeleci ( est_codigo );
+
 ALTER TABLE t_estabeleci
     ADD CONSTRAINT t_estabeleci_t_pjuridica_fk FOREIGN KEY ( t_pjuridica_psj_codigo )
         REFERENCES t_pjuridica ( psj_codigo );
@@ -131,11 +154,11 @@ ALTER TABLE t_estabeleci
         REFERENCES t_tipoest ( tes_codigo );
 
 ALTER TABLE t_estgenmusical
-    ADD CONSTRAINT t_estgenmusical_t_esti_fk FOREIGN KEY ( t_estabeleci_est_codigo )
+    ADD CONSTRAINT t_estgenmusica_fk FOREIGN KEY ( t_estabeleci_est_codigo )
         REFERENCES t_estabeleci ( est_codigo );
 
 ALTER TABLE t_estgenmusical
-    ADD CONSTRAINT t_estgenmusical_t_genl_fk FOREIGN KEY ( t_genmusical_gmu_codigo )
+    ADD CONSTRAINT t_estgenmusicall_fk FOREIGN KEY ( t_genmusical_gmu_codigo )
         REFERENCES t_genmusical ( gmu_codigo );
 
 ALTER TABLE t_galeriaest
@@ -158,13 +181,21 @@ ALTER TABLE t_pfisica
     ADD CONSTRAINT t_pfisica_t_pjuridica_fk FOREIGN KEY ( t_pjuridica_psj_codigo )
         REFERENCES t_pjuridica ( psj_codigo );
 
+ALTER TABLE t_presenca
+    ADD CONSTRAINT t_presenca_t_agenda_fk FOREIGN KEY ( t_agenda_age_codigo )
+        REFERENCES t_agenda ( age_codigo );
+
+ALTER TABLE t_presenca
+    ADD CONSTRAINT t_presenca_t_pfisica_fk FOREIGN KEY ( t_pfisica_psa_codigo )
+        REFERENCES t_pfisica ( psa_codigo );
+
 
 
 -- Relatório do Resumo do Oracle SQL Developer Data Modeler: 
 -- 
--- CREATE TABLE                             9
+-- CREATE TABLE                            11
 -- CREATE INDEX                             1
--- ALTER TABLE                             17
+-- ALTER TABLE                             22
 -- CREATE VIEW                              0
 -- ALTER VIEW                               0
 -- CREATE PACKAGE                           0

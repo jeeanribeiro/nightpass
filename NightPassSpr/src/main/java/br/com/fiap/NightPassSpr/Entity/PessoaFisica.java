@@ -16,6 +16,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -135,6 +136,10 @@ public class PessoaFisica implements Serializable {
 	
 	@Column(name="psa_tipousuario", nullable=false, length=20)
 	private String tipoUsuario;
+	
+	@OneToMany(mappedBy = "prePessoaFisica", fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
+	private List<Presenca> psaPresenca;
+	
 
 //	@OneToOne(cascade = {CascadeType.REFRESH}
 //    , fetch = FetchType.EAGER)
@@ -473,6 +478,16 @@ public class PessoaFisica implements Serializable {
 		this.pJuridicas = pJuridica;
 	}
 
+	public List<Presenca> getPsaPresenca() {
+		return psaPresenca;
+	}
+
+	public void setPsaPresenca(List<Presenca> psaPresenca) {
+		this.psaPresenca = psaPresenca;
+	}
+
+	
+	
 	/*
 	 * public List<PFGestor> getPfGestor() { return pfGestor; }
 	 * 

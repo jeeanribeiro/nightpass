@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9EDC61BB-CC24-3BD3-4DE1-A316C4474EDC" name="T_Presenca">
+<createdBy>User</createdBy>
+<createdTime>2020-04-22 01:05:30 UTC</createdTime>
+<generatorID>78E660C6-E271-4CCA-A1AC-99373F9EE71E</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="pre_codigo" id="3C5E6C76-241D-402F-9813-A463601F57A3">
+<createdBy>User</createdBy>
+<createdTime>2020-04-22 01:05:30 UTC</createdTime>
+<generatorID>AC1D5612-FF2E-A2DF-C6E7-B6E9E15AF544</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pre_status" id="198DAB1F-6402-1098-AE8A-E7C79083582D">
+<createdBy>User</createdBy>
+<createdTime>2020-04-22 01:05:30 UTC</createdTime>
+<generatorID>617ACA37-B3DE-F282-D797-76AB3EA1A8F9</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="T_PFisica_psa_codigo" id="588BCF2F-1D4A-BEE7-9E8D-AF16F8750B0B">
+<createdBy>User</createdBy>
+<createdTime>2020-04-22 01:05:30 UTC</createdTime>
+<generatorID>C6579984-3307-0129-18FC-2C09D205A844</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0325D0F4-669E-3536-D3BB-94E4AC6C40DE" referredColumn="881A7545-9FB9-A8A1-70B6-C7534E0645E4"/>
+</associations>
+</Column>
+<Column name="T_Agenda_age_codigo" id="270471EC-1B94-9A80-28E3-FD6B4A49D02A">
+<createdBy>User</createdBy>
+<createdTime>2020-04-22 01:05:30 UTC</createdTime>
+<generatorID>E2AC9C86-F665-9DF3-FEBE-A47FED8E9132</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="18243BE0-51FB-5B18-8930-6C486C9E304E" referredColumn="5E4F9A42-2D85-C84A-A5E1-20D1D334DADE"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CD14A3C2-3102-EAB2-B781-2BC260A80781" name="T_Presenca_PK">
+<createdBy>User</createdBy>
+<createdTime>2020-04-22 01:05:30 UTC</createdTime>
+<generatorID>A01C2F81-5055-5302-B1C1-6A2560BD1B0F</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3C5E6C76-241D-402F-9813-A463601F57A3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="163FA6FF-39D4-6AF9-7F3F-FC3AF6AAD463" name="T_Presenca_T_Agenda_FK">
+<createdBy>User</createdBy>
+<createdTime>2020-04-22 01:05:30 UTC</createdTime>
+<generatorID>EB68C5DB-A21F-1177-8491-3CC68C286CC1</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="270471EC-1B94-9A80-28E3-FD6B4A49D02A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A50C6E72-EC1C-B3CC-8A99-5111A613C03E" name="T_Presenca_T_PFisica_FK">
+<createdBy>User</createdBy>
+<createdTime>2020-04-22 01:05:30 UTC</createdTime>
+<generatorID>B93C5665-CF1E-F9A5-12DC-D89268F4596E</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="588BCF2F-1D4A-BEE7-9E8D-AF16F8750B0B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

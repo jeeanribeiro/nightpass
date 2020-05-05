@@ -2,6 +2,7 @@ package br.com.fiap.NightPassSpr.controller;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,8 @@ public class PainelPrincipalController {
 	public String carregarListaEstabelecimentos(Model model) throws SQLException {
 		
 		List <Estabelecimento> lEstabelecimentos =  estabelecimentoDao.listar();
+		
+			Collections.sort(lEstabelecimentos);
 		
 			model.addAttribute("estabelecimentos", lEstabelecimentos);
 			

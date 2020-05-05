@@ -12,6 +12,10 @@
 		<!-- usar validate apenas se não for necessário alterar as tabelas
 		caso contrário usar update -->
 		
+		<!-- Obs. quando criar colunas na base de dados o validate não irá funcionar
+		no início primeiro é necessário o update -->
+		
+		
 		<property name="hibernate.hbm2ddl.auto" value="validate"/>
 		<property name="hibernate.show_sql" value="true" />
 		<property name="hibernate.format_sql" value="true" />
@@ -24,33 +28,32 @@
 			<property name="javax.persistence.jdbc.driver" 
                               value="oracle.jdbc.OracleDriver" />
 
-
+ 			<!--  
 			<property name="javax.persistence.jdbc.user" value="rm82296" />
 			<property name="javax.persistence.jdbc.password" value="281180" />
 			<property name="javax.persistence.jdbc.url"
 			    value="jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl" />
+			-->
 
 
- 			<!--    
 			<property name="javax.persistence.jdbc.user" value="system" />
 			<property name="javax.persistence.jdbc.password" value="fiaporacle2" />
 			<property name="javax.persistence.jdbc.url"
 			    value="jdbc:oracle:thin:@localhost:1521:xe" />
-			-->
-
-
-			<!-- Connection Pool -->
-			<!-- Número mínimo de conexões  -->
+			
+			<!-- Connection Pool  
+			Número mínimo de conexões -->
 			<property name="hibernate.c3p0.min_size" value="5" />
-			<!-- Número máximo de conexões  -->
+<!-- 			Número máximo de conexões  -->
 			<property name="hibernate.c3p0.max_size" value="200" />
-			<!-- Tempo de timeout, remoção da conexão do pool -->
+<!-- 			Tempo de timeout, remoção da conexão do pool -->
 			<property name="hibernate.c3p0.timeout" value="2000" />
-			<!-- Comandos em cache para aumento de performance -->
-			<property name="hibernate.c3p0.max_statements" value="50" />
-			<!-- Tempo para uma conexão ser validada automaticamente -->
+<!-- 			Comandos em cache para aumento de performance -->
+			<property name="hibernate.c3p0.max_statements" value="3000" />
+<!-- 			Tempo para uma conexão ser validada automaticamente -->
 			<property name="hibernate.c3p0.idle_test_period" 
                               value="2000" />
+                              
 		
 	</properties>
 	</persistence-unit>

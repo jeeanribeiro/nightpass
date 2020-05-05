@@ -39,7 +39,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 @Table(name="T_ESTABELECI")
-public class Estabelecimento implements Serializable {
+public class Estabelecimento implements Serializable, Comparable<Estabelecimento>	{
 
 	private static final long serialVersionUID = 1L;
 
@@ -47,7 +47,6 @@ public class Estabelecimento implements Serializable {
 	@SequenceGenerator(name="Seq_T_Estabeleci", sequenceName="Seq_T_Estabeleci", allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "Seq_T_Estabeleci")
 	@Column(name="est_codigo", nullable=false)
-
 	private long estcodigo;
 	
 	@Lob
@@ -84,6 +83,11 @@ public class Estabelecimento implements Serializable {
 	inverseJoinColumns = @JoinColumn(name="T_GENMUSICAL_GMU_CODIGO"),
 	name="T_ESTGENMUSICAL")
 	private List<GeneroMusical> generoMusical;
+	
+	
+	@OneToMany(mappedBy = "EstabelecimentoAge", fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
+	private List<Agenda> AgendaEst;
+	
 	
 	public Estabelecimento() {
 		super();
@@ -177,6 +181,15 @@ public class Estabelecimento implements Serializable {
 		this.generoMusical = generoMusical;
 	}
 	
+
+	public List<Agenda> getAgendaEst() {
+		return AgendaEst;
+	}
+
+	public void setAgendaEst(List<Agenda> agendaEst) {
+		AgendaEst = agendaEst;
+	}
+
 	public GaleriaEst getGaleriaEstporTipo(TipoGaleria tipoGaleria) {
 		
 		List <GaleriaEst> galeriaEstVer = this.getGaleriaEst();
@@ -198,6 +211,15 @@ public class Estabelecimento implements Serializable {
 		}
 		
 		return null;
+		
+	}
+
+	@Override
+	public int compareTo(Estabelecimento compareEst) {
+		
+		long comparecodigo = compareEst.getEstcodigo();
+		
+		return (int) (this.estcodigo-comparecodigo);
 		
 	}
 	

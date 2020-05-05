@@ -46,11 +46,11 @@ public class GaleriaEst implements Serializable{
 	@Column(name="gae_codigo", nullable = false)
 	private long gaecodigo;
 	
-	@Lob
-	@Basic(fetch=FetchType.LAZY)
-	@Column(name="gae_foto", nullable = false)
-	//private Blob gaefoto;
-	private byte[] gaefoto;
+//	@Lob
+//	@Basic(fetch=FetchType.LAZY)
+//	@Column(name="gae_foto", nullable = false)
+//	//private Blob gaefoto;
+//	private byte[] gaefoto;
 	
 		
 	@ManyToOne
@@ -63,6 +63,10 @@ public class GaleriaEst implements Serializable{
 	@JsonBackReference(value="galeriaEst")
 	private Estabelecimento gae_est_codigo;
 	
+	
+	@Column(name="GAE_ENDSERVIDOR", nullable = true)
+	private String gae_EndServidor;
+	
 	@JsonIgnore
 	@Transient
 	private String gaeFotoExibivel = new String();
@@ -73,11 +77,11 @@ public class GaleriaEst implements Serializable{
 		
 	}
 
-	public String getGaeFotoExibivel() {
-		
-		return Base64.getEncoder().encodeToString(this.gaefoto);
-		
-	}
+//	public String getGaeFotoExibivel() {
+//		
+//		return Base64.getEncoder().encodeToString(this.gaefoto);
+//		
+//	}
 
 	public void setGaeFotoExibivel() {
 		
@@ -98,21 +102,29 @@ public class GaleriaEst implements Serializable{
 	public void setGae_est_codigo(Estabelecimento gae_est_codigo) {
 		this.gae_est_codigo = gae_est_codigo;
 	}
-
-	public byte[] getGaefoto() {
-		return gaefoto;
-	}
-
-	public void setGaefoto(byte[] gaefoto) {
-		this.gaefoto = gaefoto;
-	}
-
+//
+//	public byte[] getGaefoto() {
+//		return gaefoto;
+//	}
+//
+//	public void setGaefoto(byte[] gaefoto) {
+//		this.gaefoto = gaefoto;
+//	}
+//
 	public long getGaecodigo() {
 		return gaecodigo;
 	}
 
 	public void setGaecodigo(long gaecodigo) {
 		this.gaecodigo = gaecodigo;
+	}
+
+	public String getGae_EndServidor() {
+		return gae_EndServidor;
+	}
+
+	public void setGae_EndServidor(String gae_EndServidor) {
+		this.gae_EndServidor = gae_EndServidor;
 	}
 	
 	

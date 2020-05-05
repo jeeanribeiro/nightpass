@@ -20,7 +20,10 @@ jsProprio="Ajustar">
 	<c:forEach items="${galeriaEstAtu}" var="r">
 		<h1 class="fontelabel">_________________________________________________________</h1><br>
 		<h1 class="fontelabel">${r.getGae_tga_codigo().getTganome()}</h1><p>
+		<%--
 		<img class='establishment-image' src="data:image/jpg;base64,${r.getGaeFotoExibivel()}" alt=""/>
+		 --%>
+		
 	</c:forEach>
 
 </tags:template>
