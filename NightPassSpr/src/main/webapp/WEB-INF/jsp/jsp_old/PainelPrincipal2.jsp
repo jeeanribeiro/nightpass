@@ -29,18 +29,17 @@
 	  		<form:form action="${conta}" method="get">
 		    <h1><input class='profile' type="submit" value="sua conta"></h1>
 		    </form:form>
-            
-      <!-- Neste Formulário é aberto o painel de Gestor e carregadas as PJ vinculadas 
+
+      <!-- Neste Formulário é aberto o painel de Gestor e carregadas as PJ vinculadas
       ao gestor -->
-      
-      
+
      <c:url value="/buscarTodasPJGestor" var="action" />
 	 <form:form action="${action }" method="get">
-      
+
      <h1><input class='profile' type="submit" value="Acesso Gestor"></h1>
-      
+
      </form:form>
-      
+
       <div id='navMenu'>
         <a class='sign-out' href='/NightPassSpr/signout'><i class="fas fa-power-off"></i></a>
       </div>
@@ -52,41 +51,40 @@
 <c:forEach items="${estabelecimentos}" var="l" >
 
 	<!-- Inicio bloco de estabelecimento -->
-	
+
 	<%--Inicia a variável fachada que contem a foto padrão de estabelecimento --%>
 	<c:set var="fachada" value="resources/imgs/EstabelecimentoSemFoto.jpg"/>
-	
+
     <div class='establishment'>
-      
+
       <c:set var="codigoest" value="${l.estcodigo}"/>
-            
+
       <div class="establishment-image-button">
-      
+
 <!--       	Atualmente apenas a primeira fotografia do estabelecimento é carregada -->
-      	 
+
       	<c:forEach items="${l.getGaleriaEst()}" var="g" end="0">
-		
+
 		<%-- <c:set var="fachada" value="data:image/jpg;base64,${g.getGaeFotoExibivel()}"/> --%>
-		
+
 		<c:url value="${g.gae_EndServidor}" var="fachada"/>
-		
+
 		</c:forEach>
 		<img class='establishment-image' src="${fachada}" alt="" width="300" height="255"/>
-				
+
 		<c:url value="/agenda/${l.estcodigo}" var="agenda" />
 		<form:form action="${agenda}" method="get">
 			<button class="establishment-goto" type="submit">Agenda</button>
 		</form:form>
       </div>
-      
-      
+
       <div class="establishment-info">
         <h4 class="establishment-title">${l.getPSJ_CODIGO().getPsjNome()}</h4>
         <p class="establishment-description">${l.getEstDescricao()}</p>
         <div class="establishment-time-distance">
           <span class="establishment-time-range"><i class="far fa-clock"></i>
           <fmt:formatDate pattern = "HH:mm" value = "${l.estAbertura.getTime()}" />
-           - 
+           -
           <fmt:formatDate pattern = "HH:mm" value = "${l.estFechamento.getTime()}" />
           </span>
           <span class="establishment-distance"><i class="fas fa-map-marker-alt"></i>7.2km</span>
@@ -94,9 +92,8 @@
       </div>
     </div>
 	<!-- Fim bloco de estabelecimento -->
-
 </c:forEach>
-    
+
 </section>
 </body>
 </html>

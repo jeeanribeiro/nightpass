@@ -29,7 +29,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 @Table(name="T_PJURIDICA")
 //@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "psjCodigo")
 public class PJuridica implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -37,9 +37,9 @@ public class PJuridica implements Serializable {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "Seq_T_PJuridica")
 	@Column(name="PSJ_CODIGO", nullable=false)
 	private long psjCodigo;
-	
+
 	@Column(name="PSJ_NOME", nullable=false, length=100)
-	private String psjNome; 
+	private String psjNome;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="PSJ_DTFUNDACAO", nullable=true)
@@ -80,20 +80,20 @@ public class PJuridica implements Serializable {
 
 	@Column(name="PSJ_CIDADECOM", nullable=false, length=30)
 	private String psjCidadeCom;
-	
+
 	@Column(name="PSJ_APELIDO", nullable=true, length=30)
 	private String psjApelido;
 
 //	@OneToMany(mappedBy = "pJuridica")
 //	private List<PFGestor> pfGestor;
-	
+
 	@ManyToMany(mappedBy="pJuridicas", fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
 	private List<PessoaFisica> pessoaFisicas;
 
 	@JsonManagedReference(value="estabelecimento")
 	@OneToOne(mappedBy = "PSJ_CODIGO")
 	private Estabelecimento estabelecimento;
-	
+
 	public PJuridica() {
 		super();
 	}

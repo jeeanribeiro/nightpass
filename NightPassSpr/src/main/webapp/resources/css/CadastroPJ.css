@@ -1,17 +1,15 @@
 html, body {
-  align-items: center;
-  backdrop-filter: blur(2px) brightness(50%);
-  background-image: url("imgs/background-club.jpg");
-  background-size: cover;
-  display: flex;
-  justify-content: center;
+	align-items: center;
+	backdrop-filter: blur(2px) brightness(50%);
+	background-image: url("imgs/background-club.jpg");
+	background-size: cover;
+	display: flex;
+	justify-content: center;
 }
 
 header{
 	display:inline;
 }
-
-
 
 #signUpContainer {
   background: #222;
@@ -41,7 +39,6 @@ header{
 #signUpContainer #signUpForm button:hover {
   background: #b8005f;
 }
-
 
 .destaque1{
 	color: purple;

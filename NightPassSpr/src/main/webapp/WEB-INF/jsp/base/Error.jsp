@@ -7,8 +7,6 @@
 <title>Erro</title>
 </head>
 <body>
-
 Ocorreu um erro, página não disponível!
-
 </body>
 </html>

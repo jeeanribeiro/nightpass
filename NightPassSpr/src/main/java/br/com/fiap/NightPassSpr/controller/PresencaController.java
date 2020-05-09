@@ -23,43 +23,34 @@ import br.com.fiap.NightPassSpr.Entity.Presenca;
 @Controller
 @RequestMapping("/presenca")
 public class PresencaController {
-	
+
 	@Autowired
 	private PresencaDAO presencaDao;
 
 	@Autowired
 	private HttpSession session;
-	
+
 	@Autowired
 	private EstabelecimentoDAO estabelecimentoDAO;
-	
+
 	PessoaFisica usuarioLog;
-	
+
 	@Transactional
 	@PostMapping()
 	public String alterarPresenca(Presenca Presenca, Model model,
 			@RequestParam("Estcodigo") long Estcodigo){
-		
+
 		usuarioLog = (PessoaFisica) session.getAttribute("usuarioLog");
-		
+
 		Presenca.setPrePessoaFisica(usuarioLog);
-			
+
 		if (Presenca.getPrePessoaFisica().getCodigo() == usuarioLog.getCodigo()) {
-			
 			Presenca = presencaDao.atualizarRetEntity((Presenca));
-			
 			return "redirect:/agenda/" + Estcodigo;
-			
-		}else {
-			
+		} else {
 			return "/base/Error";
-			
-			
 		}
-		
-		
+
 	}
-	
-	
 
 }

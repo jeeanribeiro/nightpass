@@ -18,34 +18,30 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
-
-
 @Entity
 @Table(name="T_PFGESTOR")
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "rgeCodigo")
 public class PFGestor implements Serializable{
 
-	
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@SequenceGenerator(name="Seq_T_PFGestor", sequenceName="Seq_T_PFGestor", allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "Seq_T_PFGestor")
 	@Column(name="RGE_CODIGO", nullable=false)
 	private long rgeCodigo;
-	
+
 	@Column(name="RGE_PERFIL", nullable=false, length=40)
-	private String rgePerfil; 
-	
-	@JsonManagedReference	
+	private String rgePerfil;
+
+	@JsonManagedReference
 	@Column(name="T_PFISICA_PSA_CODIGO", nullable=false, length=40)
 	private long psacodigo;
-	
+
 	@JsonManagedReference
 	@Column(name="T_PJURIDICA_PSJ_CODIGO", nullable=false, length=40)
 	private long psjcodigo;
-	
-	
+
 	//@ManyToOne(cascade=CascadeType.REFRESH)
 	//@JoinColumn(name="T_PFISICA_PSA_CODIGO")
 	//private PessoaFisica pessoaFisica;
@@ -53,11 +49,9 @@ public class PFGestor implements Serializable{
 	//@ManyToOne(cascade=CascadeType.REFRESH)
 	//@JoinColumn(name="T_PJURIDICA_PSJ_CODIGO")
 	//private PJuridica pJuridica;
-	
-	
+
 	public PFGestor() {
 		super();
-
 	}
 
 	public long getRgeCodigo() {
@@ -77,14 +71,14 @@ public class PFGestor implements Serializable{
 	}
 	/*
 	 * public PessoaFisica getPessoaFisica() { return pessoaFisica; }
-	 * 
+	 *
 	 * public void setPessoaFisica(PessoaFisica pessoaFisica) { this.pessoaFisica =
 	 * pessoaFisica; }
-	 * 
+	 *
 	 * public PJuridica getpJuridica() { return pJuridica; }
-	 * 
+	 *
 	 * public void setpJuridica(PJuridica pJuridica) { this.pJuridica = pJuridica; }
-	 * 
+	 *
 	 */
 
 	public long getPsacodigo() {
@@ -102,8 +96,5 @@ public class PFGestor implements Serializable{
 	public void setPsjcodigo(long psjcodigo) {
 		this.psjcodigo = psjcodigo;
 	}
-	
-	 
-	
 
 }

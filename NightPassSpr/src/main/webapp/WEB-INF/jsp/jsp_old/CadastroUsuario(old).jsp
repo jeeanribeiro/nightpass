@@ -24,8 +24,6 @@
 <body>
 
   <section id='signUpContainer'>
-
-
     <form action="CadastroUsuarioServlet" method="post" id="signUpForm">
       <input required type="text" name="nome" placeholder="Nome" maxlength="40">
       <input required type="text" name="sobrenome" placeholder="Sobrenome" maxlength="100">

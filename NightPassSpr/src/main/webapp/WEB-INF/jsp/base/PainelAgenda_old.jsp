@@ -5,15 +5,15 @@
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<tags:template 
+<tags:template
 title="NightPass"
 cssProprio="/resources/css/PainelEstabelecimento.css"
 jsProprio="/resources/js/Agenda.js">
-	
+
 	<section id="signUpContainer">
-	
+
 	<h1 class="destaque1">${msg}</h1>
-	
+
 	<span class="principal"> Você está na agenda --> ${EstabelecimentoAtu.PSJ_CODIGO.psjNome} </span><br><br>
 
 		<table>
@@ -44,20 +44,15 @@ jsProprio="/resources/js/Agenda.js">
 					</c:forEach>
 
 					<td>
-						
 							<select name="selPresenca" id="selPresenca">
-							
 								<option value="VOU" id="statusVou"> VOU </option>
 								<option value="NÃO VOU" id="statusNaoVou">NÃO VOU </option>
 								<option value="NÃO INFORMADO" id="statusNaoInformado">NÃO INFORMADO </option>
-							
 							</select>
-					
 					<td>
 						 <form:form action="${marcar}" method="get">
 							<button class="buttonfmt" type="submit">Marcar</button>
 						</form:form>
-
 					</td>
 
 				</tr>
@@ -67,6 +62,5 @@ jsProprio="/resources/js/Agenda.js">
 		</table>
 
 	</section>
-	
 
 </tags:template>

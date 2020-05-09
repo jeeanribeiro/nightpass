@@ -3,7 +3,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
 <!DOCTYPE html>
 <html lang='pt'>
 <head>
@@ -29,23 +28,18 @@
     <h1 class='logo'>NightPass</h1>
 	<c:url value="/logar" var="action" />
 	<form:form action="${action }" method="post" commandName="pessoaFisica" id='loginForm'>
-
 	<form:input
 		  path="email"
-          type='text' 
-          name="email" 
+          type='text'
+          name="email"
           value='paula@uol.com'
-          id='login' 
+          id='login'
           placeholder='E-mail'
           pattern='/\d{3}\.\d{3}\.\d{3}\-|[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4})\w+/' />
-    
     <form:input path="senha" type='password' name="senha"
      id='password' placeholder='Senha' minlength='8' value="paulapaula"/>
-        
     <input type="submit" name="Entrar" value="Entrar">
-                
     </form:form>
-      
       <p>Não possui uma conta?
         <a href="CadastroUsuario.jsp">Cadastre-se aqui!</a>
       </p>

@@ -5,20 +5,17 @@
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<tags:template 
+<tags:template
 title="NightPass"
 cssProprio="Ajustar"
 jsProprio="Ajustar">
-	
+
 	<section id="signUpContainer">
-	
+
 	<h1 class="destaque1">${msg}</h1>
-	
-	<span class="principal"> Confirmação de Presença </span><br><br>
-	
+
+	<span class="principal">Confirmação de Presença</span><br><br>
 		<h1></h1>
-	
 	</section>
-	
 
 </tags:template>

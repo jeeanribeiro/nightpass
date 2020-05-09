@@ -15,13 +15,9 @@ public class AgendaDAOImpl extends GenericDAOImpl<Agenda, Long> implements
 	}
 
 	public List<Agenda> listarAgendaEst(long EstCodigo){
-		
-		return em.createQuery("from Agenda Where T_Estabeleci_Est_Codigo = " + EstCodigo  
+		return em.createQuery("from Agenda Where T_Estabeleci_Est_Codigo = " + EstCodigo
 				+ "Order by age_data", Agenda.class)
 				.getResultList();
-		
 	}
-	
-	
-	
+
 }

@@ -29,18 +29,18 @@
 	  		<form:form action="${conta}" method="get">
 		    <h1><input class='profile' type="submit" value="sua conta"></h1>
 		    </form:form>
-            
-      <!-- Neste Formulário é aberto o painel de Gestor e carregadas as PJ vinculadas 
+
+      <!-- Neste Formulário é aberto o painel de Gestor e carregadas as PJ vinculadas
       ao gestor -->
-      
-      
+
+
      <c:url value="/buscarTodasPJGestor" var="action" />
 	 <form:form action="${action }" method="get">
-      
+
      <h1><input class='profile' type="submit" value="Acesso Gestor"></h1>
-      
+
      </form:form>
-      
+
       <div id='navMenu'>
         <a class='sign-out' href='/NightPassSpr/signout'><i class="fas fa-power-off"></i></a>
       </div>
@@ -52,9 +52,9 @@
 <c:forEach items="${estabelecimentos}" var="l" >
 
 	<!-- Inicio bloco de estabelecimento -->
-	
+
 	<c:set var="fachada" value="resources/imgs/EstabelecimentoSemFoto.jpg"/>
-	
+
     <div class='establishment'>
       <div class="establishment-image-button">
       	<c:forEach items="${galeria}" var="g">
@@ -75,7 +75,7 @@
         <div class="establishment-time-distance">
           <span class="establishment-time-range"><i class="far fa-clock"></i>
           <fmt:formatDate pattern = "HH:mm" value = "${l.estAbertura.getTime()}" />
-           - 
+           -
           <fmt:formatDate pattern = "HH:mm" value = "${l.estFechamento.getTime()}" />
           </span>
           <span class="establishment-distance"><i class="fas fa-map-marker-alt"></i>7.2km</span>
@@ -85,7 +85,7 @@
 	<!-- Fim bloco de estabelecimento -->
 
 </c:forEach>
-    
+
 </section>
 </body>
 </html>

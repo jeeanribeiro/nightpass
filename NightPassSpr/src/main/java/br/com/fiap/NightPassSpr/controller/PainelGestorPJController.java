@@ -15,34 +15,25 @@ import br.com.fiap.NightPassSpr.Entity.PessoaFisica;
 
 @Controller
 public class PainelGestorPJController {
-	
-	
+
 	@Autowired
 	private PFisicaDAO dao;
-	
+
 	@Autowired
 	private HttpSession session;
-	
+
 	PessoaFisica usuarioLog = new PessoaFisica();
-	
+
 	@Transactional
-	@GetMapping("/buscarTodasPJGestor") 
+	@GetMapping("/buscarTodasPJGestor")
 	public String buscarTodasPJGestor (Model model) {
-
 		usuarioLog = (PessoaFisica) session.getAttribute("usuarioLog");
-		
+
 		usuarioLog = dao.buscar(usuarioLog.getCodigo());
-		
+
 		session.setAttribute("usuarioLog", usuarioLog);
-		
 
-		
 		return "base/PainelGestorPJ";
-		
-		
 	}
-
-
-	
 
 }

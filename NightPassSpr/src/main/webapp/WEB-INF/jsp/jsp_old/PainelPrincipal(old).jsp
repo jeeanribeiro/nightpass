@@ -27,20 +27,18 @@
 		    <input type="hidden" name="acao" value="conta">
 		    <h1><input class='profile' type="submit" value="sua conta"></h1>
       </form>
-      
-      <!-- Neste Formulário é aberto o painel de Gestor e carregadas as PJ vinculadas 
+
+      <!-- Neste Formulário é aberto o painel de Gestor e carregadas as PJ vinculadas
       ao gestor -->
-      
+
       <form action="GestorPJServlet" method="post">
       <!-- <h1><input class='profile' type="button" onclick="window.location.href='PainelGestorPJ.jsp'" value="acesso gestor"></h1> -->
-      
       		<input type="hidden" name="acao" value="listarPJdoGestor">
 		    <h1><input class='profile' type="submit" value="Acesso Gestor"></h1>
-      
       </form>
-      
-      
-      
+
+
+
       <div id='navMenu'>
         <a class='sign-out' href='LoginUsuario.jsp'><i class="fas fa-power-off"></i></a>
       </div>

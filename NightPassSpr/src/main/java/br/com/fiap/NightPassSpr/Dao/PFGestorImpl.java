@@ -14,14 +14,12 @@ public class PFGestorImpl extends GenericDAOImpl<PFGestor, Long>
 
 	public PFGestorImpl() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-	
+
 	public List<PFGestor> listarPorGestorPJ(PJuridica pjuridica, PessoaFisica pfisica){
 		return em.createQuery("from PFGestor p Where "
 				+ "p.psjcodigo = " + pjuridica.getPsjCodigo() + " And " +
 				"p.psacodigo = " + pfisica.getCodigo(), PFGestor.class).getResultList();
 	}
-	
-	
+
 }

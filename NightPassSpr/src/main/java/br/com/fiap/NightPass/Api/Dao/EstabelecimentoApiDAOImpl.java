@@ -7,13 +7,11 @@ import javax.persistence.EntityManager;
 import br.com.fiap.NightPassSpr.Entity.Estabelecimento;
 
 
-public class EstabelecimentoApiDAOImpl extends GenericApiDAOImpl<Estabelecimento, Long> 
+public class EstabelecimentoApiDAOImpl extends GenericApiDAOImpl<Estabelecimento, Long>
 			implements EstabelecimentoApiDAO {
-
 
 	public EstabelecimentoApiDAOImpl(EntityManager em) {
 		super(em);
-		// TODO Auto-generated constructor stub
 	}
 
 	public List<Estabelecimento> listarPorNome() {

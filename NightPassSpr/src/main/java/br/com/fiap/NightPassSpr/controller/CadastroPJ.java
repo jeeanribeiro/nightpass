@@ -23,67 +23,61 @@ import br.com.fiap.NightPassSpr.Entity.PFGestor;
 import br.com.fiap.NightPassSpr.Entity.PJuridica;
 import br.com.fiap.NightPassSpr.Entity.PessoaFisica;
 
-
-
 @Controller
 @RequestMapping("/cadastropj")
 public class CadastroPJ {
 
 	@Autowired
 	PJuridicaDAO pJuridicaDao;
-	
+
 	@Autowired
 	PFGestorDAO pfGestorDao;
-	
+
 	@Autowired
 	PFisicaDAO pFisicaDao;
-	
+
 	@Autowired
 	private HttpSession session;
-	
+
 	PessoaFisica usuarioLog = new PessoaFisica();
-	
-	
-	
+
 	@GetMapping()
 	public String cadastroPJ(@Valid PJuridica pJuridicaNova, BindingResult bindingResult,
 			RedirectAttributes RAttr, Model model){
-		
+
 		model.addAttribute("action", "cadastropj/cadastrarNovaPJ");
-		
+
 		return "base/CadastroPJ";
-		
 	}
-	
+
 	@Transactional(propagation=Propagation.REQUIRED)
-	@PostMapping("cadastrarNovaPJ") 
+	@PostMapping("cadastrarNovaPJ")
 	public String cadastrarNovaPJ(@Valid PJuridica pJuridicaNova, BindingResult bindingResult,
 			RedirectAttributes RAttr, Model model) {
 
 			RAttr.addFlashAttribute("msg","Pessoa Jurídica cadastrada com sucesso");
-			
+
 			//codigo para gravar nova PJ
-			
+
 			usuarioLog = (PessoaFisica) session.getAttribute("usuarioLog");
-			
+
 			pJuridicaDao.cadastrar(pJuridicaNova);
-			
+
 			//associa a PJ juridica ao usuário atual como PROPRIETÁRIO
-			
+
 			PFGestor pfGestor = new PFGestor();
-			
+
 			pfGestor.setPsacodigo(usuarioLog.getCodigo());
 			pfGestor.setPsjcodigo(pJuridicaNova.getPsjCodigo());
 			pfGestor.setRgePerfil("PROPRIETARIO");
-			
+
 			model.addAttribute("msg", "Pessoa Jurídica Cadastrada com Sucesso");
-			
+
 			pfGestorDao.cadastrar(pfGestor);
-			
+
 			pfGestorDao.flush();
-			
+
 			return "base/CadastroPJ";
-		
 	}
-	
+
 }

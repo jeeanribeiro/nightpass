@@ -33,13 +33,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
-
-
 @Entity
 @Table(name="T_PFisica")
 //@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "codigo")
 public class PessoaFisica implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -47,117 +45,116 @@ public class PessoaFisica implements Serializable {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="pessoaFisica")
 	@Column(name="psa_codigo")
 	private long codigo;
-	
+
 	@Column(name="psa_nome", nullable=false, length=40)
 	private String nome;
-	
+
 	@Column(name="psa_sobrenome", nullable=false, length=100)
 	private String sobrenome;
-	
+
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name="psa_dtnascimento", nullable=false)
 	private Calendar dataNasc;
-	
+
 	@Column(name="psa_RG", nullable=false, length=15)
 	private String rg;
-	
+
 	@Column(name="psa_RGOrgaoEmissor", nullable=false, length=15)
 	private String rgOrgaoEmissor;
-	
+
 	@Column(name="psa_RGEstadoEmissor", nullable=false, length=15)
 	private String rgEstadoEmissor;
-	
+
 	@Column(name="psa_CPF", nullable=false, length=11)
 	private long cpf;
-	
+
 	@Column(name="psa_Sexo", nullable=false, length=1)
 	private String sexo;
-	
+
 	@Column(name="psa_cdProfissao")
 	private Integer cdProfissao;
-	
+
 	@Column(name="psa_email", nullable=false, length=100)
 	private String email;
-	
+
 	@Column(name="psa_senha", nullable=false, length=40)
 	private String senha;
-	
+
 	@Column(name="psa_TelResidencial")
 	private long telResidencial;
-	
+
 	@Column(name="psa_TelComercial")
 	private long telComercial;
-	
+
 	@Column(name="psa_TelCelular", nullable=false, length=15)
 	private long telCelular;
-	
+
 	@Column(name="psa_CepRes")
 	private int cepRes;
-	
+
 	@Column(name="psa_EnderecoRes")
 	private String enderecoRes;
-	
+
 	@Column(name="psa_NumeroRes")
 	private Integer numeroRes;
-	
+
 	@Column(name="psa_ComplementoRes")
 	private String complementoRes;
-	
+
 	@Column(name="psa_BairroRes")
 	private String bairroRes;
-	
+
 	@Column(name="psa_CidadeRes")
 	private String cidadeRes;
-	
+
 	@Column(name="psa_EstadoRes")
 	private String estadoRes;
-	
+
 	@Column(name="psa_CepCom")
 	private int cepCom;
-	
+
 	@Column(name="psa_EnderecoCom")
 	private String enderecoCom;
-	
+
 	@Column(name="psa_numeroCom")
 	private Integer numeroCom;
-	
+
 	@Column(name="psa_ComplementoCom")
 	private String complementoCom;
-	
+
 	@Column(name="psa_BairroCom")
 	private String bairroCom;
-	
+
 	@Column(name="psa_CidadeCom")
 	private String cidadeCom;
-	
+
 	@Column(name="psa_EstadoCom")
 	private String estadoCom;
-	
+
 	@Column(name="psa_tipousuario", nullable=false, length=20)
 	private String tipoUsuario;
-	
+
 	@OneToMany(mappedBy = "prePessoaFisica", fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
 	private List<Presenca> psaPresenca;
-	
 
 //	@OneToOne(cascade = {CascadeType.REFRESH}
 //    , fetch = FetchType.EAGER)
 //	@JoinColumn(name="T_PJURIDICA_PSJ_CODIGO")
 //	private PJuridica PSJ_CODIGO;
-	
+
 //	@OneToMany(mappedBy = "pessoaFisica", fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
 //	private List< PFGestor > pfGestor;
-	
+
 	@ManyToMany(cascade=CascadeType.REFRESH, fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
 	@JoinTable(joinColumns=@JoinColumn(name="T_PFISICA_PSA_CODIGO"),
 	inverseJoinColumns = @JoinColumn(name="T_PJURIDICA_PSJ_CODIGO"),
 	name="T_PFGESTOR")
 	private List<PJuridica> pJuridicas;
-	
+
 	@Transient
 	private boolean loginValidado = false;
-	
+
 	public PessoaFisica() {
 		super();
 	}
@@ -237,8 +234,7 @@ public class PessoaFisica implements Serializable {
 	public void setDataNasc(Date dataNasc) {
 		this.dataNasc.setTime(dataNasc);
 	}
-	
-	
+
 	public String getRg() {
 		return rg;
 	}
@@ -449,14 +445,14 @@ public class PessoaFisica implements Serializable {
 
 	/*
 	 * public PJuridica getPSJ_CODIGO() { return PSJ_CODIGO; }
-	 * 
+	 *
 	 * public void setPSJ_CODIGO(PJuridica pSJ_CODIGO) { PSJ_CODIGO = pSJ_CODIGO; }
 	 */
 	public String getDtNascimentoFmt() {
 		SimpleDateFormat DtFormat = new SimpleDateFormat("yyyy-MM-dd");
 		return DtFormat.format(this.dataNasc.getTime());
 	}
-	
+
 	public boolean ValidarSenha(String SenhaUsuario) {
 		if (SenhaUsuario.equals(this.senha)) {
 			this.loginValidado = true;
@@ -486,15 +482,10 @@ public class PessoaFisica implements Serializable {
 		this.psaPresenca = psaPresenca;
 	}
 
-	
-	
 	/*
 	 * public List<PFGestor> getPfGestor() { return pfGestor; }
-	 * 
+	 *
 	 * public void setPfGestor(List<PFGestor> pfGestor) { this.pfGestor = pfGestor;
 	 * }
-	 */	
-	
-	
-	
+	 */
 }
