@@ -12,13 +12,13 @@ jsProprio="/resources/js/Agenda.js">
 	
 	<h1 class="destaque1">${msg}</h1>
 
-	<span class="principal"> Você está na agenda --> ${EstabelecimentoAtu.PSJ_CODIGO.psjNome} </span><br><br>
+	<span class="principal"> Vocï¿½ estï¿½ na agenda --> ${EstabelecimentoAtu.PSJ_CODIGO.psjNome} </span><br><br>
 
 		<table>
 			<tr style="color: red">
 				<th>DATA / ABERTURA</th>
-				<th>DESCRIÇÃO</th>
-				<th>PRESENÇA</th>
+				<th>DESCRIï¿½ï¿½O</th>
+				<th>PRESENï¿½A</th>
 			</tr>
 
 			<c:forEach var="n" items="${PresencaVer}">
@@ -42,9 +42,9 @@ jsProprio="/resources/js/Agenda.js">
 							</form>
 
 							<form action="${action}" name="formbt" method="POST">
-							<input type="hidden" name="status" value="NÃO QUERO IR"/>
+							<input type="hidden" name="status" value="Nï¿½O QUERO IR"/>
 							<input type="hidden" name="precodigo" value="${n.preCodigo}"/>
-							<input type="submit" name="btnstatus" value="NÃO QUERO IR">
+							<input type="submit" name="btnstatus" value="Nï¿½O QUERO IR">
 							</form>
 
 							</div>

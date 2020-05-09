@@ -77,7 +77,7 @@ public class PFGestor implements Serializable{
 	 
 	/*
 	 * public PJuridica getpJuridica() { return pJuridica; }
-	 * 
+	 *
 	 * public void setpJuridica(PJuridica pJuridica) { this.pJuridica = pJuridica; }
 	 */	 
 	public long getPsacodigo() {

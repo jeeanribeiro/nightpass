@@ -23,7 +23,7 @@
       <input required type="text" name="sobrenome" placeholder="Sobrenome" maxlength="100">
       <input required type="date" name="dtNascimento" placeholder="Data de nascimento">
       <input required type="tel" name="rg" placeholder="RG" maxlength="15">
-      <input required type="text" name="rgOrgaoEmissor" id="rgEmitter" placeholder="Orgão emissor" maxlength="15">
+      <input required type="text" name="rgOrgaoEmissor" id="rgEmitter" placeholder="Orgï¿½o emissor" maxlength="15">
       <select id="rgEstado" name="rgEstado">
         <option value="AC">AC</option>
         <option value="AL">AL</option>
@@ -60,7 +60,7 @@
         <option value="O">Outros</option>
       </select>
       <input required type="email" name="email" placeholder="E-mail" maxlength="100">
-      <input required type="tel" name="telCelular" placeholder="Número do celular" maxlength="15">
+      <input required type="tel" name="telCelular" placeholder="Nï¿½mero do celular" maxlength="15">
       <input required type="password" name="senha" placeholder="Senha" minlength="8" maxlength="40">
       <input required type="password" name="confirmarSenha" placeholder="Confirmar senha" minlength="8" maxlength="40">
       <input type="hidden" name="acao" value="cadUsuario">

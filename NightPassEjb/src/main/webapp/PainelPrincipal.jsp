@@ -21,14 +21,14 @@
   <header>
     <nav>
       <div class='logo'>NightPass</div>
-      <div class='logo'>Olá  ${PFisicalog.nome} </div>
+      <div class='logo'>Olï¿½  ${PFisicalog.nome} </div>
 
       <form action="CadastroUsuarioServlet" method="post">
 		    <input type="hidden" name="acao" value="conta">
 		    <h1><input class='profile' type="submit" value="sua conta"></h1>
       </form>
       
-      <!-- Neste Formulário é aberto o painel de Gestor e carregadas as PJ vinculadas 
+      <!-- Neste Formulï¿½rio ï¿½ aberto o painel de Gestor e carregadas as PJ vinculadas 
       ao gestor -->
       
       <form action="GestorPJServlet" method="post">
