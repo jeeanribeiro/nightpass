@@ -37,18 +37,20 @@ public class PresencaController {
 	
 	@Transactional
 	@PostMapping()
-	public String alterarPresenca(Presenca Presenca, Model model,
-			@RequestParam("Estcodigo") long Estcodigo){
+	public String alterarPresenca(Model model, @RequestParam("precodigo") long precodigo, 
+			@RequestParam("status") String status){
 		
 		usuarioLog = (PessoaFisica) session.getAttribute("usuarioLog");
+
+		Presenca PresencaAtu = presencaDao.buscar(precodigo);
 		
-		Presenca.setPrePessoaFisica(usuarioLog);
+		PresencaAtu.setStatus(status);
+				
+		if (PresencaAtu.getPrePessoaFisica().getCodigo() == usuarioLog.getCodigo()) {
 			
-		if (Presenca.getPrePessoaFisica().getCodigo() == usuarioLog.getCodigo()) {
-			
-			Presenca = presencaDao.atualizarRetEntity((Presenca));
-			
-			return "redirect:/agenda/" + Estcodigo;
+			PresencaAtu = presencaDao.atualizarRetEntity((PresencaAtu));
+						
+			return "redirect:/agenda/" + PresencaAtu.getPreAgenda().getEstabelecimentoAge().getEstcodigo();
 			
 		}else {
 			

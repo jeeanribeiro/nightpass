@@ -67,7 +67,7 @@ public class Agenda implements Serializable {
 	@JoinColumn(name="T_ESTABELECI_EST_CODIGO", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
 	private Estabelecimento EstabelecimentoAge;
 
-	@OneToMany(mappedBy = "preAgenda", fetch=FetchType.LAZY) @Fetch(value=FetchMode.SUBSELECT)
+	@OneToMany(mappedBy = "preAgenda", fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
 	private List<Presenca> AgePresenca;
 	
 	public long getAgeCodigo() {

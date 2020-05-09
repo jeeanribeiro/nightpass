@@ -1,45 +1,27 @@
 window.onload = function() {
+
 	
-	var statusPresenca = document.getElementById("statusPresenca");
-
-	AtualizaPresenca();
+	//obtem uma coleção com as TagName o colchetes define qual o item desejado
+	var Doc = document.getElementsByTagName("html")[0];
+		
+	var form = document.getElementsByName("formbt");
 	
-	function AtualizaPresenca(){
-
-		var statusVou = document.getElementById("statusVou");
-		var statusNaoVou = document.getElementById("statusNaoVou");
-		var statusNaoInformado = document.getElementById("statusNaoInformado");
-
-		window.alert(statusPresenca.innerHTML);
+	var btnstatus = document.getElementsByName("btnstatus");
+	
+	for (i = 0; i < form.length; i++) {
 		
-		switch (statusPresenca.innerHTML){
-		
-		case "MARCOU PRESENÇA":
+		//o form contem toda a coleção o item(x), traz o item x da coleção
+		form.item(i).onsubmit = function(){
 			
-			window.alert("sim");
-			statusVou.selected = true;
-			break;
-		
-		case "DESMARCOU PRESENÇA":
-		
-			window.alert("nao");
-			statusNaoVou.selected = true;
-			break;
-			
-		default:
-
-			window.alert("nao informado");
-			statusNaoInformado.selected = true;
-			break;
+			Doc.className="whaitcursor";
 			
 		}
 		
 	}
 	
 	
-	
-		
 
+	
 }
 	
 	

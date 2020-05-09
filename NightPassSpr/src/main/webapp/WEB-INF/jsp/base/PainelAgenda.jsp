@@ -10,8 +10,6 @@ title="NightPass"
 cssProprio="/resources/css/PainelAgenda.css"
 jsProprio="/resources/js/Agenda.js">
 	
-	<section id="signUpContainer">
-	
 	<h1 class="destaque1">${msg}</h1>
 	
 	<span class="principal"> Você está na agenda --> ${EstabelecimentoAtu.PSJ_CODIGO.psjNome} </span><br><br>
@@ -23,39 +21,31 @@ jsProprio="/resources/js/Agenda.js">
 				<th>PRESENÇA</th>
 			</tr>
 
-			<c:forEach var="n" items="${ListaPessoaAgenda}">
+			<c:forEach var="n" items="${PresencaVer}">
 
 				<tr style="color: red">
 					<td><fmt:formatDate pattern="dd/MM/YYYY HH:mm"
-							value="${n.agenda.ageData}" /></td>
-					<td>${n.agenda.ageDetalhes}</td>
+							value="${n.preAgenda.ageData}" /></td>
+					<td>${n.preAgenda.ageDetalhes}</td>
 					<td>
 
 						<div class="dropdown">
-							<button class="dropbtn">${n.presenca.status}</button>
+							<button class="dropbtn">${n.status}</button>
 							<div class="dropdown-content">
 
 							<c:url value="/presenca" var="action" />
 							
-							<form:form modelAttribute="Presenca"
-							action="${action}" method="POST">
-							<input type="hidden" name="Estcodigo" value="${n.agenda.getEstabelecimentoAge().estcodigo}"/>
+							<form action="${action}" name="formbt" method="POST">
 							<input type="hidden" name="status" value="QUERO IR"/>
-							<input type="hidden" name="preAgenda.ageCodigo" value="${n.agenda.ageCodigo}"/>
-							<input type="hidden" name="preCodigo" value="${n.presenca.preCodigo}"/>
-							<input type="hidden" name="prePressoaFisica.codigo" value="${n.presenca.prePessoaFisica.codigo}"/>
-							<input type="submit" value="QUERO IR">
-							</form:form>
+							<input type="hidden" name="precodigo" value="${n.preCodigo}"/>
+							<input type="submit" name="btnstatus" value="QUERO IR">
+							</form>
 
-							<form:form modelAttribute="Presenca"
-							action="${action}" method="POST">
-							<input type="hidden" name="Estcodigo" value="${n.agenda.getEstabelecimentoAge().estcodigo}"/>
+							<form action="${action}" name="formbt" method="POST">
 							<input type="hidden" name="status" value="NÃO QUERO IR"/>
-							<input type="hidden" name="preAgenda.ageCodigo" value="${n.agenda.ageCodigo}"/>
-							<input type="hidden" name="preCodigo" value="${n.presenca.preCodigo}"/>
-							<input type="hidden" name="prePressoaFisica.codigo" value="${n.presenca.prePessoaFisica.codigo}"/>
-							<input type="submit" value="NÃO QUERO IR">
-							</form:form>
+							<input type="hidden" name="precodigo" value="${n.preCodigo}"/>
+							<input type="submit" name="btnstatus" value="NÃO QUERO IR">
+							</form>
 
 							</div>
 						</div>
@@ -67,7 +57,5 @@ jsProprio="/resources/js/Agenda.js">
 			</c:forEach>
 
 		</table>
-	</section>
-	
 
 </tags:template>

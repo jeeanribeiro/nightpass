@@ -40,12 +40,16 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 //@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "codigo")
 public class PessoaFisica implements Serializable {
 	
+	public PessoaFisica() {
+		super();
+	}
+	
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@SequenceGenerator(name="pessoaFisica",sequenceName="sq_t_pfisica",allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="pessoaFisica")
-	@Column(name="psa_codigo")
+	@Column(name="psa_codigo", nullable = false)
 	private long codigo;
 	
 	@Column(name="psa_nome", nullable=false, length=40)
@@ -157,10 +161,6 @@ public class PessoaFisica implements Serializable {
 	
 	@Transient
 	private boolean loginValidado = false;
-	
-	public PessoaFisica() {
-		super();
-	}
 
 	public PessoaFisica(Integer codigo, String nome, String sobrenome, Calendar dataNasc, String rg,
 			String rgOrgaoEmissor, String rgEstadoEmissor, long cpf, String sexo, Integer cdProfissao, String email,
