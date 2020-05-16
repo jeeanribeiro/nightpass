@@ -12,15 +12,15 @@ public class PJuridicaDAOImpl extends GenericDAOImpl<PJuridica, Long> implements
 	public PJuridicaDAOImpl() {
 		super();
 	}
-		
+
 	public List<PJuridica> listarPorNome(){
 		return em.createQuery("from PJuridica p Order by psjNome", PJuridica.class)
 				.getResultList();
 	}
-	
+
 	public PJuridica cadastrarR (PJuridica pjuridica) {
 		em.persist(pjuridica);
 		return pjuridica;
 	}
-	
+
 }

@@ -12,7 +12,6 @@ import br.com.fiap.NightPassSpr.Entity.PessoaFisica;
 
 public class PFisicaApiDAOImpl extends GenericApiDAOImpl<PessoaFisica, Long> implements PFisicaApiDAO {
 
-	
 	public PFisicaApiDAOImpl(EntityManager em) {
 		super(em);
 	}
@@ -21,7 +20,7 @@ public class PFisicaApiDAOImpl extends GenericApiDAOImpl<PessoaFisica, Long> imp
 		return em.createQuery("from PessoaFisica f Order by nome", PessoaFisica.class)
 				.getResultList();
 	}
-	
+
 	public PessoaFisica buscarPorEmail(String emailUsuario) {
 		try {
 			return em.createQuery("from PessoaFisica f Where UPPER(f.email)='"
@@ -30,7 +29,7 @@ public class PFisicaApiDAOImpl extends GenericApiDAOImpl<PessoaFisica, Long> imp
 			return null;
 		}
 	}
-	
+
 	public boolean autenticarUsuario(String emailUsuario, String Senha) {
 		try {
 			em.createQuery("from PessoaFisica f Where UPPER(f.email)='"
@@ -42,5 +41,5 @@ public class PFisicaApiDAOImpl extends GenericApiDAOImpl<PessoaFisica, Long> imp
 			return false;
 		}
 	}
-	
+
 }

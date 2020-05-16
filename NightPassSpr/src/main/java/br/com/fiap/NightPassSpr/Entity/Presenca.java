@@ -26,12 +26,11 @@ public class Presenca implements Serializable  {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE , generator = "Seq_T_PRESENCA")
 	@Column(name="PRE_CODIGO", nullable=false)
 	private long preCodigo;
-	
-	
+
 	@ManyToOne
 	@JoinColumn(name="T_PFISICA_PSA_CODIGO", nullable=false)
 	private PessoaFisica prePessoaFisica;
-	
+
 	@ManyToOne
 	@JoinColumn(name="T_AGENDA_AGE_CODIGO", nullable=false)
 	private Agenda preAgenda;
@@ -70,7 +69,5 @@ public class Presenca implements Serializable  {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	
-	
-	
+
 }

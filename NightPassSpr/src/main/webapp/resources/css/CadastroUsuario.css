@@ -1,85 +1,85 @@
 html, body {
-  align-items: center;
-  backdrop-filter: blur(2px) brightness(50%);
-  background-image: url("imgs/background-club.jpg");
-  background-size: cover;
-  display: flex;
-  justify-content: center;
+	align-items: center;
+	backdrop-filter: blur(2px) brightness(50%);
+	background-image: url("imgs/background-club.jpg");
+	background-size: cover;
+	display: flex;
+	justify-content: center;
 }
 
 #signUpContainer {
-  background: #222;
-  box-shadow: 0 0 10px;
-  min-width: 600px;
-  padding: 20px;
+	background: #222;
+	box-shadow: 0 0 10px;
+	min-width: 600px;
+	padding: 20px;
 }
 
 #buttonsConsumerOwner {
-  display: flex;
-  flex: 1;
-  justify-content: space-between;
+	display: flex;
+	flex: 1;
+	justify-content: space-between;
 }
 
 #buttonsConsumerOwner input[type="radio"] {
-  visibility: hidden;
-  height: 0;
-  width: 0;
-  margin: 0;
-  padding: 0;
+	visibility: hidden;
+	height: 0;
+	width: 0;
+	margin: 0;
+	padding: 0;
 }
 
 #buttonsConsumerOwner input[type="radio"]:checked + label {
-  background: #d6006e;
+	background: #d6006e;
 }
 
 #buttonsConsumerOwner label {
-  background: #333;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  padding: 10px;
-  text-align: center;
-  transition-duration: 0.2s;
-  width: 100%;
+	background: #333;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	padding: 10px;
+	text-align: center;
+	transition-duration: 0.2s;
+	width: 100%;
 }
 
 #buttonsConsumerOwner label[for="isConsumer"] {
-  margin-right: 20px;
+	margin-right: 20px;
 }
 
 #signUpForm {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr 1fr;
+	display: grid;
+	gap: 20px;
+	grid-template-columns: 1fr 1fr;
 }
 
 #signUpContainer #signUpForm button {
-  background: #d6006e;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  padding: 10px 0;
+	background: #d6006e;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	padding: 10px 0;
 }
 
 input[type="submit"]{
-  background: #d6006e;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  padding: 10px 0;
+	background: #d6006e;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	padding: 10px 0;
 }
 
 #signUpContainer #signUpForm button:hover {
-  background: #b8005f;
+	background: #b8005f;
 }
 
 .destaque1{
@@ -89,4 +89,3 @@ input[type="submit"]{
 	background-color: lime;
 	text-align: center;
 }
-

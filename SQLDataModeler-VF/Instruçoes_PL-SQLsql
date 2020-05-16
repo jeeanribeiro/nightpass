@@ -1,0 +1,121 @@
+SET SERVEROUTPUT ON
+
+
+--       1. Obter uma tabela contendo os registros de agenda de um estabelecimento,
+--       mesclando com o status de presença de um determinado usuário para estes
+--       registros. 
+
+    -- Cria uma tabela de presença temporária
+    
+    CREATE TABLE t_presenca_temp (
+    pre_codigo             INTEGER,
+    pre_status             VARCHAR2(20),
+    t_pfisica_psa_codigo   INTEGER NOT NULL,
+    t_agenda_age_codigo    INTEGER NOT NULL
+    );
+
+    TRUNCATE TABLE t_presenca_temp;
+
+DECLARE
+
+    v_Estab_cod T_Estabeleci.Est_codigo%TYPE :=3;
+    v_Pfisica_cod T_Pfisica.psa_codigo%TYPE :=43;
+ 
+    v_AgendaPres T_Agenda%ROWTYPE;
+    v_PresencaPf T_Presenca%Rowtype;
+    
+    v_PresencaExiste BOOLEAN;
+  
+        CURSOR cursor_Agenda IS
+        SELECT * 
+        FROM T_AGENDA
+        WHERE t_estabeleci_est_codigo = v_Estab_cod
+        ORDER BY AGE_DATA;
+        
+        CURSOR cursor_Presenca IS
+        SELECT *
+        FROM T_PRESENCA 
+        WHERE T_PFISICA_PSA_CODIGO = v_Pfisica_cod;
+        
+BEGIN
+
+    FOR v_AgendaPres IN cursor_Agenda LOOP
+    
+    v_PresencaExiste := false;
+    
+        FOR v_PresencaPf IN cursor_Presenca LOOP
+    
+            IF v_AgendaPres.age_codigo = v_PresencaPf.t_agenda_age_codigo THEN
+            
+            v_PresencaExiste := True;
+            
+            DBMS_OUTPUT.PUT_LINE(v_AgendaPres.age_codigo ||' '|| v_PresencaPf.pre_codigo ||
+            ' ' || v_PresencaPf.t_agenda_age_codigo);
+            DBMS_OUTPUT.PUT_LINE(v_AgendaPres.age_data);
+            DBMS_OUTPUT.PUT_LINE(v_AgendaPres.AGE_DETALHES);
+            
+            INSERT INTO t_presenca_temp VALUES v_PresencaPf;
+            
+            END IF;
+            
+        END LOOP;
+        
+        IF v_PresencaExiste = False THEN
+        
+            DBMS_OUTPUT.PUT_LINE(v_AgendaPres.age_codigo);
+            
+            INSERT INTO t_presenca_temp (
+                pre_codigo,
+                pre_status,
+                t_pfisica_psa_codigo,
+                t_agenda_age_codigo
+            ) VALUES (
+                null,
+                'NÃO INFORMADO',
+                v_Pfisica_cod,
+                v_AgendaPres.age_codigo
+            );
+
+        END IF;
+        
+    END LOOP;
+
+COMMIT;
+
+END;
+/
+
+SELECT a.*, p.* FROM t_presenca_temp p inner join t_agenda a
+on p.t_agenda_age_codigo = a.age_codigo
+order by age_data ;
+
+
+
+--      3. Cadastro de produtos de estabelecimentos.
+
+DECLARE
+
+    v_Produtonovo T_PRODUTO%ROWTYPE;
+
+BEGIN
+    
+    v_Produtonovo.prd_codigo := seq_T_Produto.nextval;
+    v_Produtonovo.prd_nome := 'CERVEJA SKOL';
+    v_Produtonovo.prd_marca := 'SKOL';
+    v_Produtonovo.prd_descricao := 'Cerveja SKOL nacional';
+    v_Produtonovo.prd_preco := 10.50;
+    v_Produtonovo.T_Estabeleci_Est_Codigo := 3;
+    v_Produtonovo.prd_formato := 'LATA 350 ml';
+    
+        INSERT INTO T_PRODUTO VALUES v_Produtonovo;
+    
+END;
+/
+
+SELECT  /*loader*/ * FROM T_PRODUTO;
+
+
+
+
+
+

@@ -8,6 +8,8 @@
 </engineerTo>
 <sourcePk>55958138-9749-1081-D418-3E2D2CECE82F</sourcePk>
 <identifying>false</identifying>
+<nameOnSource>GMus</nameOnSource>
+<nameOnTarget>EstGMus</nameOnTarget>
 <optionalSource>false</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>1</sourceCardinality>

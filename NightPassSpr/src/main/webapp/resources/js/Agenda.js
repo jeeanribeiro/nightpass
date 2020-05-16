@@ -16,13 +16,10 @@ window.onload = function() {
 			Doc.className="whaitcursor";
 			
 		}
-		
+
 	}
 	
 	
 
 	
 }
-	
-	
-	

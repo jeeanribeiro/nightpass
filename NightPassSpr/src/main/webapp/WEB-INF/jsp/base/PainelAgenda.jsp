@@ -5,13 +5,13 @@
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<tags:template 
+<tags:template
 title="NightPass"
 cssProprio="/resources/css/PainelAgenda.css"
 jsProprio="/resources/js/Agenda.js">
 	
 	<h1 class="destaque1">${msg}</h1>
-	
+
 	<span class="principal"> Você está na agenda --> ${EstabelecimentoAtu.PSJ_CODIGO.psjNome} </span><br><br>
 
 		<table>

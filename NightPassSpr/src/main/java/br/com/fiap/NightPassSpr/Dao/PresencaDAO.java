@@ -7,8 +7,7 @@ import br.com.fiap.NightPassSpr.Entity.PessoaFisica;
 import br.com.fiap.NightPassSpr.Entity.Presenca;
 
 public interface PresencaDAO extends GenericDAO<Presenca, Long> {
-	
+
 	public Presenca ListarporPessoaAgenda(Agenda agendaDef, PessoaFisica pessoaDef);
-	
-		
+
 }

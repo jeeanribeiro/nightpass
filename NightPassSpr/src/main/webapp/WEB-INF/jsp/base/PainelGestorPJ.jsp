@@ -5,7 +5,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
-
 <!DOCTYPE html>
 <html lang='pt'>
 <head>
@@ -25,19 +24,18 @@
 		<h1>Você está vinculado as empresas: </h1><br>
 
 	</div>
-	
+
 	<table>
 		<tr style="color: red">
 			<th> CNPJ </th>
 			<th> NOME </th>
 			<th> PERFIL </th>
 		</tr>
-	
+
 		<c:forEach var="n" items="${usuarioLog.getpJuridicas()}">
 		<tr style="color: red">
 			<td> ${n.getPsjCnpj()} </td>
 			<td> ${n.getPsjNome()} </td>
-			<%-- <td> ${n.rgePerfil} </td> --%>
 
 			<td>
 			<c:url value="/painelestabelecimento/${n.getPsjCodigo()}" var="action" />
@@ -45,20 +43,18 @@
 				<button class="buttonfmt" type="submit">Editar</button>
 			</form:form>
 			</td>
-			
-		</tr>	
-		
+
+		</tr>
+
 		</c:forEach>
 
 	</table>
-	
+
 	<br>
 	<c:url value="/cadastropj" var="voltar"/>
 	<a class="buttonfmt" href="${voltar}">Adicionar Novo</a>
 	<c:url value="/carregarListaEstabelecimentos" var="voltar"/>
 	<a class="buttonfmt" href="${voltar}">Voltar</a>
 
-
-	
 </body>
 </html>

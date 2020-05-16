@@ -14,14 +14,18 @@
 <display>false</display>
 <notation>1</notation>
 <objectViews>
+<OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="076B2E7C-61B6-96EC-530D-204EAB2B7598" otype="Entity" vid="4550491B-D062-9845-6F96-E83A1A4A8353">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="797" y="512" width="188" height="119"/>
+</OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="19D08E90-02B4-98D1-7D80-2F768BAD12AF" otype="Entity" vid="2E02D331-846D-64C3-F2C6-5A0C3E3B9255">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="711" y="373" width="128" height="83"/>
+<bounds x="685" y="371" width="128" height="83"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.TVNote" oid="1EC21563-4475-3543-C2D4-A993A314712B" otype="Note" vid="009D2C96-3BA9-9A5A-942A-7862FD1FEAFF">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="1527" y="12" width="188" height="279"/>
-<comment>Abreviações&lt;br/&gt;&lt;br/&gt;psa = pessoa física&lt;br/&gt;psj = pessoa juridica&lt;br/&gt;est = Estabelecimento&lt;br/&gt;gmu = Genero Musical&lt;br/&gt;tes = Tipo de Estabelecimento&lt;br/&gt;gae = Galeria de Fotos vinculadas aos estabelecimentos&lt;br/&gt;tga = Tipo de Foto para galeria&lt;br/&gt;egm = Ponte Estabelecimento Genero Musical&lt;br/&gt;rge = Ponte entre Pessoas Fisicas gerindo Pessoas Juridicas&lt;br/&gt;age = Agenda dos Estabelecimentos&lt;br/&gt;pre = Presença em Estabelecimento</comment>
+<bounds x="1502" y="12" width="213" height="313"/>
+<comment>Abreviações&lt;br/&gt;&lt;br/&gt;psa = pessoa física&lt;br/&gt;psj = pessoa juridica&lt;br/&gt;est = Estabelecimento&lt;br/&gt;gmu = Genero Musical&lt;br/&gt;tes = Tipo de Estabelecimento&lt;br/&gt;gae = Galeria de Fotos vinculadas aos estabelecimentos&lt;br/&gt;tga = Tipo de Foto para galeria&lt;br/&gt;egm = Ponte Estabelecimento Genero Musical&lt;br/&gt;rge = Ponte entre Pessoas Fisicas gerindo Pessoas Juridicas&lt;br/&gt;age = Agenda dos Estabelecimentos&lt;br/&gt;pre = Presença em Estabelecimento&lt;br/&gt;prd = Produtos dos Estabelecimentos&lt;br/&gt;gap = Galeria de Produtos</comment>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="493F64F0-3BEF-2D25-1469-2B0EB6208C76" otype="Entity" vid="8B3E830F-EA07-D228-BD87-076E037BE5C2">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
@@ -46,6 +50,10 @@
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="B88B3230-8227-73A5-414C-694A801E469C" otype="Entity" vid="57497247-9419-AC53-3EC2-929E73FA7A88">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
 <bounds x="425" y="16" width="223" height="256"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="B9151604-9563-6B6A-29F9-41A9A4C6CC8F" otype="Entity" vid="A8A19F4C-1FB8-7B0B-0E10-173E883DEC59">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="1085" y="514" width="170" height="110"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="BB264E2D-18F5-C33E-24C2-A6D1F93C91A2" otype="Entity" vid="63E5E366-2259-11E8-7D68-27BC285392C1">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
@@ -90,6 +98,24 @@
 <points>
 <point x="854" y="184"/>
 <point x="911" y="140"/>
+</points>
+</Connector>
+<Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="3CB22805-0CE4-FB9D-B4A2-681EB02355F4" otype="Relation" vid_source="E8FEA1E5-89B1-B058-375B-883E0AEA33E2" vid_target="4550491B-D062-9845-6F96-E83A1A4A8353">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<backgroundColor>-16777216</backgroundColor>
+<lineWidth>1</lineWidth>
+<points>
+<point x="828" y="297"/>
+<point x="828" y="512"/>
+</points>
+</Connector>
+<Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="47AD52E7-8FD4-AF2A-B3F9-8E454B1DBC24" otype="Relation" vid_source="4550491B-D062-9845-6F96-E83A1A4A8353" vid_target="A8A19F4C-1FB8-7B0B-0E10-173E883DEC59">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<backgroundColor>-16777216</backgroundColor>
+<lineWidth>1</lineWidth>
+<points>
+<point x="985" y="569"/>
+<point x="1085" y="569"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="4E2B34ED-9C15-8987-83E1-C65DD3C1E3F0" otype="Relation" vid_source="6535C136-DA2A-78E7-2530-47DDA8B5C802" vid_target="915E8BD2-344E-A173-6491-84766858B9FA">
@@ -142,8 +168,8 @@
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="775" y="373"/>
-<point x="775" y="297"/>
+<point x="756" y="371"/>
+<point x="756" y="297"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="C8B677FB-DFBC-AA8F-7334-9F50E484762D" otype="Relation" vid_source="E8FEA1E5-89B1-B058-375B-883E0AEA33E2" vid_target="57497247-9419-AC53-3EC2-929E73FA7A88">

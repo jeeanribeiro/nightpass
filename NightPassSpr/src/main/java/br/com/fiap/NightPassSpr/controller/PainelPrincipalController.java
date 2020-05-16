@@ -18,53 +18,37 @@ import br.com.fiap.NightPassSpr.Entity.Estabelecimento;
 import br.com.fiap.NightPassSpr.Entity.GaleriaEst;
 import br.com.fiap.NightPassSpr.Entity.TipoGaleria;
 
-
 @Transactional
 @Controller
 public class PainelPrincipalController {
 
 	@Autowired
 	private  EstabelecimentoDAO estabelecimentoDao;
-	
+
 	@Autowired
 	GaleriaEstDAO galeriaEstDao;
-	
-	
+
 	@GetMapping("/carregarListaEstabelecimentos")
 	public String carregarListaEstabelecimentos(Model model) throws SQLException {
-		
+
 		List <Estabelecimento> lEstabelecimentos =  estabelecimentoDao.listar();
-		
 			Collections.sort(lEstabelecimentos);
-		
+
 			model.addAttribute("estabelecimentos", lEstabelecimentos);
-			
+
 			//Carrega as Fotos de Fachada dos Estabelecimentos
-			
 			List <GaleriaEst> galeriaEst;
 			galeriaEst = galeriaEstDao.listar();
-			
-			model.addAttribute("galeria", galeriaEst);
-			
-			//Novo Teste
 
+			model.addAttribute("galeria", galeriaEst);
+
+			//Novo Teste
 			for (Estabelecimento estabelecimento : lEstabelecimentos) {
-				
 				model.addAttribute(String.valueOf((estabelecimento.getEstcodigo())),
 						estabelecimento.getGaleriaEst());
-				
 			}
-			
+
 		return ("base/PainelPrincipal");
-		
-		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

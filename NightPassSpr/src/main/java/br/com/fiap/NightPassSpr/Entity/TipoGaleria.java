@@ -42,7 +42,6 @@ public class TipoGaleria implements Serializable{
 	
 	public TipoGaleria() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public long getTgacodigo() {

@@ -37,7 +37,7 @@ import br.com.fiap.NightPassSpr.util.BlobUtil;
 @Transactional
 //@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "gaecodigo")
 public class GaleriaEst implements Serializable{
-	
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -45,14 +45,13 @@ public class GaleriaEst implements Serializable{
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="sqTGaleriaEst")
 	@Column(name="gae_codigo", nullable = false)
 	private long gaecodigo;
-	
+
 //	@Lob
 //	@Basic(fetch=FetchType.LAZY)
 //	@Column(name="gae_foto", nullable = false)
 //	//private Blob gaefoto;
 //	private byte[] gaefoto;
-	
-		
+
 	@ManyToOne
 	@JoinColumn(name="T_TipoGaleria_tga_codigo", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
 	@JsonBackReference(value="gae_tga_codigo")
@@ -62,30 +61,24 @@ public class GaleriaEst implements Serializable{
 	@JoinColumn(name="T_Estabeleci_est_codigo", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
 	@JsonBackReference(value="galeriaEst")
 	private Estabelecimento gae_est_codigo;
-	
-	
+
+
 	@Column(name="GAE_ENDSERVIDOR", nullable = true)
 	private String gae_EndServidor;
-	
+
 	@JsonIgnore
 	@Transient
 	private String gaeFotoExibivel = new String();
 
 	public GaleriaEst() {
-		
 		super();
-		
 	}
 
 //	public String getGaeFotoExibivel() {
-//		
 //		return Base64.getEncoder().encodeToString(this.gaefoto);
-//		
 //	}
 
-	public void setGaeFotoExibivel() {
-		
-	}
+	public void setGaeFotoExibivel() {}
 
 	public TipoGaleria getGae_tga_codigo() {
 		return gae_tga_codigo;
@@ -126,9 +119,5 @@ public class GaleriaEst implements Serializable{
 	public void setGae_EndServidor(String gae_EndServidor) {
 		this.gae_EndServidor = gae_EndServidor;
 	}
-	
-	
-	
-	
-	
+
 }

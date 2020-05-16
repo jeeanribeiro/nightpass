@@ -38,13 +38,13 @@ public class Agenda implements Serializable {
 	}
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@SequenceGenerator(name="Seq_T_AGENDA", sequenceName="Seq_T_AGENDA", allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE , generator = "Seq_T_AGENDA")
 	@Column(name="AGE_CODIGO", nullable=false)
 	private long ageCodigo;
-	
+
 	@Lob
 	@Column(name="AGE_DETALHES", nullable=false)
 	private String ageDetalhes;
@@ -54,12 +54,12 @@ public class Agenda implements Serializable {
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:m")
 	@Column(name="AGE_DATA", nullable=false)
 	private Date ageData;
-	
+
 	/*
 	 * @Lob
-	 * 
+	 *
 	 * @Basic(fetch=FetchType.LAZY)
-	 * 
+	 *
 	 * @Column(name="AGE_FTPUBLICIDADE", nullable = false) private byte[]
 	 * ageFtPublicidade;
 	 */
@@ -69,7 +69,7 @@ public class Agenda implements Serializable {
 
 	@OneToMany(mappedBy = "preAgenda", fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
 	private List<Presenca> AgePresenca;
-	
+
 	public long getAgeCodigo() {
 		return ageCodigo;
 	}
@@ -96,7 +96,7 @@ public class Agenda implements Serializable {
 
 	/*
 	 * public byte[] getAgeFtPublicidade() { return ageFtPublicidade; }
-	 * 
+	 *
 	 * public void setAgeFtPublicidade(byte[] ageFtPublicidade) {
 	 * this.ageFtPublicidade = ageFtPublicidade; }
 	 */

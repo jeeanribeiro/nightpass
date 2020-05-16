@@ -24,6 +24,7 @@
 <createdTime>2020-02-16 23:52:21 UTC</createdTime>
 <generatorID>CA708D9D-67B0-CA9D-E20A-1D7EEEEB274B</generatorID>
 <ownerDesignName>NightPassDBDDl</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT029</logicalDatatype>
@@ -59,6 +60,19 @@
 <associations>
 <colAssociation fkAssociation="C7970F2D-93A8-FB9F-C96D-E16C4BC4EE8C" referredColumn="83933229-01B0-1363-049F-8F09FD7AEFB2"/>
 </associations>
+</Column>
+<Column name="gae_endservidor" id="38E77D82-6D6B-596D-F27D-CE3D78F58169">
+<createdBy>User</createdBy>
+<createdTime>2020-05-11 02:06:13 UTC</createdTime>
+<generatorID>50F1AB95-8D46-5D5A-C305-A9FD1EC12A10</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

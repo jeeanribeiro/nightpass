@@ -18,7 +18,7 @@
 </head>
 <body>
   <section id='signUpContainer'>
-  	<h2 class="destaque1">${CadastroAtu}</h2> 
+  	<h2 class="destaque1">${CadastroAtu}</h2>
     <form action="CadastroUsuarioServlet" method="post" id="signUpForm">
       <input required type="text" name="nome" value="${PFisicalog.nome}" placeholder="Nome" maxlength="40">
       <input required type="text" name="sobrenome" value="${PFisicalog.sobrenome}" placeholder="Sobrenome" maxlength="100">
@@ -26,8 +26,7 @@
       <input required type="tel" name="rg" value="${PFisicalog.rg}" placeholder="RG" maxlength="15">
       <input required type="text" name="rgOrgaoEmissor" value="${PFisicalog.rgOrgaoEmissor}" id="rgEmitter" placeholder="Orgï¿½o emissor" maxlength="15">
       <select id="rgEstado" name="rgEstado">
-      
-      
+
       	<!-- Opção cadastrada na Base -->
       	<option value="${PFisicalog.rgEstadoEmissor}" selected="selected">${PFisicalog.rgEstadoEmissor}</option>
         <option value="AC">AC</option>

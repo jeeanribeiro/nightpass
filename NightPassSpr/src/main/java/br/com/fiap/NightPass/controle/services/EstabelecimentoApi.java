@@ -26,45 +26,38 @@ import br.com.fiap.NightPass.Api.Dao.EstabelecimentoApiDAOImpl;
 import br.com.fiap.NightPass.singleton.EntityManagerFactorySingleton;
 import br.com.fiap.NightPassSpr.Entity.Estabelecimento;
 
-
 @Path("/estabelecimentoapi")
 @PermitAll
 @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
 @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
 public class EstabelecimentoApi {
-	
+
 	  private EstabelecimentoApiDAO dao;
-		
+
 		public EstabelecimentoApi() {
-			EntityManager em = 
+			EntityManager em =
 					EntityManagerFactorySingleton.getInstance().createEntityManager();
-			
+
 			dao = new EstabelecimentoApiDAOImpl(em);
 		}
-
 
 		@GET
 		@RolesAllowed("guest")
 		public List<Estabelecimento> buscarTodas() {
-
 			return dao.listar();
-
 		}
-		
+
 		@GET
 		@RolesAllowed("guest")
 		@Path("/{estcodigo}")
 		public Estabelecimento buscaPorChave(@PathParam("estcodigo") long estcodigo) {
 
 			try {
-
 				return dao.buscar(estcodigo);
-
-			}catch (EntityNotFoundException e) {
+			} catch (EntityNotFoundException e) {
 				throw new
 				WebApplicationException(Status.NOT_FOUND);
-
-			}catch (Exception e) {
+			} catch (Exception e) {
 				throw new
 				WebApplicationException(Status.INTERNAL_SERVER_ERROR);
 			}
@@ -77,21 +70,16 @@ public class EstabelecimentoApi {
 		public Response cadastrarNovoEst (Estabelecimento establecimentoNovo) {
 
 			try {
-
 				dao.cadastrar(establecimentoNovo);
 				dao.commit();
 				URI uri = UriBuilder.fromPath("/{estcodigo}").build(establecimentoNovo.getEstcodigo());
 				return Response.created(uri).entity(establecimentoNovo).build();
-
-			}catch(Exception e) {
-
+			} catch(Exception e) {
 				throw new WebApplicationException(Status.INTERNAL_SERVER_ERROR);
-
 			}
 
 		}
 
-		  
 		  @RolesAllowed("user")
 		  @DELETE
 		  @Path("deletar/{estcodigo}")
@@ -100,13 +88,12 @@ public class EstabelecimentoApi {
 			  try {
 				  dao.remover(estcodigo);
 				  dao.commit();
-				  
-			  }catch (Exception e) {
+
+			  } catch (Exception e) {
 				  throw new WebApplicationException(Status.INTERNAL_SERVER_ERROR);
 			  }
-				  
+
 		  }
-		
 
 		  @RolesAllowed("user")
 		  @PUT
@@ -118,15 +105,11 @@ public class EstabelecimentoApi {
 				  dao.atualizar(estabelecimentoAtu);
 				  dao.commit();
 				  return estabelecimentoAtu;
-				  
-			  }catch (Exception e) {
+
+			  } catch (Exception e) {
 				  throw new WebApplicationException(Status.INTERNAL_SERVER_ERROR);
 			  }
-				  
+
 		  }
-		  
-		  
-
-
 
 }

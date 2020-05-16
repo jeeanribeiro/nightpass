@@ -5,17 +5,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
-<tags:template 
+<tags:template
 title="NightPass"
 cssProprio="/resources/css/CadastroPJ.css"
 jsProprio="Ajustar">
 
 	<c:url value="${action}" var="urlfinal" />
-	
+
     <section id="signUpContainer">
 	<h1 class="destaque1">${msg}</h1>
 		<form:form  modelAttribute="pJuridicaNova" action="${urlfinal}" method="post" id="signUpForm">
-	
+
 			<input placeholder="Nome" required type="text" name="psjNome" maxlength="40">
 			<input placeholder="CNPJ" required type="tel" name="psjCnpj" maxlength="14">
 			<input placeholder="Telefone Comercial" required type="tel" name="psjTelComercial" maxlength="15">
@@ -60,10 +60,8 @@ jsProprio="Ajustar">
 			<button type="button" onclick="window.location.href='${voltar}'">Voltar
 				para Painel</button>
 
-
 		</form:form>
-		
-		
+
 	</section>
-	
+
 </tags:template>

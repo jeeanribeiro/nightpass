@@ -5,9 +5,9 @@ public class PessoaAgenda {
 	public PessoaAgenda() {
 		super();
 	}
-	
+
 	public Agenda agenda;
-	
+
 	public Presenca presenca;
 
 	public Agenda getAgenda() {
@@ -25,6 +25,5 @@ public class PessoaAgenda {
 	public void setPresenca(Presenca presenca) {
 		this.presenca = presenca;
 	}
-	
 
 }

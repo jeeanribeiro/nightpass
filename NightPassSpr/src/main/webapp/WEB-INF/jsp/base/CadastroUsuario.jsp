@@ -5,22 +5,22 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
-<tags:template 
+<tags:template
 title="NightPass"
 cssProprio="/resources/css/CadastroUsuario.css"
 jsProprio="CadastroUsuario.js">
 
   <section id='signUpContainer'>
-  
+
     <h1 class="destaque1">${msg}</h1>
 
  	<c:url value="${action}" var="urlfinal"/>
 
     <form:form  modelAttribute="NovoUsuario" action="${urlfinal}" method="post" id="signUpForm">
-    
+
       <form:input path="nome" required="true" type="text" name="nome" value="${usuarioLog.nome}" placeholder="Nome" maxlength="40"/>
       <form:input path="sobrenome" value="${usuarioLog.sobrenome}" required="true" type="text" name="sobrenome" placeholder="Sobrenome" maxlength="100"/>
-      <input name="dataNasc"  
+      <input name="dataNasc"
       value="<fmt:formatDate pattern="yyyy-MM-dd" value ="${usuarioLog.dataNasc.getTime()}"/>" required type="date" placeholder="Data de nascimento"/>
       <form:input path="rg" value="${usuarioLog.rg}" required="true" type="tel" name="rg" placeholder="RG" maxlength="15"/>
       <form:input path="rgOrgaoEmissor" value="${usuarioLog.rgOrgaoEmissor}" required="true" type="text" name="rgOrgaoEmissor" id="rgEmitter" placeholder="Orgão emissor" maxlength="15"/>
@@ -68,5 +68,5 @@ jsProprio="CadastroUsuario.js">
       <button type="submit">${btnNome}</button>
     </form:form>
   </section>
-  
+
 </tags:template>

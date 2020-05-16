@@ -1,82 +1,78 @@
 html, body {
-  align-items: center;
-  backdrop-filter: blur(2px) brightness(50%);
-  background-image: url("imgs/background-club.jpg");
-  background-size: cover;
-  display: block;
-  justify-content: center;
+	align-items: center;
+	backdrop-filter: blur(2px) brightness(50%);
+	background-image: url("imgs/background-club.jpg");
+	background-size: cover;
+	display: block;
+	justify-content: center;
 }
 
-header{
+header {
 	display:inline;
 }
 
 option, select, textarea, input {
-  background: #27739a;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  padding: 2px 2px 2px 2px;
+	background: #27739a;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	padding: 2px 2px 2px 2px;
 }
 
 .padraodestaque{
-  background: #27739a;
-  color: #fff;
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  padding: 2px 2px 2px 2px;
+	background: #27739a;
+	color: #fff;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	padding: 2px 2px 2px 2px;
 }
 
-
-
-
 textarea_old {
-  background: #e0f6ff;
-  border: none;
-  color: #a007f2;
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 300;
-  padding: 2px 2px 2px 2px;
+	background: #e0f6ff;
+	border: none;
+	color: #a007f2;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	padding: 2px 2px 2px 2px;
 }
 
 #signUpContainer {
-  background: #222;
-  box-shadow: 0 0 10px;
-  min-width: 700px;
-  padding: 20px;
+	background: #222;
+	box-shadow: 0 0 10px;
+	min-width: 700px;
+	padding: 20px;
 }
 
 #signUpForm {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr 1fr;
+	display: grid;
+	gap: 20px;
+	grid-template-columns: 1fr 1fr;
 }
 
 #signUpContainer #signUpForm button {
-  background: #d6006e;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  grid-column-start: 2;
-  padding: 10px 0;
+	background: #d6006e;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	grid-column-start: 2;
+	padding: 10px 0;
 }
 
 #signUpContainer #signUpForm button:hover {
-  background: #b8005f;
+	background: #b8005f;
 }
 
 .textolongo{
 	height: 250px;
 	width: 98%;
-	
 }
 
 .destaque1{
@@ -98,70 +94,64 @@ textarea_old {
 	border:none;
 }
 
-
 /* Style The Dropdown Button */
 .dropbtn {
-  background-color: #800080;
-  color: white;
-  padding: 6px;
-  font-size: 14px;
-  border: none;
-  cursor: pointer;
-  font-family: 'Fira Sans', sans-serif;
-  font-weight: 700;
+	background-color: #800080;
+	color: white;
+	padding: 6px;
+	font-size: 14px;
+	border: none;
+	cursor: pointer;
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 700;
 }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
-  position: relative;
-  display: inline-block;
+	position: relative;
+	display: inline-block;
 }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #8080ff;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  font-size: 14px;
-  font-family: 'Fira Sans', sans-serif;
-  font-weight: 700;
-  top:10px;
-  left:30px;
-  
+	display: none;
+	position: absolute;
+	background-color: #8080ff;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	font-size: 14px;
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 700;
+	top:10px;
+	left:30px;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: #ffffff;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+	color: #ffffff;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
 }
 
 /* Links inside the dropdown */
 .dropdown-content input {
-  color: #ffffff;
-  padding: 12px 16px;
-  text-decoration: none;
-  display:inline-table;
-  background-color: #8080ff;
-  font-family: 'Fira Sans', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  
-  
+	color: #ffffff;
+	padding: 12px 16px;
+	text-decoration: none;
+	display:inline-table;
+	background-color: #8080ff;
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 700;
+	font-size: 14px;
 }
-
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #000080}
 
 /* Change color of dropdown links on hover */
 .dropdown-content input:hover {background-color: #000080}
-
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
@@ -172,5 +162,3 @@ textarea_old {
 .dropdown:hover .dropbtn {
   background-color: #c237ce;
 }
-
-

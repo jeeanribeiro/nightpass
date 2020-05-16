@@ -11,5 +11,5 @@ implements TipoEstabelecimentoDAO {
 	public TipoEstabelecimentoDAOImpl() {
 		super();
 	}
-	
+
 }

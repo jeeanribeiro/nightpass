@@ -33,76 +33,71 @@ import br.com.fiap.NightPassSpr.Entity.PJuridica;
 @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
 public class PessoaJuridicaApi {
 
-	
+
 	/*
 	 * @GET
-	 * 
+	 *
 	 * @Path("/ola")
-	 * 
+	 *
 	 * @Produces(MediaType.TEXT_HTML) public String testaServico() {
-	 * 
+	 *
 	 * return "Olá, o serviço funciona";
-	 * 
-	 * 
+	 *
+	 *
 	 * }
 	 */
 
 	  private PJuridicaApiDAO dao;
-	
+
 		public PessoaJuridicaApi() {
-			EntityManager em = 
+			EntityManager em =
 					EntityManagerFactorySingleton.getInstance().createEntityManager();
 			dao = new PJuridicaApiDAOImpl(em);
 		}
-	
+
 	  @GET
 	  @RolesAllowed("guest")
 
 	  public List<PJuridica> buscarTodas() {
-	  
+
 	  return dao.listar();
-	  
+
 	  }
-	  
+
 	  @GET
 	  @RolesAllowed("guest")
 	  @Path("/{psjCodigo}")
 	  public PJuridica buscaPorChave(@PathParam("psjCodigo") long psjCodigo) {
-		  
+
 		  try {
 		  return dao.buscar(psjCodigo);
-		  }catch (EntityNotFoundException e) {
+		   }catch (EntityNotFoundException e) {
 			  throw new
 			  	WebApplicationException(Status.NOT_FOUND);
-			  
-		  }catch (Exception e) {
+		  } catch (Exception e) {
 			  throw new
 			  	WebApplicationException(Status.INTERNAL_SERVER_ERROR);
 		  }
-		  
+
 	  }
-	  
-	  
+
+
 	  @RolesAllowed("user")
 	  @POST
 	  @Path("cadastrarNova")
 	  public Response cadastrarNovaPJ (PJuridica pJuridicaNova) {
 
 		  try {
-
 			  dao.cadastrar(pJuridicaNova);
 			  dao.commit();
 			  URI uri = UriBuilder.fromPath("/{psjCodigo}").build(pJuridicaNova.getPsjCodigo());
 			  return Response.created(uri).entity(pJuridicaNova).build();
-
-		  }catch(Exception e) {
-
+		  } catch(Exception e) {
 			  throw new WebApplicationException(Status.INTERNAL_SERVER_ERROR);
-
 		  }
 
 	  }
-	  
+
 	  @RolesAllowed("user")
 	  @DELETE
 	  @Path("deletar/{psjCodigo}")
@@ -111,13 +106,12 @@ public class PessoaJuridicaApi {
 		  try {
 			  dao.remover(psjCodigo);
 			  dao.commit();
-			  
-		  }catch (Exception e) {
+		  } catch (Exception e) {
 			  throw new WebApplicationException(Status.INTERNAL_SERVER_ERROR);
 		  }
-			  
+
 	  }
-	  
+
 	  @RolesAllowed("user")
 	  @PUT
 	  @Path("atualizar/{psjCodigo}")
@@ -128,15 +122,10 @@ public class PessoaJuridicaApi {
 			  dao.atualizar(pJuridicaAtu);
 			  dao.commit();
 			  return pJuridicaAtu;
-			  
-		  }catch (Exception e) {
+		  } catch (Exception e) {
 			  throw new WebApplicationException(Status.INTERNAL_SERVER_ERROR);
 		  }
-			  
-	  }
-	  
-	  
-	  
 
-	
+	  }
+
 }

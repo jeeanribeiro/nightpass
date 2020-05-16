@@ -190,6 +190,35 @@ ALTER TABLE t_presenca
         REFERENCES t_pfisica ( psa_codigo );
 
 
+CREATE TABLE t_galeriaproduto (
+    gap_codigo             INTEGER NOT NULL,
+    gap_endservidor        VARCHAR2(100),
+    t_produto_prd_codigo   INTEGER NOT NULL
+);
+
+ALTER TABLE t_galeriaproduto ADD CONSTRAINT t_galeriaproduto_pk PRIMARY KEY ( gap_codigo );
+
+CREATE TABLE t_produto (
+    prd_codigo                INTEGER NOT NULL,
+    prd_nome                  VARCHAR2(80),
+    prd_marca                 VARCHAR2(50),
+    prd_descricao             VARCHAR2(800),
+    prd_preco                 NUMBER(10, 2),
+    t_estabeleci_est_codigo   INTEGER NOT NULL,
+    prd_formato               VARCHAR2(50)
+);
+
+ALTER TABLE t_produto ADD CONSTRAINT t_produto_pk PRIMARY KEY ( prd_codigo );
+
+ALTER TABLE t_galeriaproduto
+    ADD CONSTRAINT t_galeriaproduto_t_produto_fk FOREIGN KEY ( t_produto_prd_codigo )
+        REFERENCES t_produto ( prd_codigo );
+
+ALTER TABLE t_produto
+    ADD CONSTRAINT t_produto_t_estabeleci_fk FOREIGN KEY ( t_estabeleci_est_codigo )
+        REFERENCES t_estabeleci ( est_codigo );
+
+
 
 -- Relatório do Resumo do Oracle SQL Developer Data Modeler: 
 -- 

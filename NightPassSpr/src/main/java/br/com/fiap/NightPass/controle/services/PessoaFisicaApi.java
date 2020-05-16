@@ -18,21 +18,16 @@ import br.com.fiap.NightPassSpr.Entity.PessoaFisica;
 public class PessoaFisicaApi {
 
 	private PFisicaApiDAO dao;
-	
-		public PessoaFisicaApi() {
-			EntityManager em = 
-					EntityManagerFactorySingleton.getInstance().createEntityManager();
-			dao = new PFisicaApiDAOImpl(em);
-		}
-	
-	
-	
-	  @GET
-	  @Produces(MediaType.APPLICATION_JSON) public List<PessoaFisica> buscarTodas() {
-	  return dao.listar();
-	  
-	  }
-	 
-	
-	
+
+	public PessoaFisicaApi() {
+		EntityManager em =
+				EntityManagerFactorySingleton.getInstance().createEntityManager();
+		dao = new PFisicaApiDAOImpl(em);
+	}
+
+	@GET
+	@Produces(MediaType.APPLICATION_JSON) public List<PessoaFisica> buscarTodas() {
+		return dao.listar();
+	}
+
 }

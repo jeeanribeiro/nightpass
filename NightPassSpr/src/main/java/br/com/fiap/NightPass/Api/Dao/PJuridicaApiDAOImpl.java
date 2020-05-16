@@ -19,10 +19,10 @@ public class PJuridicaApiDAOImpl extends GenericApiDAOImpl<PJuridica, Long> impl
 		return em.createQuery("from PJuridica p Order by psjNome", PJuridica.class)
 				.getResultList();
 	}
-	
+
 	public PJuridica cadastrarR (PJuridica pjuridica) {
 		em.persist(pjuridica);
 		return pjuridica;
 	}
-	
+
 }

@@ -21,16 +21,16 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 @Entity
 @Table(name="T_TipoEst")
 public class TipoEstabelecimento implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@SequenceGenerator(name="tipoEst",sequenceName="sq_t_TipoEst",allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="tipoEst")
-	
+
 	@Column(name="tes_codigo")
 	private long codigo;
-	
+
 	@Column(name="tes_nome", length=60)
 	private String nome;
 
@@ -40,11 +40,11 @@ public class TipoEstabelecimento implements Serializable {
 	//Permite a Exibição
 	@JsonIgnore()
 	private List<Estabelecimento> estabelecimentos;
-	
+
 	public TipoEstabelecimento() {
 		super();
 	}
-	
+
 	public TipoEstabelecimento(Integer codigo, String nome) {
 		super();
 		this.codigo = codigo;
@@ -74,5 +74,5 @@ public class TipoEstabelecimento implements Serializable {
 	public void setEstabelecimentos(List<Estabelecimento> estabelecimentos) {
 		this.estabelecimentos = estabelecimentos;
 	}
-	
+
 }

@@ -23,18 +23,18 @@ import br.com.fiap.NightPassSpr.Entity.Presenca;
 @Controller
 @RequestMapping("/presenca")
 public class PresencaController {
-	
+
 	@Autowired
 	private PresencaDAO presencaDao;
 
 	@Autowired
 	private HttpSession session;
-	
+
 	@Autowired
 	private EstabelecimentoDAO estabelecimentoDAO;
-	
+
 	PessoaFisica usuarioLog;
-	
+
 	@Transactional
 	@PostMapping()
 	public String alterarPresenca(Model model, @RequestParam("precodigo") long precodigo, 
@@ -55,13 +55,8 @@ public class PresencaController {
 		}else {
 			
 			return "/base/Error";
-			
-			
 		}
-		
-		
+
 	}
-	
-	
 
 }
