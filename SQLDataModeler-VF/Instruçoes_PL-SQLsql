@@ -49,11 +49,6 @@ BEGIN
             
             v_PresencaExiste := True;
             
-            DBMS_OUTPUT.PUT_LINE(v_AgendaPres.age_codigo ||' '|| v_PresencaPf.pre_codigo ||
-            ' ' || v_PresencaPf.t_agenda_age_codigo);
-            DBMS_OUTPUT.PUT_LINE(v_AgendaPres.age_data);
-            DBMS_OUTPUT.PUT_LINE(v_AgendaPres.AGE_DETALHES);
-            
             INSERT INTO t_presenca_temp VALUES v_PresencaPf;
             
             END IF;
@@ -62,8 +57,6 @@ BEGIN
         
         IF v_PresencaExiste = False THEN
         
-            DBMS_OUTPUT.PUT_LINE(v_AgendaPres.age_codigo);
-            
             INSERT INTO t_presenca_temp (
                 pre_codigo,
                 pre_status,
@@ -90,7 +83,6 @@ on p.t_agenda_age_codigo = a.age_codigo
 order by age_data ;
 
 
-
 --      3. Cadastro de produtos de estabelecimentos.
 
 DECLARE
@@ -113,6 +105,48 @@ END;
 /
 
 SELECT  /*loader*/ * FROM T_PRODUTO;
+
+--      2.	Criar procedimento para que um usuário Proprietário de alguma 
+--      Pessoa Jurídica/Estabelecimento possa adicionar usuários como gestores da PJ.
+
+DECLARE
+    
+    v_Proprietario T_PFisica.PSA_CODIGO%TYPE :=26;
+    v_Novogestor T_PFisica.PSA_CODIGO%TYPE :=10;
+    v_Pjuridica T_PJuridica.Psj_codigo%Type :=83;
+    v_Pgestor T_PFGESTOR%ROWTYPE;
+    
+BEGIN
+    
+    SELECT * 
+    INTO v_Pgestor
+    FROM T_PFGESTOR g WHERE g.T_PFISICA_PSA_CODIGO = v_Proprietario
+    AND g.T_PJURIDICA_PSJ_CODIGO = v_Pjuridica;
+    
+        IF v_Pgestor.RGE_PERFIL = 'PROPRIETARIO' THEN
+        
+            DBMS_OUTPUT.PUT_LINE(v_NovoGestor); 
+        
+        END IF;
+    
+END;
+/
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
