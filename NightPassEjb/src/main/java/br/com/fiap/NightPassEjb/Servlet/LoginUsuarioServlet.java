@@ -48,41 +48,22 @@ public class LoginUsuarioServlet extends HttpServlet {
 		cPFisica = dao.buscarPorEmail((String) request.getParameter("email"));
 		
 		if (cPFisica == null) {
-		
 			request.setAttribute("resultado", "Usuario Não Encontrado");
 			usSession.invalidate();
-			
-			
 		} else {
 			if (cPFisica.ValidarSenha(request.getParameter("senha")) == true) {
-				
 				usSession.setAttribute("PFisicalog", cPFisica);
-				
 				senhaValida = true;
-				
-				//Vai para o painel de controle
 				request.getRequestDispatcher("PainelPrincipal.jsp").include(request, response);
-				
-			}else {
-				
+			} else {
 				request.setAttribute("resultado", "Senha Incorreta");
 				usSession.invalidate();
-				
 			}
-			
-			
-			
 		}
-		
-		//ser o login não for bem sucedido volta para tela de login
 		
 		if(senhaValida != true) {
-		
-		request.getRequestDispatcher("LoginUsuario.jsp").forward(request, response);
-		
+			request.getRequestDispatcher("LoginUsuario.jsp").forward(request, response);
 		}
-
-		
 		
 	}
 
