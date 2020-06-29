@@ -1,0 +1,66 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4619D32B-F724-171E-CE29-FA102D059E4B" name="T_EstGenMusical">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>DCE9497B-6BFB-14A4-6393-55AB22491305</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="T_GenMusical_gmu_codigo" id="EE612E02-BB54-5DE1-FC43-9E90C42EDA43">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>23638E37-795F-CF89-6FA6-FB24204DA490</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="80BF2906-7824-3C50-CC88-8810A94C99D4" referredColumn="9C99C6F4-7580-4C42-6E21-F48248FDC6B7"/>
+</associations>
+</Column>
+<Column name="T_Estabeleci_est_codigo" id="4303F5EA-CE69-8807-C676-A18411A37A7B">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>0A9F29F3-982E-5AFF-B588-70DDA56874AB</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FC671BE8-1FE4-243C-9E4C-5A1420C46959" referredColumn="11B66684-FBEB-A923-585A-AD677C8B865D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0B7D36BD-C457-AA64-AF21-D8D182192955" name="T_GenMusical_FK">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>B83FC6F8-6566-586C-B90F-E4C9598B3CFC</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EE612E02-BB54-5DE1-FC43-9E90C42EDA43"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F3102711-2401-5392-EF1C-1EDE510BFBE2" name="T_Estabeleci_FK">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>23CA4008-7784-8C10-519C-A01B0C48D822</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4303F5EA-CE69-8807-C676-A18411A37A7B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

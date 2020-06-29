@@ -1,5 +1,5 @@
 -- Gerado por Oracle SQL Developer Data Modeler 18.4.0.339.1532
---   em:        2020-04-21 22:25:16 BRT
+--   em:        2020-06-01 20:01:47 BRT
 --   site:      Oracle Database 11g
 --   tipo:      Oracle Database 11g
 
@@ -14,6 +14,14 @@ CREATE TABLE t_agenda (
 );
 
 ALTER TABLE t_agenda ADD CONSTRAINT t_agenda_pk PRIMARY KEY ( age_codigo );
+
+CREATE TABLE t_comanda (
+    com_codigo                INTEGER NOT NULL,
+    t_pfisica_psa_codigo      INTEGER NOT NULL,
+    t_estabeleci_est_codigo   INTEGER NOT NULL
+);
+
+ALTER TABLE t_comanda ADD CONSTRAINT t_comanda_pk PRIMARY KEY ( com_codigo );
 
 CREATE TABLE t_estabeleci (
     est_codigo               INTEGER NOT NULL,
@@ -38,12 +46,21 @@ CREATE TABLE t_estgenmusical (
 
 CREATE TABLE t_galeriaest (
     gae_codigo                 INTEGER NOT NULL,
-    gae_foto                   BLOB NOT NULL,
+    gae_foto                   BLOB,
     t_estabeleci_est_codigo    INTEGER NOT NULL,
-    t_tipogaleria_tga_codigo   INTEGER NOT NULL
+    t_tipogaleria_tga_codigo   INTEGER NOT NULL,
+    gae_endservidor            VARCHAR2(100)
 );
 
 ALTER TABLE t_galeriaest ADD CONSTRAINT t_galeriaest_pk PRIMARY KEY ( gae_codigo );
+
+CREATE TABLE t_galeriaproduto (
+    gap_codigo             INTEGER NOT NULL,
+    gap_endservidor        VARCHAR2(100),
+    t_produto_prd_codigo   INTEGER NOT NULL
+);
+
+ALTER TABLE t_galeriaproduto ADD CONSTRAINT t_galeriaproduto_pk PRIMARY KEY ( gap_codigo );
 
 CREATE TABLE t_genmusical (
     gmu_codigo   INTEGER NOT NULL,
@@ -51,6 +68,18 @@ CREATE TABLE t_genmusical (
 );
 
 ALTER TABLE t_genmusical ADD CONSTRAINT t_genmusical_pk PRIMARY KEY ( gmu_codigo );
+
+CREATE TABLE t_itempedido (
+    ipd_codigo             INTEGER NOT NULL,
+    ipd_dhgeracao          DATE,
+    ipd_dhentrega          DATE,
+    status                 VARCHAR2(100),
+    t_comanda_com_codigo   INTEGER NOT NULL,
+    ipd_quantidade         NUMBER(4, 4),
+    t_produto_prd_codigo   INTEGER NOT NULL
+);
+
+ALTER TABLE t_itempedido ADD CONSTRAINT t_itempedido_pk PRIMARY KEY ( ipd_codigo );
 
 CREATE TABLE t_pfgestor (
     t_pfisica_psa_codigo     INTEGER NOT NULL,
@@ -126,6 +155,18 @@ CREATE TABLE t_presenca (
 
 ALTER TABLE t_presenca ADD CONSTRAINT t_presenca_pk PRIMARY KEY ( pre_codigo );
 
+CREATE TABLE t_produto (
+    prd_codigo                INTEGER NOT NULL,
+    prd_nome                  VARCHAR2(80),
+    prd_marca                 VARCHAR2(50),
+    prd_descricao             VARCHAR2(800),
+    prd_preco                 NUMBER(10, 2),
+    t_estabeleci_est_codigo   INTEGER NOT NULL,
+    prd_formato               VARCHAR2(50)
+);
+
+ALTER TABLE t_produto ADD CONSTRAINT t_produto_pk PRIMARY KEY ( prd_codigo );
+
 CREATE TABLE t_tipoest (
     tes_codigo   INTEGER NOT NULL,
     tes_nome     VARCHAR2(60) NOT NULL
@@ -145,6 +186,18 @@ ALTER TABLE t_agenda
     ADD CONSTRAINT t_agenda_t_estabeleci_fk FOREIGN KEY ( t_estabeleci_est_codigo )
         REFERENCES t_estabeleci ( est_codigo );
 
+ALTER TABLE t_comanda
+    ADD CONSTRAINT t_comanda_t_estabeleci_fk FOREIGN KEY ( t_estabeleci_est_codigo )
+        REFERENCES t_estabeleci ( est_codigo );
+
+ALTER TABLE t_comanda
+    ADD CONSTRAINT t_comanda_t_pfisica_fk FOREIGN KEY ( t_pfisica_psa_codigo )
+        REFERENCES t_pfisica ( psa_codigo );
+
+ALTER TABLE t_estgenmusical
+    ADD CONSTRAINT t_estabeleci_fk FOREIGN KEY ( t_estabeleci_est_codigo )
+        REFERENCES t_estabeleci ( est_codigo );
+
 ALTER TABLE t_estabeleci
     ADD CONSTRAINT t_estabeleci_t_pjuridica_fk FOREIGN KEY ( t_pjuridica_psj_codigo )
         REFERENCES t_pjuridica ( psj_codigo );
@@ -153,14 +206,6 @@ ALTER TABLE t_estabeleci
     ADD CONSTRAINT t_estabeleci_t_tipoest_fk FOREIGN KEY ( t_tipoest_tes_codigo )
         REFERENCES t_tipoest ( tes_codigo );
 
-ALTER TABLE t_estgenmusical
-    ADD CONSTRAINT t_estgenmusica_fk FOREIGN KEY ( t_estabeleci_est_codigo )
-        REFERENCES t_estabeleci ( est_codigo );
-
-ALTER TABLE t_estgenmusical
-    ADD CONSTRAINT t_estgenmusicall_fk FOREIGN KEY ( t_genmusical_gmu_codigo )
-        REFERENCES t_genmusical ( gmu_codigo );
-
 ALTER TABLE t_galeriaest
     ADD CONSTRAINT t_galeriaest_t_estabeleci_fk FOREIGN KEY ( t_estabeleci_est_codigo )
         REFERENCES t_estabeleci ( est_codigo );
@@ -168,6 +213,22 @@ ALTER TABLE t_galeriaest
 ALTER TABLE t_galeriaest
     ADD CONSTRAINT t_galeriaest_t_tipogaleria_fk FOREIGN KEY ( t_tipogaleria_tga_codigo )
         REFERENCES t_tipogaleria ( tga_codigo );
+
+ALTER TABLE t_galeriaproduto
+    ADD CONSTRAINT t_galeriaproduto_t_produto_fk FOREIGN KEY ( t_produto_prd_codigo )
+        REFERENCES t_produto ( prd_codigo );
+
+ALTER TABLE t_estgenmusical
+    ADD CONSTRAINT t_genmusical_fk FOREIGN KEY ( t_genmusical_gmu_codigo )
+        REFERENCES t_genmusical ( gmu_codigo );
+
+ALTER TABLE t_itempedido
+    ADD CONSTRAINT t_itempedido_t_comanda_fk FOREIGN KEY ( t_comanda_com_codigo )
+        REFERENCES t_comanda ( com_codigo );
+
+ALTER TABLE t_itempedido
+    ADD CONSTRAINT t_itempedido_t_produto_fk FOREIGN KEY ( t_produto_prd_codigo )
+        REFERENCES t_produto ( prd_codigo );
 
 ALTER TABLE t_pfgestor
     ADD CONSTRAINT t_pfgestor_t_pfisica_fk FOREIGN KEY ( t_pfisica_psa_codigo )
@@ -189,44 +250,17 @@ ALTER TABLE t_presenca
     ADD CONSTRAINT t_presenca_t_pfisica_fk FOREIGN KEY ( t_pfisica_psa_codigo )
         REFERENCES t_pfisica ( psa_codigo );
 
-
-CREATE TABLE t_galeriaproduto (
-    gap_codigo             INTEGER NOT NULL,
-    gap_endservidor        VARCHAR2(100),
-    t_produto_prd_codigo   INTEGER NOT NULL
-);
-
-ALTER TABLE t_galeriaproduto ADD CONSTRAINT t_galeriaproduto_pk PRIMARY KEY ( gap_codigo );
-
-CREATE TABLE t_produto (
-    prd_codigo                INTEGER NOT NULL,
-    prd_nome                  VARCHAR2(80),
-    prd_marca                 VARCHAR2(50),
-    prd_descricao             VARCHAR2(800),
-    prd_preco                 NUMBER(10, 2),
-    t_estabeleci_est_codigo   INTEGER NOT NULL,
-    prd_formato               VARCHAR2(50)
-);
-
-ALTER TABLE t_produto ADD CONSTRAINT t_produto_pk PRIMARY KEY ( prd_codigo );
-
-ALTER TABLE t_galeriaproduto
-    ADD CONSTRAINT t_galeriaproduto_t_produto_fk FOREIGN KEY ( t_produto_prd_codigo )
-        REFERENCES t_produto ( prd_codigo );
-
 ALTER TABLE t_produto
     ADD CONSTRAINT t_produto_t_estabeleci_fk FOREIGN KEY ( t_estabeleci_est_codigo )
         REFERENCES t_estabeleci ( est_codigo );
 
-ALTER TABLE T_PFGESTOR 
-ADD CONSTRAINT PK_GESTOR UNIQUE (T_PFISICA_PSA_CODIGO, T_PJURIDICA_PSJ_CODIGO);
 
 
 -- Relatório do Resumo do Oracle SQL Developer Data Modeler: 
 -- 
--- CREATE TABLE                            11
+-- CREATE TABLE                            15
 -- CREATE INDEX                             1
--- ALTER TABLE                             22
+-- ALTER TABLE                             32
 -- CREATE VIEW                              0
 -- ALTER VIEW                               0
 -- CREATE PACKAGE                           0

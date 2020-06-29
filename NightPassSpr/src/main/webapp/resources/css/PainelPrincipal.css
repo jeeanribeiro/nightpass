@@ -15,7 +15,7 @@ h1 {
 
 .containerEstabelecimento {
 	width: 1080px;
-	height: 660px;
+	height: 680px;
 	/*background-color: maroon; */
 	background-color: transparent;
 	display: flex;
@@ -40,14 +40,14 @@ h1 {
 	"foto1 foto2 foto3"
 	"descricao descricao descricao";
 	grid-template-columns: 25% 45% 25%;
-	grid-template-rows: 16% 58% 24%;
+	grid-template-rows: 16% 56% 26%;
 	background-color: transparent;
 	row-gap: 1%;
 	column-gap: 2.5%;
 	background-image: url("../../resources/imgs/Space Waving Novo.gif");
 	background-repeat: no-repeat;
-	background-size: 90% 100%;
-	background-position-y: center;
+	background-size: 90% 96%;
+	background-position-y: top;
 	background-position-x: center;
 }
 
@@ -138,7 +138,7 @@ h1 {
 .textodescricao {
 	margin:auto;
 	width: 95%;
-	height: 70%;
+	height: 60%;
 	padding: 3px;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -183,6 +183,7 @@ h1 {
 	font-size: 22px;
 	font-weight: 700;
 	cursor: pointer;
+	
 }
 
 .alinhardiv {

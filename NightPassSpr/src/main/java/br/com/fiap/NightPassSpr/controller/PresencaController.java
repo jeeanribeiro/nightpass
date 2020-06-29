@@ -42,7 +42,9 @@ public class PresencaController {
 		
 		usuarioLog = (PessoaFisica) session.getAttribute("usuarioLog");
 
-		Presenca PresencaAtu = presencaDao.buscar(precodigo);
+		Presenca PresencaAtu = new Presenca();
+		
+		PresencaAtu = presencaDao.buscar(precodigo);
 		
 		PresencaAtu.setStatus(status);
 				

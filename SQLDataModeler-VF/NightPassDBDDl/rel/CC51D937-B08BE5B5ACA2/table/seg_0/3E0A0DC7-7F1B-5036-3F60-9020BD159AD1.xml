@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3E0A0DC7-7F1B-5036-3F60-9020BD159AD1" name="T_GaleriaEst">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>4AD90D72-4467-75ED-C8AE-0BBC6FF4521C</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="gae_codigo" id="F2B66C2A-6F49-F811-0DC9-627C3BFE8A6B">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>9F203C4B-D2DB-B8EA-237C-7984679579B3</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="gae_foto" id="4F923983-77DF-83D3-2AC0-29303385E1BE">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>CA708D9D-67B0-CA9D-E20A-1D7EEEEB274B</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="T_Estabeleci_est_codigo" id="C159BCEC-4BCB-9293-C6DA-D1A02B6CF9BE">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>CD4972DF-CF19-5810-8C50-16D4B4ABEC4E</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C525CD0A-331F-FFEC-6EB2-78F0802E972A" referredColumn="11B66684-FBEB-A923-585A-AD677C8B865D"/>
+</associations>
+</Column>
+<Column name="T_TipoGaleria_tga_codigo" id="67C103CB-64A2-FCC5-832C-D03301103F7F">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>6DE734E7-D3C0-2AF4-E394-03309B3EE060</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4C4E2F93-6DC6-C783-8098-CAF1A3DA7611" referredColumn="4F98E224-0CEB-054D-E2F2-F5A18368085C"/>
+</associations>
+</Column>
+<Column name="gae_endservidor" id="E2622C1B-928B-C723-0486-616749AD4101">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>50F1AB95-8D46-5D5A-C305-A9FD1EC12A10</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E1C5DC51-C1D4-B38D-44A8-E89E40CC6B99" name="T_GaleriaEst_PK">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>793BAB24-D193-EA25-50CA-8ACFA60A8302</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F2B66C2A-6F49-F811-0DC9-627C3BFE8A6B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="38A75DBE-E707-6D95-0DFE-C14A5E5EA4C1" name="T_GaleriaEst_T_TipoGaleria_FK">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>4E2B34ED-9C15-8987-83E1-C65DD3C1E3F0</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="67C103CB-64A2-FCC5-832C-D03301103F7F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="38FDC717-2F28-BEE9-7203-7E3047C949AA" name="T_GaleriaEst_T_Estabeleci_FK">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>BAA1E2B4-74C4-93F7-FFF8-5BD0D40ABE56</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C159BCEC-4BCB-9293-C6DA-D1A02B6CF9BE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,129 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E6E7FBEF-C55E-1FD5-74B2-00B7A488DEDE" name="T_Produto">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 23:00:43 UTC</createdTime>
+<generatorID>076B2E7C-61B6-96EC-530D-204EAB2B7598</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="prd_codigo" id="6A601C0E-6C1C-8D69-C84B-CC8807108ACF">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 23:00:43 UTC</createdTime>
+<generatorID>BF1EBE9F-BFF6-6C4D-886C-95C8C340C4E7</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prd_nome" id="2BFBA3D9-4289-8E3F-584B-0CE3B0BF17F1">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 23:00:43 UTC</createdTime>
+<generatorID>DEF1B95A-3A0E-28BD-D96E-DCCEFBED189A</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prd_marca" id="1FFD794D-2C10-200B-A54E-53FA24BA14E5">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 23:00:43 UTC</createdTime>
+<generatorID>B2BD831F-D02B-53EF-89E8-909171ACF1F3</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prd_descricao" id="EC64F624-FBA7-C3A1-8633-A0E9566280CE">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 23:00:43 UTC</createdTime>
+<generatorID>120C8FD8-FA34-A53F-9E49-1219DDBFE563</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>800</dataTypeSize>
+<ownDataTypeParameters>800,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prd_preco" id="C80D6F3B-6CD3-D0F1-ECB6-34154AB0BDEE">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 23:00:43 UTC</createdTime>
+<generatorID>4B70F688-4AB4-194C-D7D7-9C72886ECDF8</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="T_Estabeleci_est_codigo" id="BB8FCC96-84F4-93AD-5556-7293898B7A12">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 23:00:43 UTC</createdTime>
+<generatorID>092FF90A-F01F-D822-4A3E-666DA0C1F8E0</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="010A3404-C1C9-798B-A879-83B1F73AAC87" referredColumn="11B66684-FBEB-A923-585A-AD677C8B865D"/>
+</associations>
+</Column>
+<Column name="prd_formato" id="EED536A7-4A37-3807-B8EB-C1B30482E80A">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 23:00:43 UTC</createdTime>
+<generatorID>190A9DEF-6664-B4C4-3B9D-B447B4B5FCA1</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7801957B-C718-B08F-DCEB-1120A97E31A2" name="T_Produto_PK">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 23:00:43 UTC</createdTime>
+<generatorID>BBCB32BD-1FE8-CCFB-88F5-892D3E044ADE</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6A601C0E-6C1C-8D69-C84B-CC8807108ACF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="05B68435-8C31-EAB6-FEBA-4D1D24C89E41" name="T_Produto_T_Estabeleci_FK">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 23:00:43 UTC</createdTime>
+<generatorID>3CB22805-0CE4-FB9D-B4A2-681EB02355F4</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BB8FCC96-84F4-93AD-5556-7293898B7A12"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,142 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D90338D9-FB18-744F-D9D4-B5E948744B32" name="T_ItemPedido">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 23:00:43 UTC</createdTime>
+<generatorID>1A4836C4-B968-58A0-56DC-DACBA21FED50</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ipd_codigo" id="EE4074C4-35DC-8F6A-186A-6F50F3733689">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 23:00:43 UTC</createdTime>
+<generatorID>3EDF4E44-1674-C91B-B8A4-8E33A96C133D</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ipd_dhgeracao" id="89590122-BD5D-6BDF-A3BF-7BCC9C19A63E">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 23:00:43 UTC</createdTime>
+<comment>Data e Hora da realização do Pedido</comment>
+<generatorID>ED34D81B-9D3B-1897-E12C-24563F6B832F</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ipd_dhentrega" id="429DD1D9-3A6E-7DE8-FC22-FC609990CEF6">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 23:00:43 UTC</createdTime>
+<comment>Data e hora da entrega ao Consumidor</comment>
+<generatorID>DEF02944-21FC-6FDB-E3D2-E89E1B0D7F5F</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Status" id="30D0F412-B70B-489A-1131-4BD809B0551F">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 23:00:43 UTC</createdTime>
+<generatorID>7F906D5D-879E-665F-9641-A5E19B4DDB88</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="T_Comanda_com_codigo" id="16D7264D-C88C-68F6-920E-0C72088302D5">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 23:00:43 UTC</createdTime>
+<generatorID>462C0FFD-1D8D-89C2-E56D-0C0263E42B6D</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="87D55AA9-DC31-EE36-DF10-B6DC3D1F33C5" referredColumn="4A7219D1-6425-207F-D322-6FFC95A1E0FB"/>
+</associations>
+</Column>
+<Column name="ipd_quantidade" id="0E4ABB95-D682-49B1-C629-E5A3780DCA45">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 23:00:43 UTC</createdTime>
+<generatorID>3B366248-6660-18FB-D7CD-5AF6AE1B57AE</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,4,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="T_Produto_prd_codigo" id="AD709868-AB4E-8DA1-B49F-297A341B4FDD">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 23:00:43 UTC</createdTime>
+<generatorID>453368BF-597D-76C7-56E1-5C065E4414F4</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B394DC45-641D-B5F7-76F5-4C11E8DEFA82" referredColumn="6A601C0E-6C1C-8D69-C84B-CC8807108ACF"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4245CC8B-4E87-57E3-1DC7-53CA05EFCA96" name="T_ItemPedido_PK">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 23:00:43 UTC</createdTime>
+<generatorID>BAE01F42-CA33-29A7-07C3-438C6FFBF239</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EE4074C4-35DC-8F6A-186A-6F50F3733689"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E7EE2601-8B10-FD95-6C12-AD1AE48A11B2" name="T_ItemPedido_T_Comanda_FK">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 23:00:43 UTC</createdTime>
+<generatorID>19247F0E-D707-532B-4DAF-70F657148FAA</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="16D7264D-C88C-68F6-920E-0C72088302D5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="046DACA7-D6DA-4891-0659-450EE920A1E0" name="T_ItemPedido_T_Produto_FK">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 23:00:43 UTC</createdTime>
+<generatorID>C9917C3F-9D88-94D2-3D11-948BFCD011F9</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AD709868-AB4E-8DA1-B49F-297A341B4FDD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C04544CB-9756-0C7F-9390-E4B10531B1D1" containerWithKeyObject="B4C691C9-B817-05E8-DB19-B7134C4902E3" localFKIndex="B68D1628-58A9-8D25-FAF5-99C6723DD0C2" name="T_PFGestor_T_PJuridica_FK">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>F592D604-46A7-B1FB-23FC-8FD24BFDE3BC</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<referredTableLongName>T_PJuridica</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>CE2AFD8F-2475-EE40-A554-8F365A5B0DF4</referredTableID>
+<keyObject>D63B35A5-3416-57EB-8475-1F49E569CEA3</keyObject>
+<referredKeyID>D63B35A5-3416-57EB-8475-1F49E569CEA3</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>psj_codigo</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,131 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1A4836C4-B968-58A0-56DC-DACBA21FED50" name="T_ItemPedido">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:12:12 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ipd_codigo" id="3EDF4E44-1674-C91B-B8A4-8E33A96C133D">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:13:39 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ipd_dhgeracao" id="ED34D81B-9D3B-1897-E12C-24563F6B832F">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:12:36 UTC</createdTime>
+<comment>Data e Hora da realização do Pedido</comment>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ipd_dhentrega" id="DEF02944-21FC-6FDB-E3D2-E89E1B0D7F5F">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:14:34 UTC</createdTime>
+<comment>Data e hora da entrega ao Consumidor</comment>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Status" id="7F906D5D-879E-665F-9641-A5E19B4DDB88">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:16:28 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="com_codigo" id="462C0FFD-1D8D-89C2-E56D-0C0263E42B6D">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:34:02 UTC</createdTime>
+<generatorID>19247F0E-D707-532B-4DAF-70F657148FAA</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<referedAttribute>34E0ACB4-2AB5-D11B-2B75-1DCE60A811BD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ipd_quantidade" id="3B366248-6660-18FB-D7CD-5AF6AE1B57AE">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:56:42 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,4,4</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prd_codigo" id="453368BF-597D-76C7-56E1-5C065E4414F4">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:59:43 UTC</createdTime>
+<generatorID>C9917C3F-9D88-94D2-3D11-948BFCD011F9</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<referedAttribute>BF1EBE9F-BFF6-6C4D-886C-95C8C340C4E7</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="BAE01F42-CA33-29A7-07C3-438C6FFBF239" name="T_Pedido PK">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:14:21 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>3EDF4E44-1674-C91B-B8A4-8E33A96C133D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

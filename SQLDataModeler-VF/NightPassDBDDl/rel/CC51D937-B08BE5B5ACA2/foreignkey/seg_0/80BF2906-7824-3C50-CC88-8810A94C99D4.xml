@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="80BF2906-7824-3C50-CC88-8810A94C99D4" containerWithKeyObject="4619D32B-F724-171E-CE29-FA102D059E4B" localFKIndex="0B7D36BD-C457-AA64-AF21-D8D182192955" name="T_GenMusical_FK">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>B83FC6F8-6566-586C-B90F-E4C9598B3CFC</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<referredTableLongName>T_GenMusical</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>8BA922C5-D955-5935-76F9-24DA902BC151</referredTableID>
+<keyObject>6D1898B7-49F6-152E-7355-AA402BBCE083</keyObject>
+<referredKeyID>6D1898B7-49F6-152E-7355-AA402BBCE083</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>gmu_codigo</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

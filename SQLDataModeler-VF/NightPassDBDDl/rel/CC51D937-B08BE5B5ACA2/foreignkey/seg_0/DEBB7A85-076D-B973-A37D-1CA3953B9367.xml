@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="DEBB7A85-076D-B973-A37D-1CA3953B9367" containerWithKeyObject="A569F151-E8DA-ACE1-340C-0231B3D48AF7" localFKIndex="3851A387-217A-F084-26FF-F1D84D2A04CB" name="T_Comanda_T_PFisica_FK">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>3D20E656-325C-F6A5-33B7-80A120FC4F3B</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<referredTableLongName>T_PFisica</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>6377200C-B69A-CD17-21E8-E45E9D34E548</referredTableID>
+<keyObject>CDAD471F-6791-2F7F-A8A7-54046FF9B97E</keyObject>
+<referredKeyID>CDAD471F-6791-2F7F-A8A7-54046FF9B97E</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>psa_codigo</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A569F151-E8DA-ACE1-340C-0231B3D48AF7" name="T_Comanda">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>B91C43CD-AEF3-439F-A550-489F2C0F0B7D</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="com_codigo" id="4A7219D1-6425-207F-D322-6FFC95A1E0FB">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>34E0ACB4-2AB5-D11B-2B75-1DCE60A811BD</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="T_PFisica_psa_codigo" id="47374E7E-4CAD-70A1-E3E0-C6C5E5490DAF">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>3B99C1EF-EA25-5567-87C9-6799C2FAB83C</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DEBB7A85-076D-B973-A37D-1CA3953B9367" referredColumn="321D0ACE-5CFF-2CBB-65E4-585CC4E5169E"/>
+</associations>
+</Column>
+<Column name="T_Estabeleci_est_codigo" id="AC26D687-A012-31C1-F0D0-E4F0F0C0CF1F">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>BCB6A8F2-36B5-9555-FB06-FE6CA9809C20</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3A43E095-5723-79A2-F0B5-C6B659358932" referredColumn="11B66684-FBEB-A923-585A-AD677C8B865D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4F8E2E65-7B40-2E12-BE8F-8CCCC5D84A1E" name="T_Comanda_PK">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>1801DBC9-C11B-5EFD-6CD8-2C1FA76C7AA1</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4A7219D1-6425-207F-D322-6FFC95A1E0FB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="727E1810-B8CD-30D8-22F9-906F06F0DC52" name="T_Comanda_T_Estabeleci_FK">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>74F3130D-8552-9D1F-7F10-FC87BC64919A</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AC26D687-A012-31C1-F0D0-E4F0F0C0CF1F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3851A387-217A-F084-26FF-F1D84D2A04CB" name="T_Comanda_T_PFisica_FK">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>3D20E656-325C-F6A5-33B7-80A120FC4F3B</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="47374E7E-4CAD-70A1-E3E0-C6C5E5490DAF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

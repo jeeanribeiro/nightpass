@@ -7,6 +7,8 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -46,6 +48,7 @@ public class AgendaController {
 
 	PessoaFisica usuarioLog;
 
+	@Transactional(propagation=Propagation.REQUIRED) 
 	@GetMapping("/{estCodigo}")
 	public String abrirAgendaEst(@PathVariable("estCodigo") long estCodigo, Model model,
 			@RequestParam(required=false) Presenca presenca){
@@ -92,6 +95,10 @@ public class AgendaController {
 			novaPresenca.setPrePessoaFisica(usuarioLog);
 			novaPresenca.setStatus("NÃO INFORMADO");
 
+			presencaDao.cadastrar(novaPresenca);
+			presencaDao.flush();
+			presencaDao.refresh(novaPresenca);
+			
 			PresencaVer.add(novaPresenca);
 
 			}

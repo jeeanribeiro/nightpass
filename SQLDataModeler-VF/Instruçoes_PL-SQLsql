@@ -1,25 +1,15 @@
 SET SERVEROUTPUT ON
 
-
 --       1. Obter uma tabela contendo os registros de agenda de um estabelecimento,
 --       mesclando com o status de presença de um determinado usuário para estes
 --       registros. 
-
-    -- Cria uma tabela de presença temporária
-    
-    CREATE TABLE t_presenca_temp (
-    pre_codigo             INTEGER,
-    pre_status             VARCHAR2(20),
-    t_pfisica_psa_codigo   INTEGER NOT NULL,
-    t_agenda_age_codigo    INTEGER NOT NULL
-    );
 
     TRUNCATE TABLE t_presenca_temp;
 
 DECLARE
 
     v_Estab_cod T_Estabeleci.Est_codigo%TYPE :=3;
-    v_Pfisica_cod T_Pfisica.psa_codigo%TYPE :=43;
+    v_Pfisica_cod T_Pfisica.psa_codigo%TYPE :=181;
  
     v_AgendaPres T_Agenda%ROWTYPE;
     v_PresencaPf T_Presenca%Rowtype;
@@ -82,29 +72,7 @@ SELECT a.*, p.* FROM t_presenca_temp p inner join t_agenda a
 on p.t_agenda_age_codigo = a.age_codigo
 order by age_data ;
 
-
---      3. Cadastro de produtos de estabelecimentos.
-
-DECLARE
-
-    v_Produtonovo T_PRODUTO%ROWTYPE;
-
-BEGIN
-    
-    v_Produtonovo.prd_codigo := seq_T_Produto.nextval;
-    v_Produtonovo.prd_nome := 'CERVEJA SKOL';
-    v_Produtonovo.prd_marca := 'SKOL';
-    v_Produtonovo.prd_descricao := 'Cerveja SKOL nacional';
-    v_Produtonovo.prd_preco := 10.50;
-    v_Produtonovo.T_Estabeleci_Est_Codigo := 3;
-    v_Produtonovo.prd_formato := 'LATA 350 ml';
-    
-        INSERT INTO T_PRODUTO VALUES v_Produtonovo;
-    
-END;
-/
-
-SELECT  /*loader*/ * FROM T_PRODUTO;
+--//////////////////////////////////////////////////////////////////////////////
 
 --      2.	Criar procedimento para que um usuário Proprietário de alguma 
 --      Pessoa Jurídica/Estabelecimento possa adicionar usuários como gestores da PJ.
@@ -112,7 +80,7 @@ SELECT  /*loader*/ * FROM T_PRODUTO;
 DECLARE
     
     v_Proprietario T_PFisica.PSA_CODIGO%TYPE :=26;
-    v_Novogestor T_PFisica.PSA_CODIGO%TYPE :=10;
+    v_Novogestor T_PFisica.PSA_CODIGO%TYPE :=181;
     v_Pjuridica T_PJuridica.Psj_codigo%Type :=83;
     v_Pgestor T_PFGESTOR%ROWTYPE;
     
@@ -125,28 +93,362 @@ BEGIN
     
         IF v_Pgestor.RGE_PERFIL = 'PROPRIETARIO' THEN
         
-            DBMS_OUTPUT.PUT_LINE(v_NovoGestor); 
+        -- O proprietário foi validado então é permitida a inclusão de um novo Gestor
+
+            INSERT INTO t_pfgestor (
+                t_pfisica_psa_codigo,
+                t_pjuridica_psj_codigo,
+                rge_perfil,
+                rge_codigo
+            ) VALUES (
+                v_Novogestor,
+                v_Pjuridica,
+                'GESTOR',
+                SEQ_T_PFGESTOR.NEXTVAL
+            );
+                
+        ELSE
+        
+            DBMS_OUTPUT.PUT_LINE('A pessoa não é proprietária do Estabelecimento'); 
         
         END IF;
     
 END;
 /
+    SELECT  * FROM T_PFGESTOR WHERE T_PJURIDICA_PSJ_CODIGO = 83;
+
+--//////////////////////////////////////////////////////////////////////////////
+
+--      3. Cadastro de produtos de estabelecimentos.
+
+DECLARE
+
+    v_Produtonovo T_PRODUTO%ROWTYPE;
+
+BEGIN
+    
+    v_Produtonovo.prd_codigo := seq_T_Produto.nextval;
+    v_Produtonovo.prd_nome := 'BATATA FRITA';
+    v_Produtonovo.prd_marca := 'MARCA PROPRIA';
+    v_Produtonovo.prd_descricao := 'PORÇÃO DE BATATA FRITA';
+    v_Produtonovo.prd_preco := 30.00;
+    v_Produtonovo.T_Estabeleci_Est_Codigo := 3;
+    v_Produtonovo.prd_formato := 'PORÇÃO DE 500g';
+    
+        INSERT INTO T_PRODUTO VALUES v_Produtonovo;
+    
+END;
+/
+
+SELECT * FROM T_PRODUTO;
+
+--//////////////////////////////////////////////////////////////////////////////
+
+--      4.	Carregar uma lista de usuários que fazem aniversário em um determinado mês.
+
+
+    DECLARE
+    
+        --Usa o Mês atual do Sistema
+        -- v_VerMes number := Extract(month FROM (SYSDATE));
+        
+        --Usa um Mês definido pelo usuário
+        v_VerMes number := 12;
+
+        
+        v_Pessoa T_PFisica%ROWTYPE;
+        
+        CURSOR cursor_Pessoa IS
+        SELECT *
+        FROM T_PFISICA;
+        
+    BEGIN
+    
+        FOR v_Pessoa IN cursor_Pessoa LOOP
+    
+            IF Extract(month FROM v_pessoa.PSA_DTNASCIMENTO) = v_VerMes THEN
+    
+            DBMS_OUTPUT.PUT_LINE(v_pessoa.psa_codigo ||
+            ' - ' || v_pessoa.psa_nome || ' - ' || v_pessoa.psa_dtnascimento ); 
+            
+            END IF;
+        
+        END LOOP;
+        
+    END;
+    /
+        
+--//////////////////////////////////////////////////////////////
+-- SCRIPT CRIAÇÃO DE DADOS ALEATÓRIOS
+
+
+SET SERVEROUTPUT ON
+
+EXEC DBMS_RANDOM.SEED(51235456+1002);
+
+    BEGIN
+
+    DBMS_OUTPUT.put_line('value(40,60)= ' || DBMS_RANDOM.value(40,60));
+
+    END;
+/
+
+-- CRIA PRODUTOS PARA UM DETERMINADO ESTABELECIMENTO COM BASE NA TABELA T_PRODUTO_BASE
+
+DECLARE
+
+    v_PRODUTONOVO T_PRODUTO_BASE%ROWTYPE;
+    
+        CURSOR cursor_PRODUTO IS
+        SELECT *
+        FROM T_PRODUTO_BASE;
+
+BEGIN
+
+    FOR v_PRODUTONOVO IN cursor_PRODUTO LOOP
+    
+        v_PRODUTONOVO.PRD_CODIGO := SEQ_T_PRODUTO.NEXTVAL;
+        v_PRODUTONOVO.T_ESTABELECI_EST_CODIGO := 141;
+        v_PRODUTONOVO.PRD_PRECO := v_PRODUTONOVO.PRD_PRECO * 
+        ((DBMS_RANDOM.VALUE(10,20)/100)+1);
+        
+            INSERT INTO t_produto (
+                prd_codigo,
+                prd_nome,
+                prd_marca,
+                prd_descricao,
+                prd_preco,
+                t_estabeleci_est_codigo,
+                prd_formato
+            ) VALUES (
+                v_PRODUTONOVO.prd_codigo,
+                v_PRODUTONOVO.prd_nome,
+                v_PRODUTONOVO.prd_marca,
+                v_PRODUTONOVO.prd_descricao,
+                v_PRODUTONOVO.prd_preco,
+                v_PRODUTONOVO.t_estabeleci_est_codigo,
+                v_PRODUTONOVO.prd_formato
+            );
+        
+    END LOOP;
+
+END;
+/
+
+SELECT /*csv*/ * FROM T_PRODUTO;
+
+
+
+-- CRIA COMANDAS ALEATÓRIAS PARA CLIENTES
+
+-- CRIA TABELA TEMPORARIA COM CÓDIGO DE ESTABELECIMENTOS
+DROP TABLE TEMP_EST;
+DROP TABLE TEMP_PFISICA;
+
+CREATE GLOBAL TEMPORARY TABLE TEMP_EST
+(CD_EST_TEMP INTEGER, EST_CODIGO INTEGER);
+
+-- CRIA TABELA TEMPORARIA COM CÓDIGO DE CLIENTES
+
+CREATE GLOBAL TEMPORARY TABLE TEMP_PFISICA
+(CD_PFISICA_TEMP INTEGER, PSA_CODIGO INTEGER);
+
+
+--OBS: A TABELA TEMPORÁRIA TEM QUE SER CRIADA ANTES DOS PROCEDIMENTOS
+
+
+DECLARE
+
+        v_ESTROW T_ESTABELECI%ROWTYPE;
+        v_CDEST INTEGER;
+    
+        CURSOR cursor_EST IS
+        SELECT *
+        FROM T_estabeleci;
+
+BEGIN
+
+    v_CDEST := 1;
+
+    FOR v_ESTROW IN cursor_est loop
+    
+        insert into TEMP_EST (CD_EST_TEMP, EST_CODIGO) VALUES
+        (v_cdEST,V_ESTROW.EST_CODIGO);
+    
+    v_cdEst := v_cdEst + 1;
+    
+    end loop;
+    
+END;
+/
+
+DECLARE
+
+        v_PFISICAROW T_PFISICA%ROWTYPE;
+        v_CD INTEGER;
+    
+        CURSOR cursor_PFISICA IS
+        SELECT *
+        FROM T_PFISICA;
+
+BEGIN
+
+    v_CD := 1;
+
+    FOR v_PFISICAROW IN cursor_PFISICA loop
+    
+        insert into TEMP_PFISICA (CD_PFISICA_TEMP, PSA_CODIGO) VALUES
+        (v_cd, v_PFISICAROW.PSA_CODIGO);
+    
+    v_cd := v_cd + 1;
+    
+    end loop;
+    
+END;
+/
+
+
+
+
+--CRIA TABELA COMANDAS
+
+
+SELECT * FROM TEMP_PFISICA;
+SELECT * FROM TEMP_EST;
+
+EXEC DBMS_RANDOM.SEED(125487479);
+
+DECLARE
+
+    v_ComandaNova T_Comanda%ROWTYPE;
+    v_Contador integer :=0;
+    v_temp_pfisica INTEGER;
+    v_temp_est integer;
+    v_random_pfisica integer;
+    v_random_est integer;
+    
+
+BEGIN
+
+    FOR V_CONTADOR IN 1..500 LOOP
+    
+    v_random_pfisica:= TRUNC(DBMS_RANDOM.value(1,18));
+    v_random_est:= TRUNC(DBMS_RANDOM.value(1,9));
+    
+    SELECT  PSA_CODIGO into v_temp_pfisica
+        FROM TEMP_PFISICA
+        WHERE CD_PFISICA_TEMP=v_random_pfisica;
+
+    SELECT  est_codigo into v_temp_est
+        FROM TEMP_EST
+        WHERE cd_est_temp=v_random_est;
+
+    INSERT INTO t_comanda (
+    com_codigo,
+    t_pfisica_psa_codigo,
+    t_estabeleci_est_codigo
+    ) VALUES (
+        SEQ_T_COMANDA.NEXTVAL,
+        v_temp_pfisica,
+        v_temp_est
+    );
     
     
+    end loop;
+
+end;
+/
+
+select * from t_comanda;
+
+--EXEMPLOS CONVERSÃO DE DATAS EM NÚMEROS
+
+SELECT TO_CHAR(TO_DATE('15 Março 2017','DD Month YYYY'),'DL') FROM DUAL;
+SELECT TO_CHAR(TO_DATE('15 Março 2017','DD Month YYYY'),'J') FROM DUAL;
+
+--OBTER A DATA SERIAL
+SELECT TO_CHAR(TO_DATE('11/01/2020 17:22:59'),'JHH24MISS') FROM DUAL;
+SELECT TO_CHAR(TO_DATE('17:22:59'),'HH24MISS') FROM DUAL;
+
+SELECT TO_DATE('11/01/2020 17:22:59') + TO_DATE(1500,'MISS')  FROM DUAL;
+
+SELECT TO_DATE('15-FEV-2004','DD-MON-YYYY') + TO_DSINTERVAL('0 00:15:00')
+FROM DUAL;
+
+
+--OBTER A DATA FORMATADA PELO SERIAL
+SELECT TO_DATE(2459134152001,'JHH24MISS') FROM DUAL;
+
+SELECT ROUND(TO_DATE(24591341512,'JHH24MISS')) FROM DUAL;
+
+SELECT ROUND(TO_DATE(2459134)) FROM DUAL;
+
+
+-- CRIA PEDIDOS PARA AS COMANDAS
+
+EXEC DBMS_RANDOM.SEED(19361384);
+
+DECLARE
+
+        v_ComandaNova T_COMANDA%RowType;
+        v_EstCodigo integer :=61;
+        v_ItemPedidoNovo T_ITEMPEDIDO%ROWTYPE;
+        v_inserting integer :=0;
+        
+        v_Geracao integer;
+        v_Entrega integer;
+        v_quant integer;
+        
+        v_cdProdInic integer := 80;
+        v_cdProdfim integer := 93;
+        
+
+        CURSOR cursor_COMANDA IS
+        SELECT *
+        FROM T_COMANDA;
+        
+BEGIN
+
+    FOR  v_ComandaNova in cursor_COMANDA LOOP
+ 
+        if v_ComandaNova.T_ESTABELECI_EST_CODIGO = v_EstCodigo then
+
+            v_inserting := TRUNC((DBMS_RANDOM.VALUE(1,4)),0);
+            
+                FOR V_CONTADOR IN 1..v_inserting LOOP
+            
+                    v_geracao := TRUNC((DBMS_RANDOM.VALUE(2458860,2458981)),0)*1000000;
+                    v_geracao := v_geracao + (TRUNC((DBMS_RANDOM.VALUE(16,22)),0))*10000;
+                    v_geracao := v_geracao + (TRUNC((DBMS_RANDOM.VALUE(1,60)),0))*100;
+            
+                    v_quant := TRUNC((DBMS_RANDOM.VALUE(1,5)),0);
+                    
+                    v_ItemPedidoNovo.IPD_CODIGO := SEQ_T_ITEMPEDIDO.NEXTVAL;
+                    v_ItemPedidoNovo.IPD_DHGERACAO := TO_DATE(v_geracao,'JHH24MISS');
+                    
+                    v_ItemPedidoNovo.IPD_DHENTREGA := TO_DATE(v_geracao,'JHH24MISS') 
+                    +  TO_DSINTERVAL('0 00:' || TRUNC((DBMS_RANDOM.VALUE(1,52)),0) || ':00');
+                     
+                    v_ItemPedidoNovo.STATUS := 'ENTREGUE CLIENTE';
+                    v_ItemPedidoNovo.T_COMANDA_COM_CODIGO :=  v_ComandaNova.COM_CODIGO;
+                    v_ItemPedidoNovo.T_PRODUTO_PRD_CODIGO := TRUNC(DBMS_RANDOM.VALUE(v_cdProdInic, v_cdProdFim+1),0);
+                    v_ItemPedidoNovo.IPD_QUANTIDADE := v_quant;
+                    
+                    INSERT INTO T_ITEMPEDIDO VALUES v_ItemPedidoNovo;
+            
+            END LOOP;
+        
+        END IF;
     
+    END LOOP;
+    
+END;
+/
 
+SELECT P.*, C.* FROM T_ITEMPEDIDO P INNER JOIN 
+T_COMANDA C ON p.t_comanda_com_codigo = c.com_codigo
 
-
-
-
-
-
-
-
-
-
-
-
+--TRUNCATE TABLE T_ITEMPEDIDO;
 
 
 

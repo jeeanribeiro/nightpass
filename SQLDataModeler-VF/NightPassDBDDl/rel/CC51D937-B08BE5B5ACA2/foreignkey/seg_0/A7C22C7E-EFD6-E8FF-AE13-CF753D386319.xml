@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="A7C22C7E-EFD6-E8FF-AE13-CF753D386319" containerWithKeyObject="7C902F28-2B5E-22D5-9224-F4500989943D" localFKIndex="04ECFF2F-52A5-08C8-4E3E-D29A6798436B" name="T_Estabeleci_T_TipoEst_FK">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>C05043F4-E4CA-5C4F-92C5-F512B34FF631</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<referredTableLongName>T_TipoEst</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>F6122784-8961-B87E-F488-0F63461E0D94</referredTableID>
+<keyObject>723D25F0-D626-8F70-8702-42EB7AE198F0</keyObject>
+<referredKeyID>723D25F0-D626-8F70-8702-42EB7AE198F0</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>tes_codigo</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

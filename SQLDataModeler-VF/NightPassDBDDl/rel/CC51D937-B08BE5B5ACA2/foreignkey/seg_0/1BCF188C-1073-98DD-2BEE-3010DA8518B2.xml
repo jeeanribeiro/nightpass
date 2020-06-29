@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="1BCF188C-1073-98DD-2BEE-3010DA8518B2" containerWithKeyObject="3DFEC10F-C799-BFE0-B7AC-0AD366CBE677" localFKIndex="6742FB7A-9534-2043-C87A-5ECED63E5E01" name="T_Presenca_T_Agenda_FK">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>EB68C5DB-A21F-1177-8491-3CC68C286CC1</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<referredTableLongName>T_Agenda</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>4A571649-6BC0-85C2-0C21-9EC55B3341C7</referredTableID>
+<keyObject>A1E2500F-5F01-A4B6-DE41-FF7834AE9340</keyObject>
+<referredKeyID>A1E2500F-5F01-A4B6-DE41-FF7834AE9340</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>age_codigo</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

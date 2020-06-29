@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="4C4E2F93-6DC6-C783-8098-CAF1A3DA7611" containerWithKeyObject="3E0A0DC7-7F1B-5036-3F60-9020BD159AD1" localFKIndex="38A75DBE-E707-6D95-0DFE-C14A5E5EA4C1" name="T_GaleriaEst_T_TipoGaleria_FK">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:53:07 UTC</createdTime>
+<generatorID>4E2B34ED-9C15-8987-83E1-C65DD3C1E3F0</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<referredTableLongName>T_TipoGaleria</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D886E243-6E22-E3D7-37A5-3793F9DD8748</referredTableID>
+<keyObject>4C813A6D-B177-BE44-6E5D-01526EC12A04</keyObject>
+<referredKeyID>4C813A6D-B177-BE44-6E5D-01526EC12A04</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>tga_codigo</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

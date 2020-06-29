@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Rel_ComIpd" directorySegmentName="seg_0" id="19247F0E-D707-532B-4DAF-70F657148FAA">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 22:34:02 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<sourcePk>1801DBC9-C11B-5EFD-6CD8-2C1FA76C7AA1</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>B91C43CD-AEF3-439F-A550-489F2C0F0B7D</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>1A4836C4-B968-58A0-56DC-DACBA21FED50</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="87D55AA9-DC31-EE36-DF10-B6DC3D1F33C5" containerWithKeyObject="D90338D9-FB18-744F-D9D4-B5E948744B32" localFKIndex="E7EE2601-8B10-FD95-6C12-AD1AE48A11B2" name="T_ItemPedido_T_Comanda_FK">
+<createdBy>User</createdBy>
+<createdTime>2020-06-01 23:00:43 UTC</createdTime>
+<generatorID>19247F0E-D707-532B-4DAF-70F657148FAA</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<referredTableLongName>T_Comanda</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>A569F151-E8DA-ACE1-340C-0231B3D48AF7</referredTableID>
+<keyObject>4F8E2E65-7B40-2E12-BE8F-8CCCC5D84A1E</keyObject>
+<referredKeyID>4F8E2E65-7B40-2E12-BE8F-8CCCC5D84A1E</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>com_codigo</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
