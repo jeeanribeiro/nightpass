@@ -25,11 +25,11 @@ public class LoginUsuarioController {
 	@Autowired
 	private HttpSession session;
 
-	@GetMapping("/")
-	public String login(PessoaFisica pessoaFisica) {
-		return "base/LoginUsuario";
-	}
-
+	/*
+	 * @GetMapping("/") public String login(PessoaFisica pessoaFisica) { return
+	 * "base/LoginUsuario"; }
+	 */
+	
 	@GetMapping("/signout")
 	public String signout(PessoaFisica pessoaFisica) {
 		session.invalidate();

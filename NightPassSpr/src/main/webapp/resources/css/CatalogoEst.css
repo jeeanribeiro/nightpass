@@ -1,0 +1,1015 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@531&display=swap');
+
+html, body {
+    background: rgb(221, 221, 221);
+    padding: 0;
+    margin: 0;
+}
+
+
+/*Base de Fundo*/
+
+.baseprincipal{
+
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: 
+    "topo"
+    "corpo";
+    grid-template-rows: 70px 90%;
+    background-color: transparent;
+    overflow-y: hidden;
+    
+}
+
+.corpo{
+    grid-area: corpo;
+    display: grid;
+    scrollbar-base-color: aqua;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    overflow: scroll;
+}
+
+.topo{
+    grid-area: topo;
+    display: flexbox;
+    align-items: center;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+
+}
+
+/*Base Quadro Estabelecimento */
+
+.boxEst{
+
+    width: 1000px;
+    height: 300px;
+    background-color: black;
+    overflow: hidden;
+    margin: 20px;
+
+}
+
+.boxFormat{
+
+    height: 100%;
+    display: grid;
+    grid-template-columns: 440px 5px auto;
+    grid-template-areas: 
+    'boxFormat1 Esp1 boxFormat3';
+    
+    background-color: transparent;
+    
+}
+
+.boxFormat1{
+
+    width: 96%;
+    grid-area: boxFormat1;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 5px;
+
+}
+
+.boxFormat2{
+
+    width: 230px;
+    height: 96%;
+    grid-area: boxFormat2;
+    background-color:transparent;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+
+}
+
+.boxFormat3{
+
+    position: relative;
+    width: 100%;
+    grid-area: boxFormat3;
+    background-color: transparent;
+    justify-content: left;
+    padding: 5px;
+
+    display: grid;
+    grid-template-rows: 14% 76% 10%;
+    grid-template-columns: 100%;
+    overflow-y: hidden;
+
+}
+
+.formatIcon{
+
+    width:30px;
+    height: auto;
+    padding: 2px;
+
+}
+
+.Esp1{
+    grid-area: Esp1;
+    background-color: #8080ff;
+}
+
+.formatEstInfo{
+
+padding-right: 3px;
+overflow-y: auto;
+overflow-x: hidden;
+
+}
+
+.formatImgEst{
+
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    position: relative;
+    border-radius: 10px;
+
+}
+
+.formatImgEstPeq1{
+
+    position: relative;
+    top:2%;
+    left: -10%;
+
+    width: 96%;
+    height: auto;
+    z-index: 1;
+    position: relative;
+    transform: rotate(-10deg);
+    border-radius: 10px;
+
+}
+
+.formatImgEstPeq2{
+
+    position: relative;
+    top:-5%;
+    left: 10%;
+
+    width: 96%;
+    height: auto;
+    z-index: 1;
+    position: relative;
+    transform: rotate(10deg);
+    border-radius: 10px;
+
+}
+
+
+
+
+.fmtdivladoalado{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.formatNomeEst{
+
+    position: relative;
+    top: 50%;
+    left: 5%;
+
+}
+
+
+.formatImgLogo{
+
+    height: 70px;
+    width: auto;
+    z-index: 4;
+    border-radius: 10px;
+    position:relative;
+    justify-self: right;
+}
+
+
+.formatNomeEst{
+
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+
+}
+
+
+/* Formatação dos Filtros */
+
+
+.fmtFiltro{
+
+    width: 1000px;
+    height: auto;
+    background-color: transparent;
+    display: none;
+    margin: 20px;
+}
+
+.btnMenuFiltro{
+
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 16px;
+    color: rgb(255, 0, 191);
+    margin-left: 20px;
+    cursor: pointer;
+    background-color: #222222;
+    padding: 0 5px 0 5px;
+    border-radius: 3px;
+    border: transparent;
+    
+}
+
+
+.blocoFiltro{
+    background-color: white;
+    padding: 5px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    color: black
+}
+
+.blocobtnFiltro{
+    background-color: black;
+    padding: 5px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    width: 1000px;
+    height: auto;
+    margin-left: 20px;
+
+}
+
+
+.blocoFiltro>label{
+    margin: 0px;
+    padding-right: 12px;
+}
+
+/* Fontes */
+
+.LogoNPass{
+
+    font-family: 'MuseoModerno', cursive;
+    font-size: 2em;
+    color: rgb(255, 0, 191);
+    margin-left: 10px;
+}
+
+
+.LogoNPassCentro{
+
+    font-family: 'MuseoModerno', cursive;
+    font-size: 24px;
+    color: rgb(255, 0, 191);
+    display: relative;
+    text-align: center;
+}
+
+
+
+
+.HeadMenuRight{
+
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 20px;
+    color: rgb(255, 0, 191);
+    border-radius: 3px;
+    background-color: #222222;
+    position: absolute;
+    padding: 0px 10px 0px 10px;
+    right: 20px;
+    cursor: pointer;
+    
+}
+
+.HeadMenuNormal{
+
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 20px;
+    color: rgb(255, 0, 191);
+    margin-left: 20px;
+    cursor: pointer;
+    background-color: #222222;
+    padding: 0 5px 0 5px;
+    border-radius: 3px;
+    border: transparent;
+    
+}
+
+
+.Textosimples24{
+
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: white;
+    margin-left: 24px;
+    align-items: baseline;
+
+    right: 10px;
+    
+}
+
+
+.Textosimples18{
+
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 16px;
+    color: white;
+    align-items: baseline;
+    font-style: italic;
+    
+}
+
+.Textosimples14{
+
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 14px;
+    color: white;
+    align-items: baseline;
+    font-style: italic;
+    
+}
+
+.Textosimplesneg18{
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    align-items: baseline;
+    font-weight: 200;
+        
+}
+
+
+
+/*alinhar div */
+
+.tright{
+    text-align:right;
+}
+
+
+
+
+
+
+
+/*Formatação do Login */
+
+
+.fmtmodalcontent{
+
+    background-color: black;
+    width: 380px;
+    height: 500px;
+    position: relative;
+    top: 120px;
+    margin: auto;
+    border-radius: 8px;
+    border: 4px solid rgb(221, 221, 221);
+}
+
+.fmtmodalbody{
+
+    padding: 5px;
+
+}
+
+
+.modal-body .login{
+
+    display: block;
+    scrollbar-base-color: aqua;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.inputlogin {
+	background: #fff;;
+	border: none;
+	color: black;
+	cursor: pointer;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    border-radius: 4px;
+    width: 80%;
+    
+}
+
+#loginContainer {
+	align-items: center;
+	background: #222;
+	box-shadow: 0 0 10px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	padding: 5px;
+    width: 90%;
+    height: 80%;
+    margin: auto;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+.btnLoginEntrar{
+
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 16px;
+    color: rgb(255, 0, 191);
+    cursor: pointer;
+    background-color: #222222;
+    padding: 0 5px 0 5px;
+    border-radius: 3px;
+    border: 1px solid rgb(221, 221, 221) ;
+    margin-top: 10px;
+
+}
+
+.btnLoginFechar{
+
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(255, 0, 191);
+    cursor: pointer;
+    background-color: #222222;
+    padding: 1px 7px 1px 7px;
+    border-radius: 3px;
+    border: 1px solid rgb(221, 221, 221) ;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+button {
+    display: inline-block;
+    border: none;
+    text-decoration: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+
+.DestaqueEst{
+
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 22px;
+    color: rgb(255, 230, 0);
+    align-items: baseline;
+    font-style: italic;
+    font-weight: 600;
+    background-color: #8080ff;
+    text-align: center;
+    border-radius: 3px;
+        
+}
+
+.btnEst{
+
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 18px;
+    color: black;
+    align-items: baseline;
+    font-style: italic;
+    font-weight: 600;
+    background-color: #a7a7a7;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+    border: solid 2px rgb(255, 0, 191);
+    position: relative;
+    justify-content: center;
+    justify-self: center;
+}
+
+
+/*Definições do Modal */
+
+.fmtmodal{
+
+    position: fixed ;
+    top: 100px;
+    left: 20px;
+    margin: 0px;
+    width: 300px;
+    height: 70vh;
+    background-color: rgb(255, 0, 191);
+    border-radius: 8px;
+    padding: 0px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    
+}
+
+.defmodal1{
+    width: 300px;
+}
+
+.ajustamodalbody{
+
+    margin-right: 10px;
+    padding: 10px;
+    
+}
+
+.divisormodal{
+    background-color: #a7a7a7;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DESUSO */
+
+
+
+
+
+
+
+
+
+
+h1{
+    font-family: sans-serif ;
+    color: blueviolet;
+    font-size: 700;
+}
+
+.containerEstabelecimento{
+
+    width: 1080px;
+    height: 630px;
+    /*background-color: maroon; */
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: auto;
+    
+}
+
+.boxfundogif{
+
+    width: 50%;
+    height: 50%;
+    background-color: black;
+    position:fixed;
+
+}
+
+.basecomponentes{
+
+    width: 96%;
+    height: 90%;
+    display: grid;
+    grid-template-areas: 
+    "logo logo logo"
+    "foto1 foto2 foto3"
+    "descricao descricao descricao";
+    grid-template-columns: 25% 45% 25%;
+    grid-template-rows: 16% 62% 20%;
+    background-color: transparent;
+    row-gap: 1%;
+    column-gap: 2.5%;
+    background-image: url("Space Waving Novo.gif");
+    background-repeat: no-repeat;
+    background-size: 90% 100%;
+    background-position-y: center;
+    background-position-x: center;
+    
+}
+
+.logobase{
+    grid-area: logo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.logofundo{
+
+    background:radial-gradient(circle, rgba(46,34,195,0.9779326923076923) 50%, rgba(226,45,253,0.8102403846153845) 80%);
+    border-radius: 12px;
+    width:30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.fotologo{
+
+    height: 86%;
+    width: auto;
+
+}
+
+
+.foto1{
+    grid-area: foto1;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    
+}
+
+.foto2{
+    grid-area: foto2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto3{
+    grid-area: foto3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.descricao{
+    grid-area: descricao;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.fmtlogo{
+    width:auto;
+    height: 94%;
+}
+
+.fmtfotoprincipal
+{
+    width: 100%;
+    height: auto;
+    border: 2px rgb(51, 54, 73) solid;
+    border-radius: 8px;
+}
+
+.fmtfotosecundaria
+{
+    width: 100%;
+    height: auto;
+    border: 2px rgb(51, 54, 73) solid;
+    border-radius: 8px;
+}
+
+.caixadescricao{
+
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    
+
+}
+
+#alinhar{
+    background-color: rgb(253, 169, 100);
+    margin:auto;
+    width: 80%;
+    height: 70%;
+}
+
+.textodescricao{
+    background-color: rgb(253, 169, 100);
+    margin:auto;
+    width: 95%;
+    height: 90%;
+
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    color: rgb(2, 2, 134);
+    text-align: justify;
+    line-height: 22px;
+    background-color: rgb(253, 169, 100);
+    border-radius: 5px;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+
+.btnentrar{
+    
+    width: 10%;
+    height: 30%;
+
+    margin:auto;
+    margin-top: 6px;
+    
+    display: block;
+    text-align: center;
+    align-items: center;
+    
+    background-color: rgb(253, 169, 100);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: rgb(2, 2, 134);
+    border-radius: 5px;
+    cursor: pointer;
+
+
+}
+
+.alinhardiv{
+
+    margin:auto;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+}
+
+.fontenomeEst{
+    
+    height: 30%;
+    margin:auto;
+    
+    align-items: center;
+    align-self: center;
+    padding: 5px 30px 5px 30px;
+    
+    background-color: rgb(253, 169, 100);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: rgb(2, 2, 134);
+    border-radius: 5px;
+
+}
+
+
+
+.btnlateral{
+
+    background-color: #206080;
+    margin: 5px;
+    padding: 6px;
+    color: white;
+    border-radius: 2px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    cursor:pointer;
+
+}
+
+.establishment-title {
+    font-family: 'Fira Sans', sans-serif;
+    color: #d6006e;
+    margin: 0;
+    margin-right: 15px;
+    margin-left: 10px;
+    font-size: 30px;
+}
+
+
+/* Style The Dropdown Button */
+.dropbtn {
+    background-color:#c237ce;
+    margin: 5px;
+    padding: 6px;
+    color: white;
+    border-radius: 2px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    cursor:pointer;
+}
+
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:  #c237ce;
+    min-width: 140px;
+    box-shadow: 0px 8px 16px 0px #c237ce;
+    z-index: 1;
+    font-size: 14px;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 700;
+    top:15px;
+    left:40px;
+    border: 2px solid #c237ce;
+    border-radius: 5px;
+    
+    
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: #ffffff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content input {
+    color: #ffffff;
+    padding: 8px 0px 8px 5px;
+    text-decoration: none;
+    background-color: #8080ff;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 14px;
+    border:none;
+    width: 140px;
+    text-align: left;
+    
+  }
+  
+ 
+  
+
+
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #000080}
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content input:hover {background-color: #000080}
+  
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: inline;
+  }
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    background-color: #c237ce;
+  }
+  
+  .whaitcursor{
+
+  cursor:wait;
+
+  }
+
+
+
+
+
+
+
+

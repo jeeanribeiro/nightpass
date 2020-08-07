@@ -8,17 +8,93 @@
 <tags:template
 title="NightPass - Principal"
 cssProprio="/resources/css/PainelPrincipal.css"
-jsProprio="/resources/js/PainelPrincipal.js">
+jsProprio="/resources/js/XPainelPrincipal.js">
 
+
+
+<div class="baseprincipal">
+
+            <div class="topo">
+
+                <div class="LogoNPass">NigthPass</div>
+                <div class="HeadMenuRight">login</div>
+
+            </div>
+
+            <div class="corpo">
+
+				<c:forEach items="${estabelecimentos}" var="e" >
+
+
+                <div class="boxEst">
+                    
+                    <div class="boxFormat">
+
+                        <div class="boxFormat1">
+
+                            <c:if test="${not empty e.getGaleriaEst().get(0).getGae_EndServidor()}">
+                            <img class="formatImgEst" src="${e.getGaleriaEst().get(0).getGae_EndServidor()}">
+                            </c:if>
+                            
+                            <c:if test="${empty e.getGaleriaEst().get(0).getGae_EndServidor()}">
+                            <img class="formatImgEst" src="resources/imgs/EstabelecimentoSemFoto.jpg">
+                            </c:if>
+                            
+                        
+                        </div>
+
+                        <div class="boxFormat2">
+
+                            <img class="formatImgEstPeq1" src="resources/ImgBase/GIHviKUYRjMriNgglVvs_FotoCerveja.jpg"> 
+                            <img class="formatImgEstPeq2" src="resources/ImgBase/QYnjVUxZmMvzycphrFuW_FotodoShow.jpg"> 
+
+                            
+                        </div>
+
+
+                        <div class="boxFormat3">
+
+                            <div class="fmtdivladoalado">
+                            <img class="formatImgLogo" src="resources/ImgBase/BcuQGtFewuTdHYqypZRE_LogoBluePub.jpg"> 
+                            <div class="Textosimples24 formatNomeEst">${e.getPSJ_CODIGO().getPsjNome()}</div>
+                            </div>
+                           
+                            <div class="Textosimples18 formatEstInfo">
+                                <span class= "Textosimplesneg18"> Músicas: </span> &nbsp Sertanejo Universitário, Pagode, Eletrônico<br>
+                                <span class= "Textosimplesneg18">Distância:</span> &nbspa 3 km<br>
+                                <span class= "Textosimplesneg18">Tipo:</span> &nbsp Bar<br>
+                                <span class= "Textosimplesneg18"> Nota:</span> &nbsp 3,5<br><br>
+                                <div class="tright">
+                                A sacada de encontrar um ponto em comum para estrangeiros e brasileiros no mesmo lugar, foi o motivo pelo qual o The Blue Pub nasceu. Desde janeiro de 2008 em diante, vem unindo pessoas através da boa e única "gelada", além de inovar com um cardápio inigualável, cheio de sabor e cultura.
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+	</c:forEach>
+
+                
+
+            </div>
+
+
+</div>
+
+<%-- 
         <div class="baseprincipal">
             <div class="corpobase">
-				<%--INÍCIO DOS BLOCOS DE ESTABELECIMENTOS --%>
+				INÍCIO DOS BLOCOS DE ESTABELECIMENTOS
 			    <c:set var="seqEst" value="${1}"/>
 				<c:forEach items="${estabelecimentos}" var="e" >
 			       <c:if test="${e.getGaleriaEst().size() >= 3}">
 					        <div class="containerEstabelecimento">
 			                    <div class="basecomponentes">
-			                    <%-- CARREGA AS FOTOS DE FACHADA E LOGOTIPO DO ESTABELECIMENTO --%>
+			                    CARREGA AS FOTOS DE FACHADA E LOGOTIPO DO ESTABELECIMENTO
 			                     <c:set var="seqfoto" value="1"/>
 			                     <c:forEach items="${e.getGaleriaEst()}" var="g" end="4">
 			                     <c:set var="endfotoatual" value="resources/imgs/EstabelecimentoSemFoto.jpg"/>
@@ -101,5 +177,7 @@ jsProprio="/resources/js/PainelPrincipal.js">
             </div>
         </div>
 		</div>
+
+ --%> 
 
 </tags:template>
