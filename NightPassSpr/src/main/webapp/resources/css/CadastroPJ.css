@@ -1,0 +1,49 @@
+html, body {
+	align-items: center;
+	backdrop-filter: blur(2px) brightness(50%);
+	background-image: url("imgs/background-club.jpg");
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+}
+
+header{
+	display:inline;
+}
+
+#signUpContainer {
+  background: #222;
+  box-shadow: 0 0 10px;
+  min-width: 600px;
+  padding: 20px;
+}
+
+#signUpForm {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
+#signUpContainer #signUpForm button {
+  background: #d6006e;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  grid-column-start: 1;
+  padding: 10px 0;
+}
+
+#signUpContainer #signUpForm button:hover {
+  background: #b8005f;
+}
+
+.destaque1{
+	color: purple;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 16px;
+	background-color: lime;
+	text-align: center;
+}

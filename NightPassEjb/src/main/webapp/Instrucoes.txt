@@ -1,0 +1,8 @@
+Funcionalidades em funcionamento:
+
+	- Login de Usuários
+	- Cadastro de Usuários
+	- Acesso de conta para alteração dos dados dos Usuários
+	- Exclusão de Conta
+	- Cadastro de Pessoa Jurídica vinculada a Pessoa Física
+	

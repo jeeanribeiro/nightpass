@@ -13,6 +13,7 @@
 	<class>br.com.fiap.NightPassEjb.Entity.GeneroMusical</class>
 	<class>br.com.fiap.NightPassEjb.Entity.GaleriaEst</class>
 	<class>br.com.fiap.NightPassEjb.Entity.TipoGaleria</class>
+	<class>br.com.fiap.NightPassEjb.Entity.PFGestor</class>
 
 	<properties>
 		
@@ -25,6 +26,17 @@
 		<!-- 
 		
 		<property name="javax.persistence.jdbc.url" 
+		value="jdbc:oracle:thin:@localhost:1521:xe" />
+		
+		<property name="javax.persistence.jdbc.user" 
+		value="system" />
+		
+		<property name="javax.persistence.jdbc.password"
+		value="fiaporacle" />
+		
+		-->
+		
+		<property name="javax.persistence.jdbc.url" 
 		value="jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl" />
 		
 		<property name="javax.persistence.jdbc.user" 
@@ -32,21 +44,12 @@
 		
 		<property name="javax.persistence.jdbc.password"
 		value="281180" />
-		
-		-->
-		
-				
-		<property name="javax.persistence.jdbc.url" 
-		value="jdbc:oracle:thin:@localhost:1521:xe" />
 
-		<property name="javax.persistence.jdbc.user" 
-		value="system" />
+		<!-- usar validate apenas se não for necessário alterar as tabelas
+		caso contrário usar update -->
 		
-		<property name="javax.persistence.jdbc.password"
-		value="fiaporacle" />
-		
-		<property name="hibernate.hbm2ddl.auto" value="validate" />
-		<property name="hibernate.show_sql" value="false" />
+		<property name="hibernate.hbm2ddl.auto" value="update"/>
+		<property name="hibernate.show_sql" value="true" />
 		<property name="hibernate.format_sql" value="true" />
 		
 		

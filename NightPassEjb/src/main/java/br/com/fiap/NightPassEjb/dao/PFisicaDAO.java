@@ -7,8 +7,8 @@ import javax.ejb.Remote;
 import br.com.fiap.NightPassEjb.Entity.PessoaFisica;
 
 @Remote
-public interface PFisicaDAO extends GenericDAO<PessoaFisica, Integer>{
-	
+public interface PFisicaDAO extends GenericDAO<PessoaFisica, Integer> {
 	public List<PessoaFisica> listarPorNome();
-
+	public PessoaFisica buscarPorEmail(String emailUsuario);
+	public boolean autenticarUsuario(String emailUsuario, String Senha);
 }

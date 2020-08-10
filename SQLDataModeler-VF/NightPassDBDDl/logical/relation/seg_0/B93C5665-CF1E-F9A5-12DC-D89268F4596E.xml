@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Rel_Pre_Psa" directorySegmentName="seg_0" id="B93C5665-CF1E-F9A5-12DC-D89268F4596E">
+<createdBy>User</createdBy>
+<createdTime>2020-04-22 01:01:55 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<sourcePk>F0AB01E0-D19C-C549-F0E7-01517F607715</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>90DCFF38-90B9-A87E-3260-655B060048D7</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>78E660C6-E271-4CCA-A1AC-99373F9EE71E</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="rel_est-test" directorySegmentName="seg_0" id="C05043F4-E4CA-5C4F-92C5-F512B34FF631">
+<createdBy>User</createdBy>
+<createdTime>2020-02-14 22:19:02 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<sourcePk>E505F7E8-AF53-AB9A-DF56-D09F1D192F2A</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>19D08E90-02B4-98D1-7D80-2F768BAD12AF</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>D979FA0C-F9A3-85BA-FBA9-180FA6D31735</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,207 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6E5719DE-42E8-F6CD-12C4-9F5F9F45CFE7" name="T_PJuridica">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>B88B3230-8227-73A5-414C-694A801E469C</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="psj_nome" id="29654050-2A03-D50A-A217-78BD67DBACCD">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>5CF53FA8-B692-BF4D-D668-700033AB6754</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="psj_codigo" id="56124D65-85F5-E253-7698-C8696B84411E">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>EFDFB6DB-DEDB-F43A-AB59-DF2C8D30EC70</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="psj_dtfundacao" id="62F9C57E-998A-A30F-EB60-BF020B68CDBD">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>32A9ADE1-A22F-F606-3C4F-35C77206BA08</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="psj_InscEstadual" id="83A37CAC-850C-0B2F-CE66-13CB60FE81E8">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>7024019D-B787-C5FF-FDFB-26B9CBA906FB</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="psj_InscEstado" id="4C0856C5-A3ED-7BC3-CFD1-029E6327B8A4">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>0A8B5F62-11DF-5A2A-2D0F-41D43CF097DE</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="psj_CNPJ" id="76E7FCE8-1993-1625-0AAD-E8840EE65D8D">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>E80D2CCC-C9A6-CEDD-6DAA-F2FB2DD39839</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>14</dataTypePrecision>
+<ownDataTypeParameters>,14,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="psj_email" id="6A8A25D3-24C8-35E9-73C2-27C8C582A97C">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>510AF2C9-24A1-C641-3A5B-7A2AEF172ECC</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="psj_TelComercial" id="0591087B-78CD-D41F-01D4-CAF82F2B4C0A">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>3AEF83A5-9AC9-1EE9-9024-2EB253DF3005</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>15</dataTypePrecision>
+<ownDataTypeParameters>,15,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="psj_CepCom" id="5833D626-9334-0B65-9258-D30B3DE9DDB0">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>85AD1687-1BC1-16A5-30B0-901FCA45559A</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="psj_EnderecoCom" id="CEC56BE0-5A10-228A-A477-EA0318DD7B6B">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>8C84AD35-50E6-4CD4-7EF1-38B81B4167EB</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="psj_numeroCom" id="5FB7A62C-B9CD-B58B-1A66-33387857E51E">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>2B12C7FB-7AB9-7007-19F2-685407D767E7</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="psj_complementoCom" id="264D42FC-9AA3-BBF1-C2AD-72903C617065">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>473CC8C0-6201-922C-C7C3-D47FAA3FFBD6</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="psj_BairroCom" id="2E17CF42-37C0-2C3D-E3DE-DCA9484E1DE8">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>77850E19-F15E-9D5B-7E0B-4A7472714293</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="psj_EstadoCom" id="5F4AB807-3336-B587-30DC-829EE81BDC6B">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>E05B0728-23BC-F5E2-678B-7068E872DA85</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="psj_CidadeCom" id="7E7B8961-2E61-5ADC-ED3A-BECA09ACCA82">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>324674B2-E370-B4BF-6ABC-675AA0A11912</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D38BFE52-FE5F-DA7E-DE76-F92EF722464B" name="T_PJuridica_PK">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>51E73EA0-2EB0-6680-E696-E895ACFCE8EE</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="56124D65-85F5-E253-7698-C8696B84411E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

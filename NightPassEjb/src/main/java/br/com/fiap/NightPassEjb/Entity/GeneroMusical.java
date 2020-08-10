@@ -18,9 +18,6 @@ import javax.persistence.Table;
 @Table(name="T_GenMusical")
 public class GeneroMusical implements Serializable {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -32,8 +29,6 @@ public class GeneroMusical implements Serializable {
 	@Column(name="gmu_nome", length=60)
 	private String nome;
 
-	
-	
 	@ManyToMany(mappedBy="generoMusical")
 	private List<Estabelecimento> estabelecimentos;
 
@@ -71,6 +66,4 @@ public class GeneroMusical implements Serializable {
 		this.estabelecimentos = estabelecimentos;
 	}
 
-	
-	
 }

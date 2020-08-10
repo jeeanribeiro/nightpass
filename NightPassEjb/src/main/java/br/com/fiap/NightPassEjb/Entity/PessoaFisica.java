@@ -1,36 +1,34 @@
 package br.com.fiap.NightPassEjb.Entity;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.ConstraintMode;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
-import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 
 @Entity
 @Table(name="T_PFisica")
 public class PessoaFisica implements Serializable {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -126,11 +124,17 @@ public class PessoaFisica implements Serializable {
 	
 	@Column(name="psa_tipousuario", nullable=false, length=20)
 	private String tipoUsuario;
-	
 
-	@OneToOne
+	@OneToOne(cascade = {CascadeType.REFRESH}
+    , fetch = FetchType.EAGER)
 	@JoinColumn(name="T_PJURIDICA_PSJ_CODIGO")
 	private PJuridica PSJ_CODIGO;
+	
+	@OneToMany(mappedBy = "pessoaFisica",fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
+	private List< PFGestor > pfGestor;
+
+	@Transient
+	private boolean loginValidado = false;
 	
 	public PessoaFisica() {
 		super();
@@ -423,6 +427,32 @@ public class PessoaFisica implements Serializable {
 		PSJ_CODIGO = pSJ_CODIGO;
 	}
 
+	public String getDtNascimentoFmt() {
+		SimpleDateFormat DtFormat = new SimpleDateFormat("yyyy-MM-dd");
+		return DtFormat.format(this.dataNasc.getTime());
+	}
+	
+	public boolean ValidarSenha(String SenhaUsuario) {
+		if (SenhaUsuario.equals(this.senha)) {
+			this.loginValidado = true;
+		} else {
+			this.loginValidado = false;
+		}
+		return loginValidado;
+	}
+
+	public boolean isLoginValidado() {
+		return loginValidado;
+	}
+
+	public List<PFGestor> getPfGestor() {
+		return pfGestor;
+	}
+
+	public void setPfGestor(List<PFGestor> pfGestor) {
+		this.pfGestor = pfGestor;
+	}
+	
 	
 	
 	

@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="493F64F0-3BEF-2D25-1469-2B0EB6208C76" name="T_PFGestor">
+<createdBy>User</createdBy>
+<createdTime>2020-03-17 21:34:32 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="psa_codigo" id="BA0D368C-1F99-D559-386A-EE0F9D0F00E3">
+<createdBy>User</createdBy>
+<createdTime>2020-03-17 21:40:07 UTC</createdTime>
+<generatorID>1479B221-35C7-A7D5-671C-12783051E718</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<referedAttribute>305502A8-90E9-5044-023E-0A78EBC9EB0A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="psj_codigo" id="73E7099C-18B6-5C0A-C56E-1482DA071182">
+<createdBy>User</createdBy>
+<createdTime>2020-03-17 21:41:33 UTC</createdTime>
+<generatorID>F592D604-46A7-B1FB-23FC-8FD24BFDE3BC</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<referedAttribute>EFDFB6DB-DEDB-F43A-AB59-DF2C8D30EC70</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rge_perfil" id="058FF9D1-E7CB-F1FD-C200-952724436015">
+<createdBy>User</createdBy>
+<createdTime>2020-03-17 21:43:37 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rge_codigo" id="80C700AD-C8B6-6FEF-B263-2BF4D0AE3839">
+<createdBy>User</createdBy>
+<createdTime>2020-03-17 21:45:29 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4F7B615E-578B-B678-B72F-936B6C29706B" name="T_PFGestor PK">
+<createdBy>User</createdBy>
+<createdTime>2020-03-17 21:46:13 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>80C700AD-C8B6-6FEF-B263-2BF4D0AE3839</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

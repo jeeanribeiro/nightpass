@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="rel_prd_gap" directorySegmentName="seg_0" id="47AD52E7-8FD4-AF2A-B3F9-8E454B1DBC24">
+<createdBy>User</createdBy>
+<createdTime>2020-05-11 01:59:03 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<sourcePk>BBCB32BD-1FE8-CCFB-88F5-892D3E044ADE</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>076B2E7C-61B6-96EC-530D-204EAB2B7598</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>B9151604-9563-6B6A-29F9-41A9A4C6CC8F</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

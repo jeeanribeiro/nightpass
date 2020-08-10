@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Rel_Pre_Age" directorySegmentName="seg_0" id="EB68C5DB-A21F-1177-8491-3CC68C286CC1">
+<createdBy>User</createdBy>
+<createdTime>2020-04-22 01:04:02 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<sourcePk>81C8EC60-9863-13EF-C86D-940DEB734D61</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>BC413E3C-F103-6B5A-2832-544BAA67CA64</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>78E660C6-E271-4CCA-A1AC-99373F9EE71E</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

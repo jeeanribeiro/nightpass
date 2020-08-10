@@ -1,105 +1,72 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 <head>
+<meta charset="UTF-8">
 <meta charset="ISO-8859-1">
-<meta charset="utf-8">
-<title>Tela de Cadastro de Usuário</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="resources/imgs/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="resources/imgs/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="resources/imgs/favicon-16x16.png">
+<link rel="manifest" href="resources/imgs/site.webmanifest">
+<link rel="stylesheet" href="resources/css/global.css">
+<link rel="stylesheet" href="resources/css/CadastroUsuario.css">
+<title>Cadastro - NightPass</title>
 </head>
-
 <body>
-<%-- 
-
- TESTE INICIAL 
-
-	<form action="CadastroUsuarioServlet" method="get">
-	
-	<input type="submit" id="buscar" value="buscar">
-	
-	</form>
-	
-	<ul>
-	<c:forEach items="${resultado}" var="f">
-	
-		<li>${f.nome}  " " ${f.cpf} " " ${f.tipoUsuario} " " ${f.PSJ_CODIGO.psjNome} <br> ${f.PSJ_CODIGO.estabelecimento.estDescricao}</li><br>
-	
-	</c:forEach>
-	</ul>
-
-
-
- --%>
-
-
-
-	<form action="CadastroUsuarioServlet" method="post">
-	
-	<label>Nome: </label>
-	<input type="text" name="nome" value="" maxlength="40">
-	<p>
-	 
-	<label>Sobrenome: </label>
-	<input type="text" name="sobrenome" value="" maxlength="100">
-	<p>
-	 
-	<label>Data de Nascimento: </label>
-	<input type="date" name="dtNascimento" value="">
-	<p>
-	
-	<label>RG nº: </label>
-	<input type="text" name="rg" value="" maxlength="15">
-	<p>
-	
-	<label>RG - Orgão Emissor: </label>
-	<input type="text" name="rgOrgaoEmissor" value="" maxlength="15">
-	<p>
-	 
-	<label>RG - Estado: </label>
-	<input type="text" name="rgEstado" value="" maxlength="15">
-	<p>
-
-	<label>CPF: </label>
-	<input type="number" name="cpf" value="" maxlength="11">
-	<p>
-
-	<label>SEXO: </label>
-	<input type="radio" name="sexo" value="M">
-	<label for="M"> M </label>
-	<input type="radio" name="sexo" value="F">
-	<label for="M"> F </label>
-	<input type="radio" name="sexo" value="O">
-	<label for="O"> Prefiro não Informar </label>
-	<p>
-
-	<label>Tel. Celular: </label>
-	<input type="number" name="telCelular" value="" maxlength="15">
-	<p>
-
-	<label>Tipo Usuario: </label>
-	<input type="radio" name="tipoUsuario" value="Consumidor">
-	<label for="M"> Consumidor </label>
-	<input type="radio" name="tipoUsuario" value="Consumidor">
-	<label for="M"> Gestor PJ </label>
-	<p>
-
-	<label>E-mail: </label>
-	<input type="email" name="email" value="" maxlength="100">
-	<p>
-
-	<label>Senha: </label>
-	<input type="text" name="senha" value="" maxlength="40">
-	<p>
-
-	
-	<input type="submit" id="cadUsuario" value="Cadastrar Usuário">
-	
-	</form>
-
-
-
+  <section id='signUpContainer'>
+    <form action="CadastroUsuarioServlet" method="post" id="signUpForm">
+      <input required type="text" name="nome" placeholder="Nome" maxlength="40">
+      <input required type="text" name="sobrenome" placeholder="Sobrenome" maxlength="100">
+      <input required type="date" name="dtNascimento" placeholder="Data de nascimento">
+      <input required type="tel" name="rg" placeholder="RG" maxlength="15">
+      <input required type="text" name="rgOrgaoEmissor" id="rgEmitter" placeholder="Orgï¿½o emissor" maxlength="15">
+      <select id="rgEstado" name="rgEstado">
+        <option value="AC">AC</option>
+        <option value="AL">AL</option>
+        <option value="AP">AP</option>
+        <option value="AM">AM</option>
+        <option value="BA">BA</option>
+        <option value="CE">CE</option>
+        <option value="DF">DF</option>
+        <option value="ES">ES</option>
+        <option value="GO">GO</option>
+        <option value="MA">MA</option>
+        <option value="MT">MT</option>
+        <option value="MS">MS</option>
+        <option value="MG">MG</option>
+        <option value="PA">PA</option>
+        <option value="PB">PB</option>
+        <option value="PR">PR</option>
+        <option value="PE">PE</option>
+        <option value="PI">PI</option>
+        <option value="RJ">RJ</option>
+        <option value="RN">RN</option>
+        <option value="RS">RS</option>
+        <option value="RO">RO</option>
+        <option value="RR">RR</option>
+        <option value="SC">SC</option>
+        <option value="SP">SP</option>
+        <option value="SE">SE</option>
+        <option value="TO">TO</option>
+      </select>
+      <input required type="tel" name="cpf" placeholder="CPF" maxlength="11">
+      <select id="sexo" name="sexo">
+        <option value="M">Masculino</option>
+        <option value="F">Feminino</option>
+        <option value="O">Outros</option>
+      </select>
+      <input required type="email" name="email" placeholder="E-mail" maxlength="100">
+      <input required type="tel" name="telCelular" placeholder="Nï¿½mero do celular" maxlength="15">
+      <input required type="password" name="senha" placeholder="Senha" minlength="8" maxlength="40">
+      <input required type="password" name="confirmarSenha" placeholder="Confirmar senha" minlength="8" maxlength="40">
+      <input type="hidden" name="acao" value="cadUsuario">
+      <button type="submit">Cadastrar</button>
+    </form>
+  </section>
+  <script src="resources/js/CadastroUsuario.js"></script>
 </body>
 </html>

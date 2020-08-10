@@ -3,6 +3,7 @@ package br.com.fiap.NightPassEjb.Entity;
 import java.io.Serializable;
 import java.lang.annotation.Target;
 import java.sql.Clob;
+import java.sql.Date;
 import java.util.Calendar;
 import java.util.List;
 
@@ -33,11 +34,7 @@ import javax.persistence.TemporalType;
 @Table(name="T_ESTABELECI")
 
 public class Estabelecimento implements Serializable {
-	
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -49,9 +46,6 @@ public class Estabelecimento implements Serializable {
 	@Lob
 	@Column(name="EST_DESCRICAO", nullable=false)
 	private String estDescricao;
-	
-	//private Clob Est_Descricao;
-	
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="EST_ABERTURA", nullable=false)
@@ -78,10 +72,8 @@ public class Estabelecimento implements Serializable {
 	name="T_ESTGENMUSICAL")
 	private List<GeneroMusical> generoMusical;
 	
-		
 	public Estabelecimento() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 
@@ -109,14 +101,13 @@ public class Estabelecimento implements Serializable {
 		return estAbertura;
 	}
 
-
 	public void setEstAbertura(Calendar estAbertura) {
 		this.estAbertura = estAbertura;
 	}
-
-
+	
 	public Calendar getEstFechamento() {
 		return estFechamento;
+				
 	}
 
 
@@ -164,7 +155,4 @@ public class Estabelecimento implements Serializable {
 		this.generoMusical = generoMusical;
 	}
 
-	
-
-	
 }

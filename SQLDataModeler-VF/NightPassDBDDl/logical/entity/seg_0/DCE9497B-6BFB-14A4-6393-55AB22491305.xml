@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="DCE9497B-6BFB-14A4-6393-55AB22491305" name="T_EstGenMusical">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 22:26:37 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="gmu_codigo" id="23638E37-795F-CF89-6FA6-FB24204DA490">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 22:29:57 UTC</createdTime>
+<generatorID>B83FC6F8-6566-586C-B90F-E4C9598B3CFC</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<referedAttribute>03EB4735-2E32-680D-5A00-642CD9EEDB2A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="est_codigo" id="0A9F29F3-982E-5AFF-B588-70DDA56874AB">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 22:30:29 UTC</createdTime>
+<generatorID>23CA4008-7784-8C10-519C-A01B0C48D822</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<referedAttribute>AC2FB301-2A02-4D4A-CEE8-C351A6F1E102</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

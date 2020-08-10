@@ -1,17 +1,16 @@
 package br.com.fiap.NightPassEjb.dao;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 
 import br.com.fiap.NightPassEjb.Entity.TipoEstabelecimento;
 
-public class TipoEstabelecimentoDAOImpl extends GenericDAOImpl<TipoEstabelecimento, Integer> {
+@Stateless
+public class TipoEstabelecimentoDAOImpl extends GenericDAOImpl<TipoEstabelecimento, Integer>
+implements TipoEstabelecimentoDAO {
 
-	public TipoEstabelecimentoDAOImpl(EntityManager em) {
-		super(em);
-		// TODO Auto-generated constructor stub
+	public TipoEstabelecimentoDAOImpl() {
+		super();
 	}
-
-	
-	
 	
 }

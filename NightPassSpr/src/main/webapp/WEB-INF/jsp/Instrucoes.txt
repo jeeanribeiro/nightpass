@@ -1,0 +1,26 @@
+Funcionalidades em funcionamento:
+
+	- Login de Usuários
+	- Cadastro de Usuários
+	- Acesso de conta para alteração dos dados dos Usuários
+	- Carregamento de Estabelecimentos cadastrados no sistema
+	- Edição de dados dos estabelecimentos
+	- Utilizado servidor Tomcat
+
+	- Podem utilizar os logins:
+
+			paula@uol.com
+			paulapaula
+
+			luiz@uol.com
+			senhaluiz
+
+			eduardo@uol.com
+			senhaeduardo
+
+Para acesso a API / JSON
+
+Endereços:
+
+	http://localhost:7080/NightPassSpr/api/pessoajuridicaapi
+	http://localhost:7080/NightPassSpr/api/estabelecimentoapi

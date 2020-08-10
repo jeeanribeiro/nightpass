@@ -1,0 +1,134 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C18E6ACD-13F4-CA32-76BF-C98605A0A1ED" name="T_Estabeleci">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>D979FA0C-F9A3-85BA-FBA9-180FA6D31735</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="est_codigo" id="DC5EC907-09E4-B65F-C494-47048F1D2A27">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>AC2FB301-2A02-4D4A-CEE8-C351A6F1E102</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="est_Descricao" id="AAA316A8-DC9A-9E10-1DFB-C759CA463502">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<comment>Texto longo com a descrição do estabelecimento, como história, tipos de música tocada, ambiente, infraestrutura, etc.</comment>
+<generatorID>E0BA43C8-CAC5-497C-3E7F-01A911738D17</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="T_TipoEst_tes_codigo" id="4C1CEEEB-70DC-884B-D217-FE4C57FCA6A3">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>75BCDDC7-6293-3E00-9D45-804595A3E66D</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="27538C7A-5B25-BFAA-6258-ED66747A05A5" referredColumn="050A0BA4-AB3F-0370-13C5-B11B39DAE81F"/>
+</associations>
+</Column>
+<Column name="est_abertura" id="0368C900-9B2C-650A-3A68-D1A548D501A1">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>430CEE54-F782-8C74-AE45-8AB66D5C526E</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="est_fechamento" id="E32AEDC3-7829-6677-2103-1E5CCBAFB2BD">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>0C052C48-1FC7-8B61-E8F6-BA7317896873</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="T_PJuridica_psj_codigo" id="23F6604F-0571-6BB7-44CE-569FDBC2CA21">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>4F8FB852-FECE-0BC9-8903-D32F1DB598C4</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F19805B4-1636-AB2A-ED2B-32D89987BF12" referredColumn="56124D65-85F5-E253-7698-C8696B84411E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="55BCC6D3-C140-D861-A899-1B5FC52B94C1" name="T_Estabeleci_PK">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>87BE9E11-6336-2226-BA2E-9E7C4D61EC8D</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DC5EC907-09E4-B65F-C494-47048F1D2A27"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B0E4934A-7D47-EC92-8337-E281BE68B4F2" name="T_Estabeleci__IDX">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>C8B677FB-DFBC-AA8F-7334-9F50E484762D</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="23F6604F-0571-6BB7-44CE-569FDBC2CA21"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="42425C62-3E08-9CE2-2A41-49FB163E67C1" name="T_Estabeleci_T_TipoEst_FK">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>C05043F4-E4CA-5C4F-92C5-F512B34FF631</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4C1CEEEB-70DC-884B-D217-FE4C57FCA6A3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="041731E1-8F54-01A6-EBC7-ED3E55247487" name="T_Estabeleci_T_PJuridica_FK">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 23:52:21 UTC</createdTime>
+<generatorID>C8B677FB-DFBC-AA8F-7334-9F50E484762D</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="23F6604F-0571-6BB7-44CE-569FDBC2CA21"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,104 @@
+html, body {
+	align-items: center;
+	background-image: url("imgs/background-club.jpg");
+	background-size: cover;
+	display: block;
+	justify-content: center;
+}
+
+header{
+	display:inline;
+}
+
+option, select, textarea, input {
+	background: #27739a;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	padding: 2px 2px 2px 2px;
+}
+
+.padraodestaque{
+	background: #27739a;
+	color: #fff;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	padding: 2px 2px 2px 2px;
+}
+
+.uploadFoto {
+	background: #111;
+	max-width:80%;
+	heigth: auto;
+	border: solid #22f259 3px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+textarea_old {
+	background: #e0f6ff;
+	border: none;
+	color: #a007f2;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	padding: 2px 2px 2px 2px;
+}
+
+#signUpContainer {
+	background: #222;
+	box-shadow: 0 0 10px;
+	min-width: 700px;
+	padding: 20px;
+}
+
+#signUpForm {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: 1fr 1fr;
+}
+
+#signUpContainer #signUpForm button {
+	background: #d6006e;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	grid-column-start: 2;
+	padding: 10px 0;
+}
+
+#signUpContainer #signUpForm button:hover {
+	background: #b8005f;
+}
+
+.textolongo{
+	height: 250px;
+	width: 98%;
+
+}
+
+.destaque1{
+	color: purple;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 16px;
+	background-color: lime;
+	text-align: center;
+}
+
+.principal{
+	color: #a007f2;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 22px;
+	background-color: #e0f6ff;
+	text-align: left;
+	font-weight: 700;
+	padding: 0 10px 0 10px;
+}

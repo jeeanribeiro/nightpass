@@ -17,10 +17,6 @@ import javax.persistence.Table;
 
 public class TipoGaleria implements Serializable{
 	
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -70,7 +66,4 @@ public class TipoGaleria implements Serializable{
 		this.galeriaEst = galeriaEst;
 	}
 	
-	
-	
-
 }

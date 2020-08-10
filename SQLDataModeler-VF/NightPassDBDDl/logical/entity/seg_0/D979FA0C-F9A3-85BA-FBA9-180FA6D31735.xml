@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D979FA0C-F9A3-85BA-FBA9-180FA6D31735" name="T_Estabeleci">
+<createdBy>User</createdBy>
+<createdTime>2020-02-13 23:39:36 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="est_codigo" id="AC2FB301-2A02-4D4A-CEE8-C351A6F1E102">
+<createdBy>User</createdBy>
+<createdTime>2020-02-14 00:03:08 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="est_Descricao" id="E0BA43C8-CAC5-497C-3E7F-01A911738D17">
+<createdBy>User</createdBy>
+<createdTime>2020-02-13 23:43:27 UTC</createdTime>
+<comment>Texto longo com a descrição do estabelecimento, como história, tipos de música tocada, ambiente, infraestrutura, etc.</comment>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tes_codigo" id="75BCDDC7-6293-3E00-9D45-804595A3E66D">
+<createdBy>User</createdBy>
+<createdTime>2020-02-14 22:19:02 UTC</createdTime>
+<generatorID>C05043F4-E4CA-5C4F-92C5-F512B34FF631</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<referedAttribute>20EB3D5A-8120-74CA-59DA-DBF9AB08F975</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="est_abertura" id="430CEE54-F782-8C74-AE45-8AB66D5C526E">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 19:28:57 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="est_fechamento" id="0C052C48-1FC7-8B61-E8F6-BA7317896873">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 19:29:25 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="psj_codigo" id="4F8FB852-FECE-0BC9-8903-D32F1DB598C4">
+<createdBy>User</createdBy>
+<createdTime>2020-02-16 20:39:37 UTC</createdTime>
+<generatorID>C8B677FB-DFBC-AA8F-7334-9F50E484762D</generatorID>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="true"/>
+</engineerTo>
+<referedAttribute>EFDFB6DB-DEDB-F43A-AB59-DF2C8D30EC70</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="87BE9E11-6336-2226-BA2E-9E7C4D61EC8D" name="T_Estabelecimento_PK">
+<createdBy>User</createdBy>
+<createdTime>2020-02-14 00:02:45 UTC</createdTime>
+<ownerDesignName>NightPassDBDDl</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="CC51D937-BB42-85D8-F63C-B08BE5B5ACA2" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>AC2FB301-2A02-4D4A-CEE8-C351A6F1E102</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

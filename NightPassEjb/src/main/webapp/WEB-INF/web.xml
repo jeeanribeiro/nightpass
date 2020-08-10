@@ -3,6 +3,11 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
 http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 version="3.1">
+	
+	<welcome-file-list>
+    <welcome-file>LoginUsuario.jsp</welcome-file>
+	</welcome-file-list>
+	
 	<servlet>
 		<description>
 		</description>
@@ -10,8 +15,52 @@ version="3.1">
 		<servlet-name>CadastroUsuarioServlet</servlet-name>
 		<servlet-class>br.com.fiap.NightPassEjb.Servlet.CadastroUsuarioServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>LoginUsuarioServlet</display-name>
+		<servlet-name>LoginUsuarioServlet</servlet-name>
+		<servlet-class>br.com.fiap.NightPassEjb.Servlet.LoginUsuarioServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>CadastroPJServlet</display-name>
+		<servlet-name>CadastroPJServlet</servlet-name>
+		<servlet-class>br.com.fiap.NightPassEjb.Servlet.CadastroPJServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		Realiza funções referente ao acesso de Gestores nas Pessoas Jurídicas</description>
+		<display-name>GestorPJServlet</display-name>
+		<servlet-name>GestorPJServlet</servlet-name>
+		<servlet-class>br.com.fiap.NightPassEjb.Servlet.GestorPJServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		Servlet para gerenciamento do Estabelecimento vinculado a PJ</description>
+		<display-name>AdmEstabelecimentoServlet</display-name>
+		<servlet-name>AdmEstabelecimentoServlet</servlet-name>
+		<servlet-class>br.com.fiap.NightPassEjb.Servlet.AdmEstabelecimentoServlet</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>CadastroUsuarioServlet</servlet-name>
 		<url-pattern>/CadastroUsuarioServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginUsuarioServlet</servlet-name>
+		<url-pattern>/LoginUsuarioServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CadastroPJServlet</servlet-name>
+		<url-pattern>/CadastroPJServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GestorPJServlet</servlet-name>
+		<url-pattern>/GestorPJServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AdmEstabelecimentoServlet</servlet-name>
+		<url-pattern>/AdmEstabelecimentoServlet</url-pattern>
 	</servlet-mapping>
 </web-app>

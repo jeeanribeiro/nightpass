@@ -22,14 +22,11 @@ public class PJuridicaServlet extends HttpServlet{
 		
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
 		List <PJuridica> pJuridica = dao.listarPorNome();
 		
 		req.setAttribute("resultado", pJuridica);
 		
 		req.getRequestDispatcher("BuscaPessoaJuridica.jsp").forward(req, resp);
-		
-		
 	}
 
 }
