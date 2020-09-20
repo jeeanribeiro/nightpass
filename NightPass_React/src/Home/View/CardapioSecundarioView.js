@@ -1,19 +1,25 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  ImageBackground,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
+import {View, Text, TouchableOpacity, Image} from 'react-native';
 import stylesBoas from './BoasvindasStyle';
 import stylesHome from './HomeStyle';
+import stylesCardSec from './CardapioSecundarioStyle';
+import {FlatList, ScrollView} from 'react-native-gesture-handler';
 
 const image = '../View/Images/TelaFundo.jpg';
 const imgLogo = '../View/Images/LogoBluePub.jpg';
 const imgGarcom = '../View/Images/rosto-garçom.png';
 
-const BoasvindasView = (props) => {
+const CardapioSecundarioView = (props) => {
+  // Conteudo para geração do array de botões
+
+  const RenderMenu = ({item}) => (
+    <TouchableOpacity
+      style={stylesCardSec.btnCardSec}
+      onPress={() => props.testealert(item.id)}>
+      <Text style={stylesCardSec.btnfmtCardSec}>{item.id}</Text>
+    </TouchableOpacity>
+  );
+
   return (
     <View style={stylesBoas.BackgroundConteiner}>
       <View style={stylesBoas.imageBack} />
@@ -31,46 +37,21 @@ const BoasvindasView = (props) => {
 
       <View style={stylesHome.boxbody}>
         {/* Conteúdo do corpo */}
-
-        <View style={stylesBoas.barraEst}>
-          <View style={stylesBoas.fmtbaseNome}>
-            <Text style={stylesBoas.fmtNomeEst}>The Blue Pub</Text>
-          </View>
-          <Image source={require(imgLogo)} style={stylesBoas.fmtFotoLogo} />
-        </View>
-
         <View style={stylesHome.boxMsg1}>
           <Text style={stylesHome.fmtTextoNormal}>
-            Olá Alexandre seja bem vindo
+            Fique a vontade em sua escolha!
           </Text>
         </View>
 
-        <View style={stylesBoas.barraGarcom}>
-          <View style={stylesBoas.boxGarcom}>
-            <Image
-              source={require(imgGarcom)}
-              style={stylesBoas.fmtFotoGarcom}
-            />
-          </View>
-          <View style={stylesBoas.boxmsgGarcom}>
-            <Text style={[stylesHome.fmtTextoNormal, {textAlign: 'center'}]}>
-              Você será atendido pelo Ronaldo
-            </Text>
-          </View>
-        </View>
+        <FlatList
+          style={stylesCardSec.boxMenu2}
+          horizontal={true}
+          data={props.arrayMenuSec}
+          renderItem={RenderMenu}
+          keyExtractor={(item) => item.id}
+        />
 
-        <View style={stylesBoas.barraBotao1}>
-          <TouchableOpacity
-            style={stylesBoas.btnBarra1}
-            onPress={props.goToCardapioInicial}>
-            <Text style={stylesBoas.btnfmtBarra1}>
-              Veja nosso cardápio aqui
-            </Text>
-          </TouchableOpacity>
-        </View>
-
-        <View style={stylesBoas.boxtransparent} />
-
+        <View style={stylesCardSec.boxtransparent} />
         <View style={stylesBoas.barraBotao2}>
           <TouchableOpacity
             style={stylesBoas.btnBarra2}
@@ -83,18 +64,19 @@ const BoasvindasView = (props) => {
             <Text style={stylesHome.btnfmtBarra1}>Ver Conta</Text>
           </TouchableOpacity>
 
+          <TouchableOpacity
+            style={stylesBoas.btnBarra2}
+            onPress={props.goToBoasvindas}>
+            <Text style={stylesHome.btnfmtBarra1}>Voltar</Text>
+          </TouchableOpacity>
         </View>
-
         <View style={stylesBoas.boxMsgFooter}>
-          <Text style={stylesHome.fmtTextoNormal}>
-            Comanda: 110
-          </Text>
+          <Text style={stylesHome.fmtTextoNormal}>Comanda: 110</Text>
         </View>
-
         <View style={stylesBoas.boxvazio} />
       </View>
     </View>
   );
 };
 
-export default BoasvindasView;
+export default CardapioSecundarioView;

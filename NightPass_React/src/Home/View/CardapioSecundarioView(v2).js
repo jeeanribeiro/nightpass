@@ -1,19 +1,15 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  ImageBackground,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
+import {View, Text, TouchableOpacity, Image} from 'react-native';
 import stylesBoas from './BoasvindasStyle';
 import stylesHome from './HomeStyle';
+import stylesCardSec from './CardapioSecundarioStyle';
+import {FlatList} from 'react-native-gesture-handler';
 
 const image = '../View/Images/TelaFundo.jpg';
 const imgLogo = '../View/Images/LogoBluePub.jpg';
 const imgGarcom = '../View/Images/rosto-garçom.png';
 
-const BoasvindasView = (props) => {
+const CardapioSecundarioView = (props) => {
   return (
     <View style={stylesBoas.BackgroundConteiner}>
       <View style={stylesBoas.imageBack} />
@@ -32,40 +28,34 @@ const BoasvindasView = (props) => {
       <View style={stylesHome.boxbody}>
         {/* Conteúdo do corpo */}
 
-        <View style={stylesBoas.barraEst}>
-          <View style={stylesBoas.fmtbaseNome}>
-            <Text style={stylesBoas.fmtNomeEst}>The Blue Pub</Text>
-          </View>
-          <Image source={require(imgLogo)} style={stylesBoas.fmtFotoLogo} />
-        </View>
-
         <View style={stylesHome.boxMsg1}>
           <Text style={stylesHome.fmtTextoNormal}>
-            Olá Alexandre seja bem vindo
+            Fique a vontade em sua escolha!
           </Text>
         </View>
 
-        <View style={stylesBoas.barraGarcom}>
-          <View style={stylesBoas.boxGarcom}>
-            <Image
-              source={require(imgGarcom)}
-              style={stylesBoas.fmtFotoGarcom}
-            />
-          </View>
-          <View style={stylesBoas.boxmsgGarcom}>
-            <Text style={[stylesHome.fmtTextoNormal, {textAlign: 'center'}]}>
-              Você será atendido pelo Ronaldo
-            </Text>
-          </View>
-        </View>
-
-        <View style={stylesBoas.barraBotao1}>
+        <View style={stylesCardSec.boxMenu}>
           <TouchableOpacity
-            style={stylesBoas.btnBarra1}
-            onPress={props.goToCardapioInicial}>
-            <Text style={stylesBoas.btnfmtBarra1}>
-              Veja nosso cardápio aqui
+            style={{props.arrayMenuSec[0].exibe}}
+            onPress={props.goToBoasvindas}>
+            <Text style={stylesCardSec.btnfmtCardSec}>
+            {props.arrayMenuSec[0].id}
             </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={stylesCardSec.btnCardSecNS}
+            onPress={props.goToBoasvindas}>
+            <Text style={stylesCardSec.btnfmtCardSecNS}>Whisk</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={stylesCardSec.btnCardSecNS}
+            onPress={props.goToBoasvindas}>
+            <Text style={stylesCardSec.btnfmtCardSecNS}>Tequila</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={stylesCardSec.btnCardSecNS}
+            onPress={props.goToBoasvindas}>
+            <Text style={stylesCardSec.btnfmtCardSecNS}>Caipirinha</Text>
           </TouchableOpacity>
         </View>
 
@@ -83,12 +73,15 @@ const BoasvindasView = (props) => {
             <Text style={stylesHome.btnfmtBarra1}>Ver Conta</Text>
           </TouchableOpacity>
 
+          <TouchableOpacity
+            style={stylesBoas.btnBarra2}
+            onPress={props.goToBoasvindas}>
+            <Text style={stylesHome.btnfmtBarra1}>Voltar</Text>
+          </TouchableOpacity>
         </View>
 
         <View style={stylesBoas.boxMsgFooter}>
-          <Text style={stylesHome.fmtTextoNormal}>
-            Comanda: 110
-          </Text>
+          <Text style={stylesHome.fmtTextoNormal}>Comanda: 110</Text>
         </View>
 
         <View style={stylesBoas.boxvazio} />
@@ -97,4 +90,4 @@ const BoasvindasView = (props) => {
   );
 };
 
-export default BoasvindasView;
+export default CardapioSecundarioView;

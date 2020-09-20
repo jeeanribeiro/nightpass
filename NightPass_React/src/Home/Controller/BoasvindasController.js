@@ -6,14 +6,15 @@ class BoasvindasController extends React.Component {
     super();
   }
 
-  goTo() {
-    this.props.navigation.navigate('xxxxx');
+  goToCardapioInicial() {
+    this.props.navigation.navigate('CardapioInicial');
   }
 
   render = () => {
-    return <BoasvindasView />;
+    return (
+      <BoasvindasView goToCardapioInicial={() => this.goToCardapioInicial()} />
+    );
   };
-
 }
 
 export default BoasvindasController;

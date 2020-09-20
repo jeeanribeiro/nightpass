@@ -8,12 +8,13 @@ import {
 } from 'react-native';
 import stylesBoas from './BoasvindasStyle';
 import stylesHome from './HomeStyle';
+import stylesCardInic from './CardapioIncialStyle';
 
 const image = '../View/Images/TelaFundo.jpg';
 const imgLogo = '../View/Images/LogoBluePub.jpg';
 const imgGarcom = '../View/Images/rosto-garçom.png';
 
-const BoasvindasView = (props) => {
+const CardapioInicialView = (props) => {
   return (
     <View style={stylesBoas.BackgroundConteiner}>
       <View style={stylesBoas.imageBack} />
@@ -41,32 +42,41 @@ const BoasvindasView = (props) => {
 
         <View style={stylesHome.boxMsg1}>
           <Text style={stylesHome.fmtTextoNormal}>
-            Olá Alexandre seja bem vindo
+            Fique a vontade em sua escolha!
           </Text>
         </View>
 
-        <View style={stylesBoas.barraGarcom}>
-          <View style={stylesBoas.boxGarcom}>
-            <Image
-              source={require(imgGarcom)}
-              style={stylesBoas.fmtFotoGarcom}
-            />
-          </View>
-          <View style={stylesBoas.boxmsgGarcom}>
-            <Text style={[stylesHome.fmtTextoNormal, {textAlign: 'center'}]}>
-              Você será atendido pelo Ronaldo
-            </Text>
-          </View>
-        </View>
-
-        <View style={stylesBoas.barraBotao1}>
+        <View style={stylesCardInic.boxbtnCardapio}>
           <TouchableOpacity
-            style={stylesBoas.btnBarra1}
-            onPress={props.goToCardapioInicial}>
-            <Text style={stylesBoas.btnfmtBarra1}>
-              Veja nosso cardápio aqui
-            </Text>
+            style={stylesCardInic.btnBarraCardapio}
+            onPress={props.goToBebidas}>
+            <Text style={stylesCardInic.btnfmtCardapio}>Bebidas</Text>
           </TouchableOpacity>
+
+          <TouchableOpacity
+            style={stylesCardInic.btnBarraCardapio}
+            onPress={''}>
+            <Text style={stylesCardInic.btnfmtCardapio}>Porções</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={stylesCardInic.btnBarraCardapio}
+            onPress={''}>
+            <Text style={stylesCardInic.btnfmtCardapio}>Sanduíches</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={stylesCardInic.btnBarraCardapio}
+            onPress={''}>
+            <Text style={stylesCardInic.btnfmtCardapio}>Saldados</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={stylesCardInic.btnBarraCardapio}
+            onPress={''}>
+            <Text style={stylesCardInic.btnfmtCardapio}>Refeições</Text>
+          </TouchableOpacity>
+
         </View>
 
         <View style={stylesBoas.boxtransparent} />
@@ -82,13 +92,10 @@ const BoasvindasView = (props) => {
             onPress={props.goToBoasvindas}>
             <Text style={stylesHome.btnfmtBarra1}>Ver Conta</Text>
           </TouchableOpacity>
-
         </View>
 
         <View style={stylesBoas.boxMsgFooter}>
-          <Text style={stylesHome.fmtTextoNormal}>
-            Comanda: 110
-          </Text>
+          <Text style={stylesHome.fmtTextoNormal}>Comanda: 110</Text>
         </View>
 
         <View style={stylesBoas.boxvazio} />
@@ -97,4 +104,4 @@ const BoasvindasView = (props) => {
   );
 };
 
-export default BoasvindasView;
+export default CardapioInicialView;

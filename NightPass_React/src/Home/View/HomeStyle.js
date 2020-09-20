@@ -7,12 +7,18 @@ export default StyleSheet.create({
   },
 
   boxhead: {
-    flex: 1.4,
+    flex: 1.6,
     flexDirection: 'row',
     backgroundColor: 'black',
     alignItems: 'center',
     alignContent: 'center',
     margin: 'auto',
+  },
+
+  boxbody: {
+    flex: 19.4,
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
   },
 
   btnPrincipal: {
@@ -35,7 +41,8 @@ export default StyleSheet.create({
     marginBottom: 5,
     marginLeft: 10,
     marginRight: 10,
-    flex: 0.9,
+    flex: 1,
+    maxHeight: 30,
     flexDirection: 'column',
     backgroundColor: 'white',
     alignItems: 'center',
@@ -83,7 +90,7 @@ export default StyleSheet.create({
   barraBotao1: {
     marginTop: 5,
     marginBottom: 5,
-    flex: 1.3,
+    flex: 1.5,
     flexDirection: 'row',
     backgroundColor: 'transparent',
     alignItems: 'center',
@@ -109,7 +116,7 @@ export default StyleSheet.create({
     textAlign: 'center',
   },
 
-  boxbody: {
+  boxvazio: {
     flex: 6,
   },
 

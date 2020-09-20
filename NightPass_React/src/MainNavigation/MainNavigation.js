@@ -5,11 +5,15 @@ import {createStackNavigator} from 'react-navigation-stack';
 import {createDrawerNavigator} from 'react-navigation-drawer';
 import HomeController from '../Home/Controller/HomeController';
 import BoasvindasController from '../Home/Controller/BoasvindasController';
+import CardapioInicialController from '../Home/Controller/CardapioInicialController';
+import CardapioSecundarioController from '../Home/Controller/CardapioSecundarioController';
 
 const opcoesNav = createStackNavigator(
   {
     Home: HomeController,
     boasVindas: BoasvindasController,
+    CardapioInicial: CardapioInicialController,
+    CardapioSecundario: CardapioSecundarioController,
   },
   {
     //oculta a barra de navegação por padrão
