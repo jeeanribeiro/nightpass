@@ -7,11 +7,25 @@ class CardapioInicialController extends React.Component {
   }
 
   goToBebidas() {
-    this.props.navigation.navigate('CardapioSecundario');
+    this.props.navigation.navigate('CardapioSecundario', {item: 'Bebidas'});
+  }
+
+  goToPorcoes() {
+    this.props.navigation.navigate('CardapioSecundario', {item: 'Porcoes'});
+  }
+
+  goToBoasVindas() {
+    this.props.navigation.navigate('boasVindas');
   }
 
   render = () => {
-    return <CardapioInicialView goToBebidas={() => this.goToBebidas()} />;
+    return (
+      <CardapioInicialView
+        goToBebidas={() => this.goToBebidas()}
+        goToPorcoes={() => this.goToPorcoes()}
+        goToBoasVindas={() => this.goToBoasVindas()}
+      />
+    );
   };
 }
 

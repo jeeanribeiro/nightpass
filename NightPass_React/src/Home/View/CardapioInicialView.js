@@ -55,28 +55,27 @@ const CardapioInicialView = (props) => {
 
           <TouchableOpacity
             style={stylesCardInic.btnBarraCardapio}
-            onPress={''}>
+            onPress={props.goToPorcoes}>
             <Text style={stylesCardInic.btnfmtCardapio}>Porções</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={stylesCardInic.btnBarraCardapio}
-            onPress={''}>
+            onPress={() => alert('em implementação')}>
             <Text style={stylesCardInic.btnfmtCardapio}>Sanduíches</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={stylesCardInic.btnBarraCardapio}
-            onPress={''}>
+            onPress={() => alert('em implementação')}>
             <Text style={stylesCardInic.btnfmtCardapio}>Saldados</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={stylesCardInic.btnBarraCardapio}
-            onPress={''}>
+            onPress={() => alert('em implementação')}>
             <Text style={stylesCardInic.btnfmtCardapio}>Refeições</Text>
           </TouchableOpacity>
-
         </View>
 
         <View style={stylesBoas.boxtransparent} />
@@ -91,6 +90,12 @@ const CardapioInicialView = (props) => {
             style={stylesBoas.btnBarra2}
             onPress={props.goToBoasvindas}>
             <Text style={stylesHome.btnfmtBarra1}>Ver Conta</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={stylesBoas.btnBarra2}
+            onPress={props.goToBoasVindas}>
+            <Text style={stylesHome.btnfmtBarra1}>Voltar</Text>
           </TouchableOpacity>
         </View>
 

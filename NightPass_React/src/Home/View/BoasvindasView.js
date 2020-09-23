@@ -74,13 +74,19 @@ const BoasvindasView = (props) => {
         <View style={stylesBoas.barraBotao2}>
           <TouchableOpacity
             style={stylesBoas.btnBarra2}
-            onPress={props.goToBoasvindas}>
+            onPress={() => alert('em implementação')}>
             <Text style={stylesHome.btnfmtBarra1}>Ver Pedido</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={stylesBoas.btnBarra2}
-            onPress={props.goToBoasvindas}>
+            onPress={() => alert('em implementação')}>
             <Text style={stylesHome.btnfmtBarra1}>Ver Conta</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={stylesBoas.btnBarra2}
+            onPress={props.goToHome}>
+            <Text style={stylesHome.btnfmtBarra1}>Voltar</Text>
           </TouchableOpacity>
 
         </View>

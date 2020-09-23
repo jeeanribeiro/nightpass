@@ -43,7 +43,7 @@ const HomeView = (props) => {
 
           <TouchableOpacity
             style={styles.btnBarra1}
-            onPress={() => alert('alert1')}>
+            onPress={() => alert('em implementação')}>
             <Text style={styles.btnfmtBarra1}>Agora não </Text>
           </TouchableOpacity>
         </View>

@@ -63,7 +63,7 @@ export default StyleSheet.create({
     maxHeight: 40,
   },
 
-  fmtMenuBar:{
+  fmtMenuBar: {
     backgroundColor: 'transparent',
     alignItems: 'center',
     justifyContent: 'center',
@@ -71,7 +71,7 @@ export default StyleSheet.create({
   },
 
   boxtransparent: {
-    flex: 8.6,
+    flex: 1.6,
     backgroundColor: 'transparent',
   },
 
@@ -79,4 +79,129 @@ export default StyleSheet.create({
     flex: 0,
     backgroundColor: 'black',
   },
+
+  boxBody: {
+    flex: 16.4,
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+  },
+
+  boxFooter: {
+    flex: 3,
+    backgroundColor: 'transparent',
+  },
+
+  //Estilos do menu de subitens
+
+  boxSubMenu: {
+    backgroundColor: 'transparent',
+    marginLeft: 10,
+    marginRight: 10,
+    maxHeight: '80%',
+  },
+
+  boxSubItem: {
+    height: 100,
+    width: '100%',
+    backgroundColor: 'rgba(255,255,255,0.9)',
+    alignSelf: 'center',
+    marginBottom: 8,
+    borderWidth: 2,
+    borderColor: '#FF00BF',
+    justifyContent: 'center',
+    flexDirection: 'row',
+  },
+
+  boxImgItem: {
+    height: '98%',
+    flex: 0.9,
+    //borderWidth: 1,
+    //borderColor: 'black',
+  },
+
+  boxDescItem: {
+    height: '98%',
+    flex: 1.4,
+    justifyContent: 'center',
+    //borderWidth: 1,
+    //borderColor: 'black',
+  },
+
+  fmtTextoNormal: {
+    color: 'black',
+    fontSize: 14,
+    fontFamily: 'FiraSans-Medium',
+    marginLeft: 10,
+    textAlign: 'left',
+  },
+
+  boxPedidoItem: {
+    height: '98%',
+    flex: 0.7,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    //borderWidth: 1,
+    //borderColor: 'black',
+  },
+
+  boxfmtImgItem: {
+    height: '96%',
+    width: '96%',
+    resizeMode: 'contain',
+  },
+
+  //Estilo botão quantidade e adicionar
+
+  btnQuant: {
+    backgroundColor: 'transparent',
+    flexDirection: 'row',
+    borderRadius: 10,
+    padding: 1,
+    paddingLeft: 5,
+    paddingRight: 5,
+    borderColor: '#FF00BF',
+    borderWidth: 2,
+    justifyContent: 'space-between',
+    alignContent: 'center',
+    alignItems: 'center',
+    width: '90%',
+    height: '35%',
+    alignSelf: 'center',
+  },
+
+  fmtMaisMenos: {
+    color: 'red',
+    fontSize: 22,
+    fontFamily: 'MuseoModerno-Bold',
+    textAlign: 'center',
+  },
+
+  fmtQuant: {
+    color: 'black',
+    fontSize: 18,
+    fontFamily: 'FiraSans-Medium',
+    textAlign: 'center',
+  },
+
+  btnAdicionar: {
+    backgroundColor: 'black',
+    borderRadius: 10,
+    padding: 1,
+    paddingLeft: 5,
+    paddingRight: 5,
+    borderColor: '#FF00BF',
+    borderWidth: 2,
+    alignContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+    marginTop: 8,
+  },
+
+  fmtAdicionar: {
+    color: 'white',
+    fontSize: 13,
+    fontFamily: 'FiraSans-Regular',
+    textAlign: 'center',
+  },
+
 });

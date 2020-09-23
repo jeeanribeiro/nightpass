@@ -10,9 +10,16 @@ class BoasvindasController extends React.Component {
     this.props.navigation.navigate('CardapioInicial');
   }
 
+  goToHome() {
+    this.props.navigation.navigate('Home');
+  }
+
   render = () => {
     return (
-      <BoasvindasView goToCardapioInicial={() => this.goToCardapioInicial()} />
+      <BoasvindasView
+        goToCardapioInicial={() => this.goToCardapioInicial()}
+        goToHome={() => this.goToHome()}
+      />
     );
   };
 }
