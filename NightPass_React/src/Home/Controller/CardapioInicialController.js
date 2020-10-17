@@ -2,6 +2,7 @@ import React from 'react';
 import CardapioInicialView from '../View/CardapioInicialView';
 
 class CardapioInicialController extends React.Component {
+
   constructor() {
     super();
   }

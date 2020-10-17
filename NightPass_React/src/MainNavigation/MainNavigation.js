@@ -25,7 +25,7 @@ const opcoesNav = createStackNavigator(
 
 const AppLogged = createDrawerNavigator({
   opcoesNav,
-  initialRouteName: 'Places',
+  initialRouteName: 'Home',
 });
 
 const AppContainer = createAppContainer(AppLogged);

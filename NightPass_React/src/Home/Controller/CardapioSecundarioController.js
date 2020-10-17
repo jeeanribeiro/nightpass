@@ -5,8 +5,6 @@ import CardapioSecundarioView from '../View/CardapioSecundarioView';
 
 let tempPedido = new Array();
 
-let arrayMenuPorcao = new Array();
-
 class CardapioSecundarioController extends React.Component {
   constructor() {
     super();
@@ -48,6 +46,29 @@ class CardapioSecundarioController extends React.Component {
       aMenuSec: arrayMenuSec,
       aSubItem: new Array(),
       aPedido: new Array(),
+    };
+  }
+
+  atualizaMenu() {
+    let arrayNovoMenu = new Array();
+
+    arrayNovoMenu.push({
+      id: 'Carnes',
+      sel: false,
+    });
+
+    arrayNovoMenu.push({
+      id: 'Petiscos',
+      sel: false,
+    });
+
+    arrayNovoMenu.push({
+      id: 'Salgados',
+      sel: false,
+    });
+
+    this.state = {
+      aMenuSec: arrayNovoMenu,
     };
   }
 
@@ -164,6 +185,14 @@ class CardapioSecundarioController extends React.Component {
   }
 
   render = () => {
+    const {params} = this.props.navigation.state;
+
+    if (params.item === 'Porcoes') {
+
+      console.log(params.item);
+      this.atualizaMenu();
+    }
+
     return (
       <CardapioSecundarioView
         arrayMenuSec={this.state.aMenuSec}
