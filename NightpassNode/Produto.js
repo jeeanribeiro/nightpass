@@ -38,11 +38,12 @@ function create ( PRD_CODIGO,
     PRD_DESCRICAO,
     PRD_PRECO,
     T_ESTABELECI_EST_CODIGO,
-    PRD_FORMATO ) {
+    PRD_FORMATO,
+    PRD_IMGPATH ) {
 
         produtos.push(
             new Produto(PRD_CODIGO,PRD_NOME,PRD_MARCA,PRD_DESCRICAO,
-                PRD_PRECO,T_ESTABELECI_EST_CODIGO,PRD_FORMATO)
+                PRD_PRECO,T_ESTABELECI_EST_CODIGO,PRD_FORMATO,PRD_IMGPATH)
         )
 
     }
@@ -60,6 +61,7 @@ function getbyid (idproduto) {
         PRD_PRECO,
         T_ESTABELECI_EST_CODIGO,
         PRD_FORMATO,
+        PRD_IMGPATH,
         idproduto) {
 
             if (produtos[idproduto] != null){
@@ -71,6 +73,7 @@ function getbyid (idproduto) {
                 produtos[idproduto].PRD_PRECO = PRD_PRECO;
                 produtos[idproduto].T_ESTABELECI_EST_CODIGO = T_ESTABELECI_EST_CODIGO;
                 produtos[idproduto].PRD_FORMATO = PRD_FORMATO;
+                produtos[idproduto].PRD_IMGPATH = PRD_IMGPATH;
             }
 
         }
@@ -87,5 +90,4 @@ module.exports.getAll = getAll;
 module.exports.deleteProduto = deleteProduto
 module.exports.getbyid = getbyid;
 module.exports.update = update;
-
 

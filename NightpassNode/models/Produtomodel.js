@@ -31,7 +31,13 @@ const ProdutoSchema = new mongoose.Schema({
     prd_formato:{
         type: String,
         required: true
+    },
+
+    prd_imgpath: {
+        type: String,
+        required: false
     }
+
 });
 mongoose.model('Produtos', ProdutoSchema);
 

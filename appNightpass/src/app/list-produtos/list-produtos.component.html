@@ -1,0 +1,32 @@
+<div class="container">
+
+    <div class="boxhead"><div class="textlogo">NightPass</div></div>
+    
+    <div class="boxbody">
+
+        <div class="boxEst">The Blue Pub</div>
+
+        <div 
+            *ngFor="let prod of produtos$ | async"
+            class="boxItem">
+
+            <div class="fmtbaseItem">
+
+                <div class="fmtimgItem"><img class="fmtimgpad" src='{{prod.prd_imgpath}}'></div>
+
+                <div class="fmtdescItem">
+                    <div>Código Item: <span class="fmtfonteDest">{{prod.prd_codigo}} </span></div>
+                    <div>Nome: <span class="fmtfonteDest">{{prod.prd_nome}}</span></div>
+                    <div>Marca: <span class="fmtfonteDest">{{prod.prd_marca}}</span></div>
+                    <div>Descrição: <span class="fmtfonteDest">{{prod.prd_descricao}}</span></div>
+                    <div>Preço R$: <span class="fmtfonteDest">{{prod.prd_preco}}</span></div>
+                    <div>Código Estabelecimento: <span class="fmtfonteDest">{{prod.t_estabeleci_est_codigo}}</span></div>
+                    <div>Embalagem: <span class="fmtfonteDest">{{prod.prd_formato}}</span></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

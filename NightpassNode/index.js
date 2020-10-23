@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 //Importação do Shema Produto
 const Produto = require('./models/Produtomodel');
@@ -10,7 +11,18 @@ const { produtos } = require('./Produto');
 //Database Mongo
 
 mongoose.Promise = global.Promise;
+
+/*Conexão com base local
+
 mongoose.connect('mongodb://localhost:27017/nightpass', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+
+*/
+
+mongoose.connect('mongodb+srv://nightpassusr:Grupofiap2020@nightpassclt.nyxh4.mongodb.net/test', 
+{
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -41,7 +53,7 @@ app.post('/produto', function (req, res) {
 });
 
 // Retorna todos os produtos na base
-app.get('/produtos', function( req, res){
+app.get('/produtos', cors(),  function( req, res){
 
     Produto.find()
         .then((produtos) => res.send(produtos))
@@ -87,8 +99,9 @@ app.delete('/produto/:id', function(req, res){
 });
 
 
-app.listen(8081, () => {
-    console.log('Servidor rodando em http://localhost/8081');
+app.listen(8091, () => {
+    console.log('Servidor rodando em http://localhost:8091, local');
+    console.log('Ou na núvem pelo mongo Atlas conforme configuração');
 })
 
 
