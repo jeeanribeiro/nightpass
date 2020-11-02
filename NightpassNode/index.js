@@ -21,7 +21,9 @@ mongoose.connect('mongodb://localhost:27017/nightpass', {
 
 */
 
-mongoose.connect('mongodb+srv://nightpassusr:Grupofiap2020@nightpassclt.nyxh4.mongodb.net/test', 
+//Conexão na nuvem Atlas Mongo
+
+mongoose.connect('mongodb+srv://Nightpassusr:Grupofiap2020@cluster0.ilb0u.mongodb.net/Produtos', 
 {
     useNewUrlParser: true,
     useUnifiedTopology: true
