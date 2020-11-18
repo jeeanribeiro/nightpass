@@ -1,6 +1,7 @@
 /* eslint-disable no-alert */
 import React, {useCallback} from 'react';
 import {View} from 'react-native';
+import {State} from 'react-native-gesture-handler';
 import CardapioSecundarioView from '../View/CardapioSecundarioView';
 
 let tempPedido = new Array();
@@ -46,7 +47,33 @@ class CardapioSecundarioController extends React.Component {
       aMenuSec: arrayMenuSec,
       aSubItem: new Array(),
       aPedido: new Array(),
+      data: [],
     };
+
+    const headers = {
+      'Content-Type': 'application/json',
+      Authorization: 'Basic YWRtaW46bnBhc3NhZG1pbg==',
+    };
+
+    fetch(
+      'http://admin:npassadmin@localhost:8080/NightPassSpr/api/produtoapi/Est/41',
+      {headers},
+    )
+      //fetch('https://reactnative.dev/movies.json')
+      .then(function (response) {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        }
+        // Read the response as json.
+        return response.json();
+      })
+      .then(function (responseAsJson) {
+        // Do stuff with the JSON
+        console.log(responseAsJson);
+      })
+      .catch(function (error) {
+        console.log('Looks like there was a problem: \n', error);
+      });
   }
 
   atualizaMenu() {
@@ -188,7 +215,6 @@ class CardapioSecundarioController extends React.Component {
     const {params} = this.props.navigation.state;
 
     if (params.item === 'Porcoes') {
-
       console.log(params.item);
       this.atualizaMenu();
     }

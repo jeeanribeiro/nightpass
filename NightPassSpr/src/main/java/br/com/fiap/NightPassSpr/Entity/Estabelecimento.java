@@ -88,6 +88,9 @@ public class Estabelecimento implements Serializable, Comparable<Estabelecimento
 	@OneToMany(mappedBy = "EstabelecimentoAge", fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
 	private List<Agenda> AgendaEst;
 
+	@OneToMany(mappedBy = "EstabelecimentoPrd", fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
+	private List<Produto> ProdutoEst;
+
 
 	public Estabelecimento() {
 		super();
@@ -167,6 +170,7 @@ public class Estabelecimento implements Serializable, Comparable<Estabelecimento
 		this.generoMusical = generoMusical;
 	}
 
+	@JsonIgnore
 	public List<Agenda> getAgendaEst() {
 		return AgendaEst;
 	}
@@ -196,4 +200,15 @@ public class Estabelecimento implements Serializable, Comparable<Estabelecimento
 		return (int) (this.estcodigo-comparecodigo);
 	}
 
+	@JsonIgnore
+	public List<Produto> getProdutoEst() {
+		return ProdutoEst;
+	}
+
+	public void setProdutoEst(List<Produto> produtoEst) {
+		ProdutoEst = produtoEst;
+	}
+
+	
+	
 }

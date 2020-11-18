@@ -464,20 +464,15 @@ overflow-x: hidden;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.loginContainer {
+	align-items: center;
+	background: #222;
+	box-shadow: 0 0 10px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding: 20px;
+}
 
 
 

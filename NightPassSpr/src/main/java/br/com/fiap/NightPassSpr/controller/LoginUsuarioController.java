@@ -68,9 +68,40 @@ public class LoginUsuarioController {
 			return new ModelAndView("base/LoginUsuario");
 		}
 		//Procedimentos básicos de carregamento de páginas
-		return new ModelAndView("redirect:/carregarListaEstabelecimentos");
+		return new ModelAndView("redirect:/");
 	}
 
+
+	@Transactional
+	@PostMapping("/logarGestor")
+	public ModelAndView loginGestor (PessoaFisica pessoaFisica,
+			Model model, @RequestParam(required=false) boolean baseimagens) {
+
+		usuarioLog = dao.buscarPorEmail(pessoaFisica.getEmail());
+
+		session.setAttribute("baseimagens", baseimagens);
+		System.out.println(baseimagens);
+
+		if(usuarioLog == null) {
+			model.addAttribute("msg", "Login não cadastrado");
+			return new ModelAndView("base/LoginUsuario");
+		}
+
+		if (usuarioLog.ValidarSenha(pessoaFisica.getSenha()) == true) {
+			//Senha Valida
+			model.addAttribute("msg", "Usuario Autenticado");
+			session.setAttribute("usuarioLog", usuarioLog);
+			//Vai para o painel de controle
+		} else {
+			//Senha Inválida
+			model.addAttribute("msg", "Senha Incorreta");
+			return new ModelAndView("base/LoginUsuario");
+		}
+		//Procedimentos básicos de carregamento de páginas
+		return new ModelAndView("redirect:/buscarTodasPJGestor");
+	}
+
+	
 	/*
 	 * @Transactional
 	 *

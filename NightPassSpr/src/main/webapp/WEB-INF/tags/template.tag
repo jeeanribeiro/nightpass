@@ -18,6 +18,7 @@
 <link rel="manifest" href="<c:url value="/resources/imgs/site.webmanifest"/>">
 <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/global.css"/>">
 <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/generico.css"/>">
+<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/CatalogoEst.css"/>">
 
     <!--CDN versions of jQuery and Popper.js (deve estar antes dos cods Bootstrap -->
 

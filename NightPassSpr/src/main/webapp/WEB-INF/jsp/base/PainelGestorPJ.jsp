@@ -1,60 +1,72 @@
-<%@ page language="java" contentType="text/html"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
-<!DOCTYPE html>
-<html lang='pt'>
-<head>
-<meta charset="ISO-8859-1">
-<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<link rel="apple-touch-icon" sizes="180x180" href="resources/imgs/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="resources/imgs/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="resources/imgs/favicon-16x16.png">
-<link rel="manifest" href="resources/imgs/site.webmanifest">
-<link rel="stylesheet" href="resources/css/global.css">
-<title>Painel Gestor - NightPass</title>
-</head>
-<body>
-	<p>
-	<p>
-	<div style="color: red">
-		<h1>Você está vinculado as empresas: </h1><br>
+<tags:template
+title="NightPass - Principal"
+cssProprio="/resources/css/CatalogoEst.css"
+jsProprio="/resources/js/CatalogoEst.js">
 
-	</div>
 
-	<table>
-		<tr style="color: red">
-			<th> CNPJ </th>
-			<th> NOME </th>
-			<th> PERFIL </th>
-		</tr>
+      <div class="baseprincipal">
 
-		<c:forEach var="n" items="${usuarioLog.getpJuridicas()}">
-		<tr style="color: red">
-			<td> ${n.getPsjCnpj()} </td>
-			<td> ${n.getPsjNome()} </td>
+            <div class="topo">
 
-			<td>
-			<c:url value="/painelestabelecimento/${n.getPsjCodigo()}" var="action" />
-			<form:form action="${action}" method="get">
-				<button class="buttonfmt" type="submit">Editar</button>
-			</form:form>
-			</td>
+                <div class="LogoNPass">NigthPass</div>
 
-		</tr>
+                <!-- Button to Open the Modal -->
 
-		</c:forEach>
+                <button type="button" class="HeadMenuRight"
+                data-toggle="modal" data-target="#mdlogin">login</button>
 
-	</table>
+            </div>
 
-	<br>
-	<c:url value="/cadastropj" var="voltar"/>
-	<a class="buttonfmt" href="${voltar}">Adicionar Novo</a>
-	<c:url value="/carregarListaEstabelecimentos" var="voltar"/>
-	<a class="buttonfmt" href="${voltar}">Voltar</a>
+		<div class="corpo">
+	
+			<div class="boxListaPJ">
+	
+			<div style="color: red">
+				<h1>Você está vinculado as empresas: </h1><br>
+			</div>
+		
+			<table>
+				<tr style="color: red">
+					<th> CNPJ </th>
+					<th> NOME </th>
+					<th> PERFIL </th>
+				</tr>
+		
+				<c:forEach var="n" items="${usuarioLog.getpJuridicas()}">
+				<tr style="color: red">
+					<td> ${n.getPsjCnpj()} </td>
+					<td> ${n.getPsjNome()} </td>
+		
+					<td>
+					<c:url value="/painelestabelecimento/${n.getPsjCodigo()}" var="action" />
+					<form:form action="${action}" method="get">
+						<button class="buttonfmt" type="submit">Editar</button>
+					</form:form>
+					</td>
+		
+				</tr>
+		
+				</c:forEach>
+		
+			</table>
+		
+			<br>
+			<c:url value="/cadastropj" var="voltar"/>
+			<a class="buttonfmt" href="${voltar}">Adicionar Novo</a>
+			<c:url value="/" var="voltar"/>
+			<a class="buttonfmt" href="${voltar}">Voltar</a>
+			
+			</div>
+	
+		</div>
 
-</body>
-</html>
+</div>
+
+</tags:template>

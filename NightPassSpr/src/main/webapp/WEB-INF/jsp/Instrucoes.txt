@@ -22,5 +22,11 @@ Para acesso a API / JSON
 
 Endereços:
 
-	http://localhost:7080/NightPassSpr/api/pessoajuridicaapi
-	http://localhost:7080/NightPassSpr/api/estabelecimentoapi
+	http://localhost:8080/NightPassSpr/api/pessoajuridicaapi
+	xxxx
+	
+  <role rolename="user"/>
+  <role rolename="guest"/>
+  <user username="user"  password="npassuser" roles="user"/>
+  <user username="guest" password="npassguest" roles="guest"/>
+  <user username="admin" password="npassadmin" roles="user,guest"/>

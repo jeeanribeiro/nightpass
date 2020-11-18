@@ -27,6 +27,7 @@ import org.hibernate.annotations.FetchMode;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
@@ -65,9 +66,11 @@ public class Agenda implements Serializable {
 	 */
 	@ManyToOne()
 	@JoinColumn(name="T_ESTABELECI_EST_CODIGO", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
+	@JsonIgnore()
 	private Estabelecimento EstabelecimentoAge;
 
 	@OneToMany(mappedBy = "preAgenda", fetch=FetchType.EAGER) @Fetch(value=FetchMode.SUBSELECT)
+	@JsonIgnore()
 	private List<Presenca> AgePresenca;
 
 	public long getAgeCodigo() {
@@ -100,6 +103,7 @@ public class Agenda implements Serializable {
 	 * public void setAgeFtPublicidade(byte[] ageFtPublicidade) {
 	 * this.ageFtPublicidade = ageFtPublicidade; }
 	 */
+
 	public Estabelecimento getEstabelecimentoAge() {
 		return EstabelecimentoAge;
 	}

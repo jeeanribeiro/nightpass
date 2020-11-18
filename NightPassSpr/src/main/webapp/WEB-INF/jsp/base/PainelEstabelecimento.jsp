@@ -53,6 +53,10 @@ jsProprio="Ajustar">
 			<br><br>
 			<c:url value="/abreGaleria" var="voltar"/>
 			<a class="buttonfmt" href="${voltar}">Galeria Estabelecimento</a>
+			
+			<c:url value="/abreCardapio" var="voltar"/>
+			<a class="buttonfmt" href="${voltar}">Gerenciar Cardápio</a>
+			
 
 
 			<br><br>

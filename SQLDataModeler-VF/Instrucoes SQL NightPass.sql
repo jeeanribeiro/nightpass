@@ -30,6 +30,12 @@ START WITH     50
  INCREMENT BY   1
  NOCACHE
  NOCYCLE;
+
+CREATE SEQUENCE SEQ_T_GALERIAPRODUTO
+START WITH     1
+ INCREMENT BY   1
+ NOCACHE
+ NOCYCLE;
  
 
 
@@ -295,7 +301,15 @@ T_PRODUTO PD ON i.t_produto_prd_codigo = pd.prd_codigo;
 SELECT * FROM T_ESTABELECI;
 
 
-
+INSERT INTO t_galeriaproduto (
+    gap_codigo,
+    gap_endservidor,
+    t_produto_prd_codigo
+) VALUES (
+    SEQ_T_GALERIAPRODUTO.nextval,
+    'Batata-Frita.jpg',
+    67
+);
 
 
 
